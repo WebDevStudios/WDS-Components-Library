@@ -1,0 +1,34 @@
+//--------------------------------------------------------------
+// Icons
+//--------------------------------------------------------------
+
+// Social icons <ul>
+.social-icons {
+	@include clearfix;
+	@include list-reset;
+
+	// Each icon <li>
+	.social-icon {
+		display: inline-block;
+
+		// Loop through all social icons
+		@each $social-color, $color in $social-colors {
+
+			// Set styles on those social icons!
+			.icon-#{$social-color} {
+				@include size(rem(30) rem(30));
+
+				fill: $color;
+
+				&:hover {
+					fill: lighten($color, 20%);
+				} // &:hover
+			} // .icon-#{$social-color}
+		} // end each loop
+
+		// No margin for the last <li> item
+		&:last-child {
+			margin-right: 0;
+		} // &:last-child
+	} // .social-icon
+} // .social-icons
