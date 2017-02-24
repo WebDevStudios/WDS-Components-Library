@@ -40,3 +40,35 @@ function _s_image_hero( $args = array() ) {
 	<?php return ob_get_clean();
 }
 
+/**
+ * Echo the Image Hero
+ *
+ * @param  array  [$args = array()]  The hero arguments.
+ *
+ * @author Carrie Forde
+ */
+function _s_the_image_hero( $args = array() ) {
+
+	$post_id = get_the_ID();
+
+	// Get the hero meta.
+	$image         = get_post_meta( $post_id, 'background_image', true );
+	$title         = get_post_meta( $post_id, 'hero_title', true );
+	$description   = get_post_meta( $post_id, 'hero_description', true );
+	$button_link   = get_post_meta( $post_id, 'button_link', true );
+	$button_title  = get_post_meta( $post_id, 'button_title', true );
+	$button_text   = get_post_meta( $post_id, 'button_text', true );
+
+	// Grab the image object's URL.
+	$image = wp_get_attachment_image_url( $image, 'full' );
+
+	// Call our hero function.
+	echo _s_get_image_hero( array( // WPCS: XSS OK
+		'image'         => $image,
+		'title'         => $title,
+		'description'   => $description,
+		'button_link'   => $button_link,
+		'button_title'  => $button_title,
+		'button_text'   => $button_text,
+	) );
+}
