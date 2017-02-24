@@ -55,7 +55,6 @@ function _s_get_pricing_card( $args = array() ) {
 	<?php return ob_get_clean();
 }
 
-
 /**
  * Build the markup for a section of pricing cards.
  *
@@ -69,6 +68,7 @@ function _s_get_pricing_card_section( $args = array() ) {
 
 	$post_id = get_the_ID();
 
+	// Get the post meta.
 	$section_header = get_post_meta( $post_id, 'pricing_header', true );
 	$pricing_card = get_post_meta( $post_id, 'pricing_card', true );
 
@@ -82,6 +82,7 @@ function _s_get_pricing_card_section( $args = array() ) {
 		$description = get_post_meta( $post_id, 'pricing_card', $i . 'card_description' );
 		$features = get_post_meta( $post_id, 'pricing_card' . $i . 'features' );
 
+		// Pass the meta to the card function to get the card markup.
 		echo _s_get_pricing_card( array(
 			'title'       => $title,
 			'description' => $description,
