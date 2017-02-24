@@ -89,7 +89,7 @@ function _s_get_pattern_section( $args = array() ) {
 		<div class="pattern-document-live">
 
 		<?php if ( $args['output'] ) : ?>
-			<?php echo wp_kses( $args['output'], $allowed_tags ); ?>
+			<?php echo wp_kses_post( $args['output'], $allowed_tags ); ?>
 		<?php endif; ?>
 
 		</div><!-- .pattern-document-live -->
@@ -120,6 +120,12 @@ function _s_pattern_allowed_html() {
 		),
 		'source' => array(
 			'src' => true,
+		),
+		'section' => array(
+			'class'            => true,
+			'style'            => true,
+			'aria-labelledby'  => true,
+			'aria-describedby' => true,
 		),
 	) );
 

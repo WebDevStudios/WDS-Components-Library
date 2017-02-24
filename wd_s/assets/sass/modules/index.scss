@@ -1,13 +1,13 @@
 @import "comments";
-@import "content";
-@import "footer";
-@import "forms";
-@import "buttons";
-@import "header";
-@import "hero";
-@import "icons";
+@import "content"; // This should go in structure
+@import "footer"; // This should go in structure
+@import "forms"; // This should be in base
+@import "buttons"; // This should be in base
+@import "header"; // This should go in structure
+//@import "hero"; // commenting out in favor of wds-components
+@import "icons"; // This should go in base
 @import "mobile-navigation";
 @import "navigation";
-@import "tables";
-@import "modal";
-@import "footer";
+@import "tables"; // This should go in base
+//@import "modal"; commenting out in favor of wds-components
+@import "footer"; // This should go in structure
