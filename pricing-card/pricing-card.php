@@ -54,3 +54,43 @@ function _s_get_pricing_card( $args = array() ) {
 
 	<?php return ob_get_clean();
 }
+
+
+/**
+ * Build the markup for a section of pricing cards.
+ *
+ * @param   array  [$args = array()]  The args.
+ * @return  string                    The pricing section markup.
+ *
+ * @author Carrie Forde
+ */
+
+function _s_get_pricing_card_section( $args = array() ) {
+
+	$post_id = get_the_ID();
+
+	$section_header = get_post_meta( $post_id, 'pricing_header', true );
+	$pricing_card = get_post_meta( $post_id, 'pricing_card', true );
+
+	ob_start();
+
+	for ( $i = 0; $i < $pricing_card; $i++ ) {
+
+		$title = get_post_meta( $post_id, 'pricing_card' . $i . 'card_title', true );
+		$currency = get_post_meta( $post_id, 'pricing_card' . $i . 'currency_symbol', true );
+		$price = get_post_meta( $post_id, 'pricing_card' . $i . 'price', true );
+		$description = get_post_meta( $post_id, 'pricing_card', $i . 'card_description' );
+		$features = get_post_meta( $post_id, 'pricing_card' . $i . 'features' );
+
+		echo _s_get_pricing_card( array(
+			'title'       => $title,
+			'description' => $description,
+			'currency'    => $currency,
+			'price'       => $price,
+//			'feature'     => array( $features ),
+			'button_text' => 'Choose Plan',
+		) );
+	}
+
+	return ob_get_clean();
+}
