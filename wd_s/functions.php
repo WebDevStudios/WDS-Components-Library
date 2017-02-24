@@ -170,3 +170,8 @@ require get_template_directory() . '/inc/patterns.php';
  * WDS Components.
  */
 require get_template_directory() . '/inc/wds-components.php';
+
+/**
+ * CMB2 meta.
+ */
+require get_template_directory() . '/inc/cmb2-meta.php';
