@@ -13,15 +13,15 @@
  *
  * @author Carrie Forde
  */
-function _s_image_hero( $args = array() ) {
+function _s_get_image_hero( $args = array() ) {
 
 	$defaults = array(
 		'image'         => 'https://unsplash.it/1920/1080',
 		'title'         => 'Image Hero Title',
 		'description'   => 'This is a hero description. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mihi enim erit isdem istis fortasse iam utendum. Quare ad ea primum, si videtur; Nec hoc ille non vidit, sed verborum magnificentia est et gloria delectatus.',
 		'button_link'   => '',
-		'button_title'  => '',
-		'button_text'   => '',
+		'button_title'  => 'Click to see more',
+		'button_text'   => 'Click Me',
 		'class'         => '',
 	);
 	$args = wp_parse_args( $args, $defaults );
