@@ -31,3 +31,9 @@ If you decide to use a prefix with your CMB2 fields, be sure to add that to the 
 ```php
 $image = get_post_meta($post_id, $prefix . 'image', true );
 ```
+
+Additionally, when using CMB2 with images, you will want to make sure you append `_id` to the end of the image meta to get the image object, and not a URL. E.g.:
+
+```php
+$image = get_post_meta( $post_id, 'image_id', true );
+```
