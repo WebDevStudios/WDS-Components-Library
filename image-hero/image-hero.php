@@ -43,7 +43,7 @@ function _s_get_image_hero( $args = array() ) {
 				<p class="hero-description"><?php echo esc_html( $args['description'] ); ?></p>
 			<?php endif; ?>
 
-			<?php if ( ! empty ( $args['button_link'] && $args['button_text'] ) ) : ?>
+			<?php if ( ! empty( $args['button_link'] && $args['button_text'] ) ) : ?>
 				<a href="<?php echo esc_url( $args['button_link'] ); ?>" class="hero-button" <?php echo ( ! empty( $args['button_title'] ) ) ? 'title="' . esc_attr( $args['button_title'] ) . '"' : '' ?>><?php echo esc_html( $args['button_text'] ); ?></a>
 			<?php endif; ?>
 		</div><!-- .hero-content -->

@@ -26,7 +26,7 @@ function _s_video_hero_meta() {
 		'desc'    => 'Upload an image at least 1920 pixels wide. This is used as a backup in case the video fails.',
 		'id'      => 'background_image',
 		'type'    => 'file',
-		'options' => array( 'url' => false, ),
+		'options' => array( 'url' => false ),
 	) );
 
 	$video_hero->add_field( array(
@@ -68,6 +68,6 @@ function _s_video_hero_meta() {
 		'name'  => 'Button Text',
 		'desc'  => 'Optional. Add text to the button.',
 		'id'    => 'button_text',
-		'type'  => 'text'
+		'type'  => 'text',
 	) );
 }
