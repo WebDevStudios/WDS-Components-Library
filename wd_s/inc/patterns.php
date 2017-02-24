@@ -118,6 +118,9 @@ function _s_pattern_allowed_html() {
 		'use' => array(
 			'xlink:href' => true,
 		),
+		'source' => array(
+			'src' => true,
+		),
 	) );
 
 	return $allowed_tags;
@@ -206,10 +209,6 @@ function _s_hook_theme_patterns() {
 
 	$template_dir = 'template-parts/patterns/pattern';
 
-	get_template_part( $template_dir, 'globals' );
-	get_template_part( $template_dir, 'typography' );
-	get_template_part( $template_dir, 'icons' );
-	get_template_part( $template_dir, 'buttons' );
-	get_template_part( $template_dir, 'forms' );
+	get_template_part( $template_dir, 'heroes' );
 }
 add_action( '_s_pattern_content', '_s_hook_theme_patterns' );
