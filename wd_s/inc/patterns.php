@@ -216,5 +216,6 @@ function _s_hook_theme_patterns() {
 	$template_dir = 'template-parts/patterns/pattern';
 
 	get_template_part( $template_dir, 'heroes' );
+	get_template_part( $template_dir, 'pricing-section' );
 }
 add_action( '_s_pattern_content', '_s_hook_theme_patterns' );
