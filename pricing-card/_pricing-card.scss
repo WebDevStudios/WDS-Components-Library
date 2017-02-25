@@ -1,0 +1,142 @@
+//--------------------------------------------------------------
+// PRICING CARD
+//--------------------------------------------------------------
+
+
+.wrap {
+
+	@include grid-media($tablet-landscape) {
+		padding: rem(20);
+	}
+}
+
+// Begin Pricing Table styles
+// These are general PT styles, and theme comes later
+.pricing-section {
+	color: $color-white;
+} // .pricing-section
+
+.pricing {
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: center;
+	margin: 0 auto rem(30);
+	width: 100%;
+} // .pricing
+
+.pricing-item {
+	align-items: stretch;
+	display: flex;
+	flex: 0 1 rem(330);
+	flex-direction: column;
+	position: relative;
+	text-align: center;
+} // .pricing-item
+
+.pricing-feature-list {
+	text-align: left;
+} // .pricing-feature-list
+
+.pricing-action {
+	background: none;
+	border: none;
+	color: inherit;
+
+	&:focus {
+		outline: none;
+	}
+} // .pricing-action
+
+// Begin pricing theme
+.pricing-theme {
+
+	.pricing-item {
+		background: rgba($color-white, 0.08);
+		border: rem(1) solid rgba($color-white, 0.4);
+		border-radius: rem(10);
+		color: $color-white;
+		cursor: default;
+		margin-bottom: rem(20);
+		transition: border-color 0.3s, background 0.3s;
+
+		@include grid-media($phone-landscape) {
+			margin: rem(20);
+		}
+
+		&:hover {
+			border: rem(1) solid rgba($color-white, 1);
+			background: rgba($color-white, 0.18);
+		}
+	} // .pricing-item
+
+	.pricing-title {
+		font-size: rem(28);
+		font-weight: 400;
+		margin: rem(8) 0;
+		padding: rem(24);
+		position: relative;
+
+		// little bottom border decoration
+		&:after {
+			@include position(absolute, null null 0 35%);
+			@include size(30% rem(1));
+
+			background: $color-white;
+			content: '';
+		}
+	} // .pricing-title
+
+	.pricing-price {
+		font-size: rem(48);
+		font-weight: 400;
+		padding: rem(18) 0 0 0;
+		position: relative;
+		z-index: 100;
+	} // .pricing-price
+
+	.pricing-currency {
+		font-size: rem(26);
+		vertical-align: super;
+	} // .pricing-currency
+
+	.pricing-sentence {
+		margin: 0 auto;
+		padding: rem(14) rem(20);
+		font-size: rem(16);
+	} // .pricing-sentence
+
+	.pricing-feature-list {
+		font-size: rem(20);
+		list-style: none;
+		margin: 0 rem(30);
+		padding: rem(30) 0;
+	} // .pricing-feature-list
+
+	.pricing-feature {
+		line-height: 1.4;
+
+		// Please use a real icon?
+		&:before {
+			content: "\2713";
+			display: inline-block;
+			padding: 0 rem(14) 0 0;
+			vertical-align: middle;
+		}
+	} // .pricing-feature
+
+	.pricing-action {
+		background: rgba($color-white, 0.7);
+		border-radius: rem(5);
+		color: $color-blue;
+		flex: none;
+		font-weight: 700;
+		margin: auto rem(20) rem(20);
+		padding: rem(16) rem(20);
+		transition: background 0.3s;
+
+		&:focus,
+		&:hover {
+			background: $color-white;
+		}
+	} // .pricing-action
+} // .pricing-theme
