@@ -28,16 +28,6 @@ function _s_get_pricing_card( $args = array() ) {
 	// Start the markup party! 🎉
 	ob_start(); ?>
 
-	<section class="pricing-section">
-
-		<?php if ( ! empty( $args['header'] ) ) : ?>
-			<header class="pricing-header">
-				<h2><?php echo esc_html( $args['header'] ); ?></h2>
-			</header>
-		<?php endif; ?>
-
-		<div class="pricing-inner-wrap">
-
 			<div class="pricing-item">
 				<h3 class="pricing-title"><?php echo esc_html( $args['title'] ); ?></h3>
 				<div class="pricing-price"><span class="pricing-currency"><?php echo esc_html( $args['currency'] ); ?></span><?php echo esc_html( $args['price'] ); ?></div>
@@ -49,8 +39,6 @@ function _s_get_pricing_card( $args = array() ) {
 				</ul>
 				<button class="pricing-action"><?php echo esc_html( $args['button_text'] ); ?></button>
 			</div>
-		</div>
-	</section>
 
 	<?php return ob_get_clean();
 }
@@ -63,35 +51,55 @@ function _s_get_pricing_card( $args = array() ) {
  *
  * @author Carrie Forde
  */
-
 function _s_get_pricing_card_section( $args = array() ) {
 
 	$post_id = get_the_ID();
 
 	// Get the post meta.
 	$section_header = get_post_meta( $post_id, 'pricing_header', true );
-	$pricing_card = get_post_meta( $post_id, 'pricing_card', true );
+	$pricing_card   = get_post_meta( $post_id, 'pricing_card', true );
 
-	ob_start();
+	ob_start(); ?>
 
-	for ( $i = 0; $i < $pricing_card; $i++ ) {
+	<section class="pricing-section">
 
-		$title = get_post_meta( $post_id, 'pricing_card' . $i . 'card_title', true );
-		$currency = get_post_meta( $post_id, 'pricing_card' . $i . 'currency_symbol', true );
-		$price = get_post_meta( $post_id, 'pricing_card' . $i . 'price', true );
-		$description = get_post_meta( $post_id, 'pricing_card', $i . 'card_description' );
-		$features = get_post_meta( $post_id, 'pricing_card' . $i . 'features' );
+		<?php if ( ! empty( $section_header ) ) : ?>
+			<header class="pricing-header">
+				<h2><?php echo esc_html( $section_header ); ?></h2>
+			</header>
+		<?php endif; ?>
 
-		// Pass the meta to the card function to get the card markup.
-		echo _s_get_pricing_card( array(
-			'title'       => $title,
-			'description' => $description,
-			'currency'    => $currency,
-			'price'       => $price,
-//			'feature'     => array( $features ),
-			'button_text' => 'Choose Plan',
-		) );
-	}
+		<div class="pricing-inner-wrap">
 
-	return ob_get_clean();
+			<?php for ( $i = 0; $i < $pricing_card; $i++ ) :
+
+				$title       = get_post_meta( $post_id, 'pricing_card_' . $i . '_card_title', true );
+				$currency    = get_post_meta( $post_id, 'pricing_card_' . $i . '_currency_symbol', true );
+				$price       = get_post_meta( $post_id, 'pricing_card_' . $i . '_price', true );
+				$description = get_post_meta( $post_id, 'pricing_card_', $i . '_card_description' );
+				$features    = get_post_meta( $post_id, 'pricing_card_' . $i . '_features' );
+
+				// Get each feature, and store them in an array.
+				$features_new = array();
+
+				// Loop over $features, which always has an index of 0, and store them in our $features_new array.
+				for ( $j = 0; $j < $features[0]; $j++ ) :
+
+					$features_new[] = get_post_meta( $post_id, 'pricing_card_' . $i . '_features_' . $j . '_feature', true );
+				endfor;
+
+				// Pass the meta to the card function to get the card markup.
+				echo _s_get_pricing_card( array( // WPCS: XSS OK
+					'title'       => $title,
+					'description' => $description,
+					'currency'    => $currency,
+					'price'       => $price,
+					'feature'     => $features_new,
+					'button_text' => 'Choose Plan',
+				) );
+			endfor; ?>
+		</div>
+	</section>
+
+	<?php return ob_get_clean();
 }
