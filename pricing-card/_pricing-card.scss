@@ -35,6 +35,7 @@
 
 // The pricing card button.
 .pricing-action {
+	margin-top: auto; // This will always push teh button to the bottom of the container and make them align better.
 
 	&:focus {
 		outline: none;
