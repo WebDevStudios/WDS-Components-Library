@@ -53,5 +53,5 @@
 
 		</div><!-- .wrap -->
 	</header><!-- .site-header -->
-	<?php echo _s_get_pricing_card_section(); ?>
+	<?php _s_the_pricing_card_section_cmb2(); ?>
 	<div id="content" class="site-content">
