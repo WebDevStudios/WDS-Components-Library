@@ -158,3 +158,23 @@ function _s_get_pricing_card_section_cmb2( $args = array() ) {
 
 	<?php return ob_get_clean();
 }
+
+/**
+ * Echo the ACF-based pricing card section.
+ *
+ * @author Carrie Forde
+ */
+function _s_the_pricing_card_section_acf() {
+
+	echo _s_get_pricing_card_section_acf(); // WPCS: XSS OK.
+}
+
+/**
+ * Echo the CMB2-based pricing card section.
+ *
+ * @author Carrie Forde
+ */
+function _s_the_pricing_card_section_cmb2() {
+
+	echo _s_get_pricing_card_section_cmb2(); // WPCS: XSS OK.
+}
