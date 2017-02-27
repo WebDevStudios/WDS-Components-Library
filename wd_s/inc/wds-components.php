@@ -170,7 +170,6 @@ function _s_the_image_hero( $args = array() ) {
 	) );
 }
 
-
 /**
  * Build and return the pricing section markup.
  *
@@ -183,7 +182,7 @@ function _s_get_pricing_card( $args = array() ) {
 
 	$defaults = array(
 		'title'       => 'Startup',
-		'description' => '',
+		'description' => 'Small business solution',
 		'currency'    => '$',
 		'price'       => '9.90',
 		'feature'     => array( 'Unlimited calls', 'Free hosting', '40MB of storage' ),
@@ -194,20 +193,14 @@ function _s_get_pricing_card( $args = array() ) {
 	// Start the markup party! 🎉
 	ob_start(); ?>
 
-	<section class="pricing-section">
-
-		<?php if ( ! empty( $args['header'] ) ) : ?>
-			<header class="pricing-header">
-				<h2><?php echo esc_html( $args['header'] ); ?></h2>
-			</header>
-		<?php endif; ?>
-
-		<div class="pricing-inner-wrap">
-
-			<div class="pricing-item">
+			<div class="pricing-card">
 				<h3 class="pricing-title"><?php echo esc_html( $args['title'] ); ?></h3>
 				<div class="pricing-price"><span class="pricing-currency"><?php echo esc_html( $args['currency'] ); ?></span><?php echo esc_html( $args['price'] ); ?></div>
-				<p class="pricing-sentence"><?php echo esc_html( $args['description'] ); ?></p>
+
+				<?php if ( ! empty( $args['description'] ) ) : ?>
+					<p class="pricing-sentence"><?php echo esc_html( $args['description'] ); ?></p>
+				<?php endif; ?>
+
 				<ul class="pricing-feature-list">
 					<?php foreach ( $args['feature'] as $feature ) : ?>
 						<li class="pricing-feature"><?php echo esc_html( $feature ); ?></li>
@@ -215,8 +208,6 @@ function _s_get_pricing_card( $args = array() ) {
 				</ul>
 				<button class="pricing-action"><?php echo esc_html( $args['button_text'] ); ?></button>
 			</div>
-		</div>
-	</section>
 
 	<?php return ob_get_clean();
 }
@@ -231,11 +222,13 @@ function _s_get_pricing_card( $args = array() ) {
  */
 function _s_get_pricing_card_section( $args = array() ) {
 
+	// Let's use a friendlier ID.
 	$post_id = get_the_ID();
 
 	// Get the post meta.
-	$section_header = get_post_meta( $post_id, 'pricing_header', true );
-	$pricing_card   = get_post_meta( $post_id, 'pricing_card', true );
+	$section_header      = get_post_meta( $post_id, 'pricing_header', true );
+	$section_description = get_post_meta( $post_id, 'pricing_description', true );
+	$pricing_card        = get_post_meta( $post_id, 'pricing_card', true );
 
 	ob_start(); ?>
 
@@ -244,6 +237,7 @@ function _s_get_pricing_card_section( $args = array() ) {
 		<?php if ( ! empty( $section_header ) ) : ?>
 			<header class="pricing-header">
 				<h2><?php echo esc_html( $section_header ); ?></h2>
+				<?php echo wp_kses_post( $section_description ); ?>
 			</header>
 		<?php endif; ?>
 
@@ -251,11 +245,12 @@ function _s_get_pricing_card_section( $args = array() ) {
 
 			<?php for ( $i = 0; $i < $pricing_card; $i++ ) :
 
-				$title       = get_post_meta( $post_id, 'pricing_card_' . $i . '_card_title', true );
-				$currency    = get_post_meta( $post_id, 'pricing_card_' . $i . '_currency_symbol', true );
-				$price       = get_post_meta( $post_id, 'pricing_card_' . $i . '_price', true );
-				$description = get_post_meta( $post_id, 'pricing_card_', $i . '_card_description' );
-				$features    = get_post_meta( $post_id, 'pricing_card_' . $i . '_features' );
+				$title            = get_post_meta( $post_id, 'pricing_card_' . $i . '_card_title', true );
+				$currency         = get_post_meta( $post_id, 'pricing_card_' . $i . '_currency_symbol', true );
+				$price            = get_post_meta( $post_id, 'pricing_card_' . $i . '_price', true );
+				$card_description = get_post_meta( $post_id, 'pricing_card_' . $i . '_card_description', true );
+				$features         = get_post_meta( $post_id, 'pricing_card_' . $i . '_features', true );
+				$button_text      = get_post_meta( $post_id, 'pricing_card_' . $i . '_button_text', true );
 
 				// Get each feature, and store them in an array.
 				$features_new = array();
@@ -269,11 +264,11 @@ function _s_get_pricing_card_section( $args = array() ) {
 				// Pass the meta to the card function to get the card markup.
 				echo _s_get_pricing_card( array( // WPCS: XSS OK
 					'title'       => $title,
-					'description' => $description,
+					'description' => $card_description,
 					'currency'    => $currency,
 					'price'       => $price,
 					'feature'     => $features_new,
-					'button_text' => 'Choose Plan',
+					'button_text' => $button_text,
 				) );
 			endfor; ?>
 		</div>
@@ -281,4 +276,3 @@ function _s_get_pricing_card_section( $args = array() ) {
 
 	<?php return ob_get_clean();
 }
-
