@@ -55,7 +55,7 @@ function _s_get_pricing_card( $args = array() ) {
  *
  * @author Carrie Forde
  */
-function _s_get_pricing_card_section( $args = array() ) {
+function _s_get_pricing_card_section_acf( $args = array() ) {
 
 	// Let's use a friendlier ID.
 	$post_id = get_the_ID();
@@ -106,6 +106,53 @@ function _s_get_pricing_card_section( $args = array() ) {
 					'button_text' => $button_text,
 				) );
 			endfor; ?>
+		</div>
+	</section>
+
+	<?php return ob_get_clean();
+}
+
+/**
+ * Build the markup for a section of pricing cards. This uses the CMB2 fields.
+ *
+ * @param   array  [$args = array()]  The args.
+ * @return  string                    The pricing section markup.
+ *
+ * @author Carrie Forde
+ */
+function _s_get_pricing_card_section_cmb2( $args = array() ) {
+
+	// Get a friendlier ID to work with.
+	$post_id = get_the_ID();
+
+	// Get the section meta.
+	$section_header = get_post_meta( $post_id, 'pricing_header', true );
+	$section_description = get_post_meta( $post_id, 'pricing_description', true );
+	$cards = get_post_meta( $post_id, 'pricing_card_group', true );
+
+	ob_start(); ?>
+
+	<section class="pricing-section">
+
+		<?php if ( ! empty( $section_header ) ) : ?>
+			<header class="pricing-header">
+				<h2><?php echo esc_html( $section_header ); ?></h2>
+				<?php echo wp_kses_post( $section_description ); ?>
+			</header>
+		<?php endif; ?>
+
+		<div class="pricing-inner-wrap">
+			<?php foreach ( $cards as $card ) :
+
+				echo _s_get_pricing_card( array( // WPCS: XSS OK
+					'title'       => $card['card_title'],
+					'description' => $card['card_description'],
+					'currency'    => $card['currency'],
+					'price'       => $card['price'],
+					'feature'     => $card['features'],
+					'button_text' => $card['button_text'],
+				) );
+			endforeach; ?>
 		</div>
 	</section>
 
