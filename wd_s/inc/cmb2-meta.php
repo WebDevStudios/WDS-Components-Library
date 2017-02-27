@@ -201,7 +201,7 @@ function _s_pricing_card_meta() {
 	$pricing_card->add_group_field( $pricing_card_group, array(
 		'name' => 'Description',
 		'desc' => 'Enter a short description of the product or service.',
-		'id'   => 'description',
+		'id'   => 'card_description',
 		'type' => 'textarea',
 	) );
 
