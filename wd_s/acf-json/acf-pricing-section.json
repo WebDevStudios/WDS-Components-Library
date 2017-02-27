@@ -4,7 +4,7 @@
     "fields": [
         {
             "key": "field_58b0bd2d8af23",
-            "label": "Pricing Header",
+            "label": "Pricing Section Header",
             "name": "pricing_header",
             "type": "text",
             "instructions": "",
@@ -20,6 +20,25 @@
             "prepend": "",
             "append": "",
             "maxlength": ""
+        },
+        {
+            "key": "field_58b47db1ace2f",
+            "label": "Pricing Header Description",
+            "name": "pricing_description",
+            "type": "wysiwyg",
+            "instructions": "Optional. Add some descriptive text about the products or services offered.",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "tabs": "all",
+            "toolbar": "full",
+            "media_upload": 0,
+            "delay": 0
         },
         {
             "key": "field_58b0bd4a8af24",
@@ -64,7 +83,7 @@
                     "label": "Currency Symbol",
                     "name": "currency",
                     "type": "select",
-                    "instructions": "$ : $\r\n\u00a3 : \u00a3",
+                    "instructions": "",
                     "required": 0,
                     "conditional_logic": 0,
                     "wrapper": {
@@ -72,7 +91,10 @@
                         "class": "",
                         "id": ""
                     },
-                    "choices": [],
+                    "choices": {
+                        "$": "$",
+                        "\u00a3": "\u00a3"
+                    },
                     "default_value": [],
                     "allow_null": 0,
                     "multiple": 0,
@@ -160,6 +182,25 @@
                             "maxlength": ""
                         }
                     ]
+                },
+                {
+                    "key": "field_58b47cfa97c52",
+                    "label": "Button Text",
+                    "name": "button_text",
+                    "type": "text",
+                    "instructions": "Enter text to display on the card call-to-action button.",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "default_value": "",
+                    "placeholder": "",
+                    "prepend": "",
+                    "append": "",
+                    "maxlength": ""
                 }
             ]
         }
@@ -181,5 +222,5 @@
     "hide_on_screen": "",
     "active": 1,
     "description": "",
-    "modified": 1487977378
+    "modified": 1488224955
 }
