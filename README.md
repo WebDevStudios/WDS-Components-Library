@@ -41,10 +41,28 @@ bundle install
 bundle exec jekyll serve
 ```
 
-Once up and running, you can view your local Jekyll site at `http://localhost:4000` or visit the server address indicated in the terminal:
+Once up and running, you can view your local Jekyll site by visiting the server address indicated in the terminal:
 
 ```
 Configuration file: /[path-to-project]/wds-components/_config.yml
-	Server address: http://127.0.0.1:4000/
+	Server address: http://127.0.0.1:4000/wds-component-library
   Server running... press ctrl-c to stop.
+```
+## Adding components
+
+Here is the basic structure of a component within the Jekyll site:
+
+```
+components/
+|-- your-component/  
+|--|-- _intro.md  
+|--|-- component.html (the HTML output)  
+|--|-- component-tags.html (the PHP template tags required to generate output)  
+|--|-- compontent-cmb2.html  
+|--|-- component.js
+|--|-- component-acf.json  
+|--|-- output.html  
+|--|-- index.md  
+|--|-- sass/  
+|--|--|-- your-component.scss
 ```
