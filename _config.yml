@@ -17,16 +17,18 @@ title: WDS Components Library
 email: contact@webdevstudios.com
 description: > # this means to ignore newlines until "baseurl:"
   The WDS Components Library is a collection of WordPress-ready components that can be dropped into any WordPress project. The WDS Components Library works really great with our starter theme wd_s, but can be used with any WordPress theme.
-baseurl: "" # the subpath of your site, e.g. /blog
+baseurl: "/wds-components-library" # the subpath of your site, e.g. /blog
 url: "/wds-components-library" # the base hostname & protocol for your site, e.g. http://example.com
 twitter_username: webdevstudios
 github_username:  webdevstudios
 
 # Build settings
 markdown: kramdown
-theme: minima
 gems:
   - jekyll-feed
 exclude:
   - Gemfile
   - Gemfile.lock
+collections:
+  components:
+    output: true
