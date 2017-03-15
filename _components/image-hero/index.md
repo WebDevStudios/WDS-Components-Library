@@ -4,15 +4,26 @@ path_slug: image-hero
 layout: component
 ---
 
-{% include_relative _intro.md %}
 
-<div class="component__content">
+{% include_relative _description.md %}
 
-	<div class="component__example"></div>
+<h3 class="component__heading">Usage</h3>
+{% include_relative _usage.md %}
 
-	<div class="component__code">
+<iframe class="live-output" src="{{ site.baseurl }}/components/{{page.path_slug}}/component-live.html">
+</iframe>
 
-		<h3 class="code__title">PHP Template Tag</h3>
-		{% include_relative template-tag.html %}
-	</div>
-</div>
+<h3 class="component__heading">HTML Output</h3>
+```html
+{% include_relative component-output.html %}
+```
+
+<h3 class="component__heading">Template Tag</h3>
+```html
+{% include_relative component-php.html %}
+```
+
+<h3 class="component__heading">SCSS</h3>
+```scss
+{% include_relative scss/component-scss.scss %}
+```

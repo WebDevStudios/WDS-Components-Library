@@ -18,20 +18,10 @@
 
 		{% include header.html %}
 
-		<main class="page-content" aria-label="Content">
-			<div class="wrapper">
-				<article class="post">
-
-					<header class="post-header">
-						<h1 class="post-title">About</h1>
-					</header>
-
-					<div class="post-content">
-
-						{{ content }}
-					</div>
-				</article>
-			</div>
+		<main class="site-main" aria-label="content">
+			<article class="post">
+				{{ content }}
+			</article>
 		</main>
 
 		{% include footer.html %}
