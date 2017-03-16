@@ -19,11 +19,21 @@ layout: component
 ```
 
 <h3 class="component__heading">Template Tag</h3>
-```html
+```php
 {% include_relative component-php.html %}
 ```
 
 <h3 class="component__heading">SCSS</h3>
 ```scss
 {% include_relative scss/component-scss.scss %}
+```
+
+<h3 class="component__heading">CMB2 Metabox</h3>
+```php
+{% include_relative component-cmb2.html %}
+```
+
+<h3 class="component__heading">ACF JSON</h3>
+```json
+{% include_relative component-acf-json.json %}
 ```
