@@ -6,6 +6,7 @@ baseurl: /wds-components-library
 author:
   name: WebDevStudios
   email: contact@webdevstudios.com
+  website: https://webdevstudios.com
   github: webdevstudios
   twitter: webdevstudios
 markdown: kramdown
