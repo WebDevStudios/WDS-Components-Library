@@ -1,0 +1,270 @@
+//--------------------------------------------------------------
+// MIXINS
+//--------------------------------------------------------------
+
+//-------------------------------
+// Margin Auto
+//
+// Makes the assumption the
+// element is already block.
+//-------------------------------
+@mixin margin-auto {
+	margin-left: auto;
+	margin-right: auto;
+}
+
+
+//-------------------------------
+// Center Block
+//
+// Displays block and centers.
+//-------------------------------
+@mixin center-block {
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+
+//-------------------------------
+// Full Width
+//
+// Extend an element to the edge
+// of the browser window when the
+// parent has a fixed width. See
+// https://css-tricks.com/full-width-containers-limited-width-parents/
+// for more info.
+//-------------------------------
+@mixin full-width {
+	left: 50%;
+	margin-left: -50vw;
+	margin-right: -50vw;
+	position: relative;
+	right: 50%;
+	width: 100vw;
+}
+
+
+//-------------------------------
+// Margin & Padding reset
+//-------------------------------
+@mixin margin-padding-reset {
+	margin: 0;
+	padding: 0;
+}
+
+
+//-------------------------------
+// List Reset
+//-------------------------------
+@mixin list-reset {
+	@include margin-padding-reset;
+
+	list-style: none;
+}
+
+
+
+//-------------------------------
+// Vertical Rhythm
+//
+// Use this mixin to easily add
+// vertical space between
+// successive instances of an
+// element.
+//-------------------------------
+@mixin vertical-rhythm($margin: 40px) {
+
+	& + & {
+		margin-top: $margin;
+		@content;
+	}
+}
+
+
+//-------------------------------
+// Hide Text
+//
+// Also known as Image Replacment
+// this hides text, but doesn't
+// make it disappear. Great for
+// accessibility.
+//-------------------------------
+@mixin hide-text {
+	@include size(1px);
+
+	border: none;
+	clip: rect(0 0 0 0);
+	margin: -1px;
+	overflow: hidden;
+	padding: 0;
+	position: absolute;
+}
+
+
+//-------------------------------
+// BEM Element
+//
+// Appends __$element to the
+// block class.
+//-------------------------------
+@mixin element($element) {
+
+	&__#{$element} {
+		@content;
+	}
+}
+
+
+//-------------------------------
+// BEM Modifier
+//
+// Appends --$modifier to the
+// block class.
+//-------------------------------
+@mixin modifier($modifier) {
+
+	&--#{$modifier} {
+		@content;
+	}
+}
+
+
+//-------------------------------
+// Grid Classes
+//
+// Use this mixin to set up
+// custom grid classes. It is
+// used to set up the Carrie Forde
+// grid.
+//-------------------------------
+@mixin grid-classes {
+
+	@for $i from 1 through $grid-columns {
+
+		// Generate the column classes.
+		@include modifier(#{$i}) {
+			@include grid-column($i);
+		}
+	}
+}
+
+
+//-------------------------------
+// Grid classes, no gutter
+//
+// Use this mixin to set up
+// custom grid classes that don't
+// require a gutter.
+//-------------------------------
+@mixin grid-classes-no-gutter {
+
+	@for $i from 1 through $grid-columns {
+
+		@include modifier(#{$i}) {
+			@include grid-column($i, $no-gutter);
+		}
+	}
+}
+
+
+//-------------------------------
+// Color Classes
+//
+// Use this mixin to set up the
+// .$color and .$color-background
+// utilities classes.
+//-------------------------------
+@mixin color-class($color) {
+	color: $color;
+
+	&-background {
+		background-color: $color;
+	}
+}
+
+//-----------------------------------------
+// Button Text Color
+//-----------------------------------------
+@mixin button-text-color($color) {
+
+	&:visited {
+		color: $color__button-link;
+	}
+
+	&:hover {
+		color: $color;
+	}
+
+	&:after {
+		color: $color;
+	}
+}
+//-----------------------------------------
+// Strip Units Forked from Boubon 4
+// https://github.com/thoughtbot/bourbon/blob/v4-stable/app/assets/stylesheets/functions/_strip-units.scss
+//-----------------------------------------
+@function strip-unit($number) {
+	@if type-of($number) == 'number' and not unitless($number) {
+		@return $number / ($number * 0 + 1);
+	}
+
+	@return $number;
+}
+
+//-----------------------------------------
+// PX to EM Forked from Bourbon 4
+// https://github.com/thoughtbot/bourbon/blob/v4-stable/app/assets/stylesheets/functions/_px-to-em.scss
+// Usaege em(12) — defaults context to 16
+// Usage em(12, 16) = same as above.
+//-----------------------------------------
+@function em($pixelvalue, $context: $base-context) {
+
+	@if not unitless($pixelvalue) {
+		$pixelvalue: strip-units($pixelvalue);
+	}
+
+	@if not unitless($context) {
+		$base: strip-units($context);
+	}
+
+	@return ($pixelvalue / $base-context) * 1em;
+}
+
+
+//-----------------------------------------
+// PX to REM Forked from Bourbon 4
+// https://github.com/thoughtbot/bourbon/blob/v4-stable/app/assets/stylesheets/functions/_px-to-rem.scss
+// Usaege em(12) — defaults context to 16
+// Usage em(12, 16) = same as above.
+//-----------------------------------------
+@function rem($pixelvalue, $context: $base-context) {
+
+	@if not unitless($pixelvalue) {
+		$pixelvalue: strip-units($pixelvalue);
+	}
+
+	@if not unitless($context) {
+		$base: strip-units($context);
+	}
+
+	@return ($pixelvalue / $base-context) * 1rem;
+}
+
+//-----------------------------------------
+// Unitless Line Height
+// Usage lh(12) = lh(12,12) = 1
+// Usage lh(24, 12) = 2
+//-----------------------------------------
+@function lh($font-size, $line-height: $font-size) {
+
+	@if not unitless($font-size) {
+		$font-size: strip-units($font-size);
+	}
+
+	@if not unitless($line-height) {
+		$line-height: strip-units($line-height);
+	}
+
+	@return $font-size/$line-height;
+}
