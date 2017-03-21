@@ -13,4 +13,11 @@ layout: default
 			</div>
 		{% endfor %}
 	</section>
+
+	<section class="typography">
+		<h2>Typography</h2>
+		{% for font in site.data.fonts %}
+			<div style="font-family: {{font[1]}}">{{font[0]}} : {{font[1]}}</div>
+		{% endfor %}
+	</section>
 </div>

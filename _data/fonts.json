@@ -1,0 +1,5 @@
+{
+	"$font-sans": "'Raleway', sans-serif;",
+	"$font-code": "Monaco, Consolas, 'Andle Mono', 'DejaVu Sans Mono', monospace;",
+	"$font-pre": "'Courier 10 Pitch', Courier, monospace;",
+}

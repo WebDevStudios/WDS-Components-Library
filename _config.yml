@@ -17,3 +17,5 @@ collections:
     output: true
   colors:
     output: false
+  fonts:
+    output: false
