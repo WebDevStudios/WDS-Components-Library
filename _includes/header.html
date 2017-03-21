@@ -6,8 +6,19 @@
 
 	<nav class ="site-navigation" role="navigation" aria-label="main-navigation">
 		<ul class="site-navigation__menu">
-			{% for components in site.components %}
-				<li class="menu-item"><a href="{{site.baseurl}}{{components.url}}">{{components.title}}</a></li>
+			{% for category in site.data.categories %}
+				<li class="menu-item">
+					<a href="#">{{category[0]}}</a>
+					<ul class="site-navigation__sub-menu">
+						{% for components in site.components %}
+							{% if components.category == category[1] %}
+							<li class="menu-item">
+								<a href="{{site.baseurl}}{{components.url}}">{{components.title}}</a>
+							</li>
+							{% endif %}
+						{% endfor %}
+					</ul>
+				</li>
 			{% endfor %}
 		</ul>
 	</nav>

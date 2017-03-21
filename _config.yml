@@ -19,3 +19,5 @@ collections:
     output: false
   fonts:
     output: false
+  categories:
+    output: false

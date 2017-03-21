@@ -2,6 +2,7 @@
 title: Image Hero
 path_slug: image-hero
 layout: component
+category: ui
 ---
 
 
