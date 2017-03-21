@@ -9,6 +9,7 @@ $output-bourbon-deprecation-warnings: false;
 // Utilities
 @import 'bourbon';
 @import 'neat';
+@import 'utilities/grid-settings';
 @import 'utilities/variables';
 @import 'utilities/mixins';
 

@@ -34,9 +34,9 @@ h1,
 	font-weight: 700;
 	line-height: 1.125;
 
-	// @include media($tablet-landscape) {
-	// 	font-size: em(60);
-	// }
+	@include grid-media($tablet-landscape) {
+		font-size: em(60);
+	}
 } // h1, .h1
 
 h2,
@@ -57,9 +57,9 @@ h3,
 	letter-spacing: rem(2.2);
 	text-transform: uppercase;
 
-	// @include media($tablet-landscape) {
-	// 	font-size: em(32);
-	// }
+	@include grid-media($tablet-landscape) {
+		font-size: em(32);
+	}
 } // h3, .h3
 
 h4,
@@ -95,11 +95,10 @@ h6,
 //--------------------------------------------------------------
 // Inline Elements
 //--------------------------------------------------------------
-// Also make divs with the class intro match the regular paragraph text.
 p {
 	font-size: em(20);
 	margin: 0 0 rem(32) 0;
-} // p, .entry-content div.intro
+} // p
 
 // Match list font-size to p
 ul,

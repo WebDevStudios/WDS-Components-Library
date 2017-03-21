@@ -1,0 +1,105 @@
+// --------------------------------------------------------------
+// Grid Settings - overrides default Bourbon Neat
+// http://neat.bourbon.io/examples/
+// --------------------------------------------------------------
+
+// http://neat.bourbon.io/docs/2.0.0/
+// Add color: #fc0, to the map below to show the visual grid.
+$neat-grid: (
+	columns: 12,
+	gutter: em(20),
+);
+
+$wds-neat-grid: (
+	color: #fc0,
+	columns: 12,
+	direction: ltr,
+	gutter: em(20),
+	media: em(1400),
+);
+
+
+//-----------------------------------------
+// Global Base Context for em(), rem(), and lh()
+//-----------------------------------------
+$base-context: 16;
+
+
+//-----------------------------------------
+// Grid Breakpoint Variables
+//-----------------------------------------
+$grid-extra-large-desktop: em(1920);
+$grid-large-desktop: em(1680);
+$grid-transition: em(1405);
+$grid-desktop: em(1366);
+$grid-tablet-large: em(1268);
+$grid-small-desktop: em(1280);
+$grid-calendar-flex: em(1178);
+$grid-tablet-landscape: em(1024);
+$grid-wp-admin-bar: em(783);
+$grid-tablet-portrait: em(768);
+$grid-phone-landscape: em(640);
+$grid-phone-portrait: em(359);
+
+
+//-----------------------------------------
+// Custom Grids
+//-----------------------------------------
+$phone-portrait: (
+	media: $grid-phone-portrait,
+);
+
+$phone-landscape: (
+	media: $grid-phone-landscape,
+);
+
+$tablet-portrait: (
+	media: $grid-tablet-portrait,
+);
+
+$wp-admin-bar: (
+	media: $grid-wp-admin-bar,
+);
+
+$tablet-landscape: (
+	media: $grid-tablet-landscape,
+);
+
+$tablet-large: (
+	media: $grid-tablet-large,
+);
+
+$calendar-flex: (
+	media: $grid-calendar-flex,
+);
+
+$small-desktop: (
+	media: $grid-small-desktop,
+);
+
+$desktop: (
+	media: $grid-desktop,
+);
+
+$large-desktop: (
+	media: $grid-large-desktop,
+);
+
+$transition: (
+	media: $grid-transition,
+);
+
+$xl-desktop: (
+	media: $grid-extra-large-desktop,
+);
+
+
+//-----------------------------------------
+// Box Sizing
+//
+// Make sure all elements use box-sizing:
+// border-box by default.
+//-----------------------------------------
+* {
+	box-sizing: border-box;
+}
