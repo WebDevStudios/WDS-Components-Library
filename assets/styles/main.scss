@@ -5,6 +5,7 @@
 // Ignore Bourbon 5 Warnings.
 $output-bourbon-deprecation-warnings: false;
 
+
 // Utilities
 @import 'bourbon';
 @import 'neat';
@@ -14,6 +15,7 @@ $output-bourbon-deprecation-warnings: false;
 
 // Base
 {% include bower_components/sanitize-css/sanitize.css %}
+@import 'base/patterns';
 @import 'base/typography';
 @import 'base/colors';
 @import 'base/buttons';

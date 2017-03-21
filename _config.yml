@@ -15,3 +15,5 @@ sass:
 collections:
   components:
     output: true
+  colors:
+    output: false

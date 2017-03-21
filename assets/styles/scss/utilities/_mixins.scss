@@ -200,16 +200,14 @@
 		color: $color;
 	}
 }
+
 //-----------------------------------------
 // Strip Units Forked from Boubon 4
 // https://github.com/thoughtbot/bourbon/blob/v4-stable/app/assets/stylesheets/functions/_strip-units.scss
 //-----------------------------------------
-@function strip-unit($number) {
-	@if type-of($number) == 'number' and not unitless($number) {
-		@return $number / ($number * 0 + 1);
-	}
-
-	@return $number;
+@function strip-units($value) {
+	
+	@return ($value / ($value * 0 + 1));
 }
 
 //-----------------------------------------

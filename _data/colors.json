@@ -1,0 +1,7 @@
+{
+	"$color-baltic-sea": "#3e3e3d;",
+	"$color-jaffa": "#e37848;",
+	"$color-charade": "#3b3e43;",
+	"$color-zircon": "#e1e3e9;",
+	"$color-solar": "linear-gradient(to top, #ff4c00 0, #ff9a3d 100%);"
+}
