@@ -1,3 +1,63 @@
 //--------------------------------------------------------------
 // NAVIGATION
 //--------------------------------------------------------------
+.site-navigation {
+	display: flex;
+	font-weight: 500;
+	letter-spacing: em(2, 16);
+	text-transform: uppercase;
+
+	@include element(menu) {
+		@include margin-padding-reset; // We don't need list reset because sanitize.css takes care of the list.
+
+		font-size: em(14, 16);
+	}
+
+	@include element(sub-menu) {
+		@include margin-padding-reset; // We don't need list reset because sanitize.css takes care of the list.
+
+		background-color: $color-shark;
+		border-radius: 5px;
+		border-top-right-radius: 0;
+		box-shadow: 0 3px 3px rgba($color-black, 0.2);
+		display: none;
+		font-size: em(14, 16);
+		padding: rem(7);
+		width: rem(200);
+
+		.menu-item {
+			
+			+ .menu-item {
+				border-top: 1px solid $color-tuatara;
+			} // + .menu-item
+		} // .menu-item
+	}
+	
+	a {
+		color: $color-alto-2;
+		display: block;
+		text-decoration: none;
+
+		&:hover {
+			color: $color-white;
+		}
+	}
+} // .site-navigation
+
+.menu-item {
+	display: block;
+	padding: rem(10);
+	position: relative;
+		
+	&:hover {
+		background-color: $color-shark;
+		border-top-left-radius: 5px;
+		border-top-right-radius: 5px;
+		
+		> .site-navigation__sub-menu {
+			@include position(absolute, 100% 0 null null);
+
+			display: block;
+		} // .site-navigation__sub-menu
+	} // &:hover
+} // .menu-item

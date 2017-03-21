@@ -6,12 +6,19 @@
 	background-color: $color-mako;
 	display: flex;
 	justify-content: space-between;
+	padding: rem(20);
 
 	@include grid-media($tablet-landscape) {
+		@include position(fixed, 0 0 null 0);
+		
 		padding: 0 rem(40);
 	}
 } // .site-header
 
 .site-branding {
-	padding: rem(10) rem(15);
+	
+
+	@include grid-media($tablet-landscape) {
+		padding-left: 0;
+	}
 } // .site-branding
