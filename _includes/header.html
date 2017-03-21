@@ -1,15 +1,14 @@
 <header class="site-header" role="banner">
 
-	<div class ="wrapper">
-
-	<p class="site-title"><a href="{{site.url}}{{site.baseurl}}/">{{ site.title }}</a></p>
-
-		<nav class ="site-navigation" role="navigation" aria-label="main-navigation">
-			<ul class="site-navigation__menu">
-				{% for components in site.components %}
-					<li class="menu-item"><a href="{{site.baseurl}}{{components.url}}">{{components.title}}</a></li>
-				{% endfor %}
-			</ul>
-		</nav>
+	<div class="site-branding">
+		<a class="site-logo" rel="home" itemprop="url" href="{{site.url}}{{site.baseurl}}/">WebDevStudios</a>
 	</div>
+
+	<nav class ="site-navigation" role="navigation" aria-label="main-navigation">
+		<ul class="site-navigation__menu">
+			{% for components in site.components %}
+				<li class="menu-item"><a href="{{site.baseurl}}{{components.url}}">{{components.title}}</a></li>
+			{% endfor %}
+		</ul>
+	</nav>
 </header>

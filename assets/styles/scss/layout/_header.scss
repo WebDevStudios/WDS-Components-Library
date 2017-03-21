@@ -1,3 +1,17 @@
 //--------------------------------------------------------------
 // HEADER
 //--------------------------------------------------------------
+.site-header {
+	align-items: center;
+	background-color: $color-mako;
+	display: flex;
+	justify-content: space-between;
+
+	@include grid-media($tablet-landscape) {
+		padding: 0 rem(40);
+	}
+} // .site-header
+
+.site-branding {
+	padding: rem(10) rem(15);
+} // .site-branding
