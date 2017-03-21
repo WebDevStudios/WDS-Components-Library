@@ -2,19 +2,76 @@
 // VARIABLES
 //--------------------------------------------------------------
 
-$base-context: 16px;
+$base-context: 16;
 
 
 //-----------------------------------------
 // Brand Colors
 //-----------------------------------------
-$color-baltic-sea: #3e3e3d;
-$color-jaffa: #e37848;
-$color-charade: #3b3e43;
-$color-zircon: #e1e3e9;
-$color-vermillion: #ff4c00; // For gradient only ($color-solor).
-$color-neon-carrot: #ff9a3d; // For gradient only ($color-solor).
-$color-solar: linear-gradient(to top, $color-vermillion 0, $color-neon-carrot 100%);
+$color-tuatara: #40403f;
+$color-flame: #f3713c; // Primary WDS Orange
+$color-jaffa: #f47c48;
+$color-sapphire: #1648c7;
+$color-mako: #3d4046;
+$color-athens-gray: #e2e4eb;
+$color-outer-space: #2d3d40;
+$color-mystic: #e3ebed;
+
+
+//-----------------------------------------
+// Neutral Colors
+//-----------------------------------------
+$color-black: #000;
+$color-cod-gray: #111;
+$color-shark: #262828;
+$color-mineshaft: #333;
+$color-dove-gray: #666;
+$color-dusty-gray: #999;
+$color-tundora: #4e4e4e; // Secondary Button Hover
+$color-cape-cod: #3f4040; // Outline Button
+$color-gray: #808080;
+$color-gray-alt: #929292;
+$color-silver-chalice: #aaa;
+$color-silver: #ccc;
+$color-alto: #ddd;
+$color-alto-2: #d3d3d3;
+$color-mercury: #e5e5e5;
+$color-gallery: #eee;
+$color-whitesmoke: #f1f1f1;
+$color-catskill-white: #f1f7f8;
+$color-cornflower-blue: #e8f0f1;
+$color-white: #fff;
+$color-loblolly: #b7b7b7;
+
+
+//-----------------------------------------
+// Color Skinning
+//-----------------------------------------
+$color-background-body: $color-white;
+$color-text-main: $color-mako;
+$color-background-hr: $color-silver;
+$color-border-abbr: $color-dove-gray;
+
+// Accessibility
+$color-background-screen-reader: $color-whitesmoke;
+$color-text-screen-reader: #1648c7;
+
+// Links
+$color-link: #1648c7;
+$color-link-visited: #1648c7;
+$color-link-hover: darken(#1648c7, 30%);
+
+// Centered hero background
+$color-twilight-blue: #f8fdff;
+
+// Featured books background
+$color-catskill-white: #e6eff3;
+
+// Featured Work background
+$color-black-squeeze: #f0f6f9;
+
+// Logo train background
+$color-aqua-haze: #f2f6f7;
 
 
 //-----------------------------------------
@@ -23,3 +80,6 @@ $color-solar: linear-gradient(to top, $color-vermillion 0, $color-neon-carrot 10
 $font-sans: 'Raleway', sans-serif;
 $font-code: Monaco, Consolas, 'Andle Mono', 'DejaVu Sans Mono', monospace;
 $font-pre: 'Courier 10 Pitch', Courier, monospace;
+
+$line-height-body: 1.625;
+$line-height-pre: $line-height-body;

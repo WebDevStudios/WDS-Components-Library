@@ -1,0 +1,208 @@
+//--------------------------------------------------------------
+// TYPOGRAPHY 
+//--------------------------------------------------------------
+body,
+button,
+input,
+select,
+textarea {
+	color: $color-text-main;
+	font-family: $font-sans;
+	line-height: $line-height-body;
+}
+
+//--------------------------------------------------------------
+// Headings
+//--------------------------------------------------------------
+// Loop through headings for common styles.
+@function headings($from: 1, $to: 6) {
+	@if $from == $to {
+		@return "h#{$from}, .h#{$from}";
+	} @else {
+		@return "h#{$from}, .h#{$from}," + headings($from + 1, $to);
+	}
+}
+
+// Output headings.
+#{headings(1, 6)} {
+	margin-top: 0;
+} // #{headings(1, 6)}
+
+h1,
+.h1 {
+	font-size: em(40);
+	font-weight: 700;
+	line-height: 1.125;
+
+	// @include media($tablet-landscape) {
+	// 	font-size: em(60);
+	// }
+} // h1, .h1
+
+h2,
+.h2 {
+	font-size: em(36);
+	font-weight: 700;
+	line-height: 1.125;
+
+	// @include media($tablet-landscape) {
+	// 	font-size: em(48);
+	// }
+} // h2, .h2
+
+h3,
+.h3 {
+	font-size: em(22);
+	font-weight: 400;
+	letter-spacing: rem(2.2);
+	text-transform: uppercase;
+
+	// @include media($tablet-landscape) {
+	// 	font-size: em(32);
+	// }
+} // h3, .h3
+
+h4,
+.h4 {
+	font-size: em(28);
+	font-weight: 700;
+	line-height: 1.125;
+	margin-bottom: rem(10);
+} // h4, .h4
+
+h5,
+.h5 {
+	font-size: em(24);
+	font-weight: 700;
+	text-transform: none;
+}  // h5, .h5
+
+h6,
+.h6 {
+	font-size: em(20);
+	font-weight: 700;
+} // h6, .h6
+
+.h1,
+.h2,
+.h4,
+.h5,
+.h6 {
+	letter-spacing: 0;
+} // .h1, .h2, .h4, .h5, .h6
+
+
+//--------------------------------------------------------------
+// Inline Elements
+//--------------------------------------------------------------
+// Also make divs with the class intro match the regular paragraph text.
+p {
+	font-size: em(20);
+	margin: 0 0 rem(32) 0;
+} // p, .entry-content div.intro
+
+// Match list font-size to p
+ul,
+ol {
+	font-size: em(20);
+} // ul, ol
+
+b,
+strong {
+	font-weight: 700;
+} // b, strong
+
+dfn,
+cite,
+em,
+i {
+	font-style: italic;
+} // dfn, cite, em, i
+
+blockquote,
+q {
+	font-style: italic;
+	margin: 0 rem(24);
+	padding: rem(10);
+	quotes: "" "";
+
+	&::before,
+	&::after {
+		content: "";
+	}  // &::before, &::after
+} // blockquote, q
+
+blockquote {
+	border-left: rem(4) solid $color-flame;
+	margin-bottom: rem(32);
+	padding: rem(10) rem(20);
+
+	p:last-child {
+		margin-bottom: 0;
+	} // p:last-child
+
+	cite {
+		display: block;
+		margin-top: rem(16);
+	} // cite
+} // blockquote
+
+address {
+	margin: 0 0 rem(32) 0;
+} // address
+
+pre {
+	border: rem(2) solid $color-alto;
+	border-radius: rem(2);
+	font-family: $font-pre;
+	font-size: em(15);
+	line-height: $line-height-pre;
+	margin: 0 0 rem(32);
+	max-width: 100%;
+	overflow: auto;
+	padding: rem(24);
+} // pre
+
+code,
+kbd,
+tt,
+var {
+	font-family: $font-code;
+	font-size: em(15);
+} // code, kbd, tt, var
+
+abbr,
+acronym {
+	border-bottom: 1px dotted $color-border-abbr;
+	cursor: help;
+} // abbr, acronym
+
+mark,
+ins {
+	text-decoration: none;
+} // mark, ins
+
+sup,
+sub {
+	font-size: 75%;
+	height: 0;
+	line-height: 0;
+	position: relative;
+	vertical-align: baseline;
+} // sup, sub
+
+sup {
+	bottom: 1ex;
+} // sup
+
+sub {
+	top: 0.5ex;
+} // sub
+
+small {
+	font-size: 75%;
+} // small
+
+big {
+	font-size: 125%;
+} // big
