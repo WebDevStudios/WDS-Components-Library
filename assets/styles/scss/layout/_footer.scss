@@ -6,8 +6,24 @@
 } // .site-footer
 
 .footer-cta {
-	align-items: center;
 	display: flex;
-	justify-content: space-between;
 	padding: rem(40);
+
+	.site-description {
+		flex: 0 1 40%;
+		margin: 0 auto 0 rem(30);
+	} // .info-wrap
+
+	.logo-link {
+		display: block;
+	} // .logo-link
+
+	.apply {
+		font-size: 1.2em;
+		margin-bottom: rem(30);
+	} // .apply
+
+	.button {
+		margin-left: rem(15);
+	} // .button
 } // .footer-cta

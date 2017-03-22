@@ -20,5 +20,7 @@
 } // .site-logo
 
 .footer-logo {
+	@include size(rem(150) rem(60));
+	
 	color: $color-mako;
 } // .footer-logo
