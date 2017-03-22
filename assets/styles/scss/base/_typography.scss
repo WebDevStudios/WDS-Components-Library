@@ -210,3 +210,8 @@ big {
     padding: 0;
     position: absolute;
 } // .screen-reader-text
+
+// If the user highlights text, let's make it look nice and branded.
+::selection {
+	background-color: rgba($color-flame, 0.8);
+} // ::selection

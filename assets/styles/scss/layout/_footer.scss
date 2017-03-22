@@ -1,3 +1,13 @@
 //--------------------------------------------------------------
 // FOOTER
 //--------------------------------------------------------------
+.site-footer {
+	background-color: $color-athens-gray;
+} // .site-footer
+
+.footer-cta {
+	align-items: center;
+	display: flex;
+	justify-content: space-between;
+	padding: rem(40);
+} // .footer-cta
