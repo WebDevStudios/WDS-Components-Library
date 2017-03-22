@@ -2,8 +2,12 @@
 // CONTENT 
 //--------------------------------------------------------------
 .site-main {
-	
-	@include grid-media($tablet-landscape) {
-		margin-top: rem(80);
+	max-width: 100%;
+	padding: rem(30);
+	width: rem(930);
+
+	@include grid-media($tablet-portrait) {
+		margin: rem(75) auto rem(60);
+		padding: rem(60) 0;
 	}
 } // .site-main
