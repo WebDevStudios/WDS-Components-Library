@@ -36,6 +36,34 @@ layout: default
 	</section>
 
 	<section class="section-pattern">
+		<h2 class="pattern-heading">Buttons</h2>
+
+		<div class="pattern-document">
+			<heading class="pattern-document__heading">
+				<h3 class="pattern-document__title">Button - Orange</h3>
+			</heading>
+
+			<button type="button" class="button-orange">Click</button>
+		</div>
+
+		<div class="pattern-document">
+			<heading class="pattern-document__heading">
+				<h3 class="pattern-document__title">Button - Black</h3>
+			</heading>
+
+			<button type="button" class="button-black">Click</button>
+		</div>
+
+		<div class="pattern-document">
+			<heading class="pattern-document__heading">
+				<h3 class="pattern-document__title">Button - Outline</h3>
+			</heading>
+
+			<button type="button" class="button-outline">Click</button>
+		</div>
+	</section>
+
+	<section class="section-pattern">
 		<h2 class="pattern-heading">Typography</h2>
 
 		<div class="pattern-document headings">
