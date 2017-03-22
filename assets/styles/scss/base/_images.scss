@@ -4,7 +4,7 @@
 .site-logo {
 	@include size(rem(123) rem(42));
 	
-	background: url('../images/wds-logo.svg') no-repeat;
+	background: url('../images/svg/wds-logo.svg') no-repeat;
 	background-size: cover;
 	display: block;
 	overflow: hidden;
