@@ -1,0 +1,28 @@
+//--------------------------------------------------------------
+// SOCIAL NAVIGATION 
+//--------------------------------------------------------------
+.social-media-menu {
+	@include list-reset;
+
+	display: flex;
+	justify-content: center;
+	padding: rem(30);
+
+	.menu-item {
+		@include size(rem(30));
+
+		margin: 0 rem(7);
+
+		a {
+			color: $color-mako;
+
+			&:hover {
+				color: rgba($color-jaffa, 0.7);
+			}
+		} // a
+
+		svg {
+			@include size(100%);
+		}
+	} // .menu-item
+} // .social-media-menu
