@@ -5,7 +5,11 @@
 	@include list-reset;
 
 	display: flex;
-	justify-content: flex-end;
+	justify-content: center;
+
+	@include grid-media($tablet-landscape) {
+		justify-content: flex-end;
+	}
 
 	.menu-item {
 		@include size(rem(30));
