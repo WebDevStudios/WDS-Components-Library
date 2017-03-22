@@ -2,10 +2,19 @@
 // NAVIGATION
 //--------------------------------------------------------------
 .site-navigation {
+	align-items: center;
 	display: flex;
+	flex-grow: 1;
 	font-weight: 500;
+	justify-content: space-between;
 	letter-spacing: em(2, 16);
 	text-transform: uppercase;
+
+	@include grid-media($tablet-portrait) {
+		border-left: 1px solid $color-athens-gray;
+		margin-left: rem(20);
+		padding-left: rem(10);
+	}
 
 	@include element(menu) {
 		@include margin-padding-reset; // We don't need list reset because sanitize.css takes care of the list.
