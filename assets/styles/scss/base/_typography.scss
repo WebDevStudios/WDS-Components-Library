@@ -197,6 +197,27 @@ big {
 	font-size: 125%;
 } // big
 
+
+//-----------------------------------------
+// Links
+//-----------------------------------------
+a {
+	border-bottom: 2px solid;
+	color: $color-sapphire;
+	text-decoration: none;
+	transition: color 0.3s ease-in-out, border-color 0.3s ease-in-out;
+
+	&:visited {
+		color: $color-sapphire;
+	}
+
+	&:hover,
+	&:active,
+	&:focus {
+		color: inherit;
+	}
+} // a
+
 //-----------------------------------------
 // Helpers
 //-----------------------------------------
