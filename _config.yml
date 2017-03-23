@@ -1,6 +1,6 @@
 title: WDS Components Library
 description: >
-  The WDS Components Library is a collection of WordPress-ready components that can be dropped into any WordPress project. The WDS Components Library works really great with our starter theme wd_s, but can be used with any WordPress theme.
+  The WDS Components Library is a collection of WordPress-ready components that can be dropped into any WordPress project. The WDS Components Library works really great with our starter theme <a href="https://github.com/WebDevStudios/wd_s">wd_s</a>, but can be used with any WordPress theme.
 url: https://WebDevStudios.github.io
 baseurl: /wds-components-library
 author:
