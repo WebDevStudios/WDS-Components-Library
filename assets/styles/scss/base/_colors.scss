@@ -3,3 +3,33 @@
 //
 // Use this partial to set up color classes.
 //--------------------------------------------------------------
+
+//-----------------------------------------
+// Colors
+//
+// This presentational class is used for
+// setting the `color` property only.
+//-----------------------------------------
+@each $theme-color, $color in $theme-colors {
+	
+	// Set the fill color for the icon.
+	.color-#{$theme-color} {
+		color: $color;
+	} // .icon-#{$icon-color}
+}
+
+
+//-----------------------------------------
+// Background Colors
+//
+// This presentational class is used for
+// setting the `background-color` property
+// only.
+//-----------------------------------------
+@each $background-color, $color in $theme-colors {
+	
+	// Set the fill color for the icon.
+	.background-#{$background-color} {
+		background: $color;
+	} // .icon-#{$icon-color}
+}
