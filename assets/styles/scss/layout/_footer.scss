@@ -29,6 +29,7 @@
 
 		@include grid-media($tablet-landscape) {
 			font-size: 1.2em;
+			margin-top: 0;
 		}
 	} // .apply
 
