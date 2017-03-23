@@ -4,11 +4,13 @@
 .site-header {
 	align-items: center;
 	display: flex;
+	flex-wrap: wrap;
 	padding: rem(20);
 
 	@include grid-media($tablet-landscape) {
 		@include position(fixed, 0 0 null 0);
 		
+		flex-wrap: nowrap;
 		padding: 0 rem(40);
 	}
 
@@ -23,6 +25,16 @@
 			color: $color-white;
 		} // &:hover
 	} // a
+
+	.github-link {
+		@include size(rem(30));
+
+		margin-left: auto;
+
+		svg {
+			@include size(100%);
+		}
+	} // .github
 } // .site-header
 
 .site-branding {
