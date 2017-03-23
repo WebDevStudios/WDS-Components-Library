@@ -16,7 +16,7 @@
 		<link rel="canonical" href="{{site.url}}/{{page.path_slug}}">
 	</head>
 
-	<body>
+	<body {% if page.layout == 'component' %}class="template-component"{% endif %}>
 
 		{% include header.html %}
 

@@ -10,4 +10,9 @@
 		margin: rem(75) auto rem(60);
 		padding: rem(60) 0;
 	}
+
+	// The component template page header needs to sit flush with the site header.
+	.template-component & {
+		padding-top: 0;
+	} // .template-component &
 } // .site-main

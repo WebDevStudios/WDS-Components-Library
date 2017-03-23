@@ -1,0 +1,15 @@
+//--------------------------------------------------------------
+// PAGE HEADER 
+//--------------------------------------------------------------
+.page-header {
+	padding: rem(60);
+	text-align: center;
+
+	@include grid-media($tablet-landscape) {
+		padding: rem(80);
+	}
+
+	.category {
+		font-size: em(24, 32);
+	} // .category
+} // .page-header

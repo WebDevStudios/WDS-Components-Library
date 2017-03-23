@@ -6,6 +6,7 @@
 	display: flex;
 	flex-wrap: wrap;
 	padding: rem(20);
+	z-index: 2;
 
 	@include grid-media($tablet-landscape) {
 		@include position(fixed, 0 0 null 0);

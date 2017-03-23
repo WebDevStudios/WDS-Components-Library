@@ -23,11 +23,13 @@ $output-bourbon-deprecation-warnings: false;
 @import 'base/buttons';
 @import 'base/images';
 @import 'base/code-syntax';
+@import 'base/helpers';
 
 
 // Modules
 @import 'modules/navigation';
 @import 'modules/social-navigation';
+@import 'modules/page-header';
 
 
 // Layout
