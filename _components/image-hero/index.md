@@ -5,29 +5,19 @@ layout: component
 category: ui
 ---
 
-
+<!-- Description -->
 {% include_relative _description.md %}
 
-<h3 class="component__heading">Usage</h3>
-{% include_relative _usage.md %}
-
+<!-- Live Example -->
 <iframe class="live-output" src="{{ site.baseurl }}/components/{{page.path_slug}}/component-live.html">
 </iframe>
 
-<h3 class="component__heading">HTML Output</h3>
-```html
-{% include_relative component-output.html %}
-```
+<!-- Usage -->
+<h3 class="component__heading">Usage</h3>
+{% include_relative _usage.md %}
 
-<h3 class="component__heading">Template Tag</h3>
-```php
-{% include_relative component-php.html %}
-```
-
-<h3 class="component__heading">SCSS</h3>
-```scss
-{% include_relative scss/component-scss.scss %}
-```
+<!-- Code -->
+{% include code-tabs.html %}
 
 <h3 class="component__heading">CMB2 Metabox</h3>
 ```php
