@@ -6,7 +6,7 @@
 	padding: rem(30);
 	width: rem(930);
 
-	@include grid-media($tablet-portrait) {
+	@include grid-media($tablet-landscape) {
 		margin: rem(75) auto rem(60);
 		padding: rem(60) 0;
 	}
