@@ -25,7 +25,6 @@
 	@include element(sub-menu) {
 		@include margin-padding-reset; // We don't need list reset because sanitize.css takes care of the list.
 
-		background-color: $color-shark;
 		border-radius: 5px;
 		border-top-right-radius: 0;
 		box-shadow: 0 3px 3px rgba($color-black, 0.2);
@@ -61,12 +60,7 @@
 	} // .menu-item
 	
 	a {
-		color: $color-alto-2;
 		display: block;
 		text-decoration: none;
-
-		&:hover {
-			color: $color-white;
-		}
-	}
+	} // a
 } // .site-navigation

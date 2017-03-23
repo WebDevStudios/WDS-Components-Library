@@ -3,7 +3,6 @@
 //--------------------------------------------------------------
 .site-header {
 	align-items: center;
-	background-color: $color-mako;
 	display: flex;
 	padding: rem(20);
 
@@ -12,6 +11,18 @@
 		
 		padding: 0 rem(40);
 	}
+
+	// All header links (including Github social icon).
+	a {
+		
+		&:visited {
+			color: $color-alto-2;
+		} // &:visited
+
+		&:hover {
+			color: $color-white;
+		} // &:hover
+	} // a
 } // .site-header
 
 .site-branding {
