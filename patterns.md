@@ -156,3 +156,21 @@ p q r s t u v w x y z { | } ~</pre>
 		</div>
 	</section>
 </div>
+
+<!-- From here down, we're adding syntax. Syntax & syntax headings cannot be indented, otherwise, they will not output correctly. -->
+<h2 class="pattern-heading">Code Syntax</h2>
+
+<h3 class="pattern-document__title">Sass / SCSS</h3>
+```sass
+{% include_relative _components/image-hero/scss/component-scss.scss %}
+```
+
+<h3 class="pattern-document__title">HTML</h3>
+```html
+{% include_relative _components/image-hero/component-output.html %}
+```
+
+<h3 class="pattern-document__title">PHP</h3>
+```php
+{% include_relative _components/image-hero/component-php.html %}
+```
