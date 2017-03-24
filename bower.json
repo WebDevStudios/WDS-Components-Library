@@ -1,0 +1,26 @@
+{
+  "name": "wds-components",
+  "homepage": "https://github.com/WebDevStudios/WDS-Components-Library",
+  "authors": [
+    "WebDevStudios <contact@webdevstudios.com>"
+  ],
+  "description": "A collection of WordPress-ready components that can be dropped into any WordPress project.",
+  "main": "index.md",
+  "keywords": [
+    "components",
+    "patterns",
+    "WordPress"
+  ],
+  "license": "GPL-3",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "sanitize-css": "^5.0.0"
+  }
+}
