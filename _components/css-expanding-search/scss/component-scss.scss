@@ -21,7 +21,7 @@ $color-dove-gray: #666666;
 // Set height for the search form elements
 .search-field,
 .search-submit {
-	height: rem(60);
+	height: 60px;
 }
 
 // Style the search text input
@@ -32,7 +32,7 @@ $color-dove-gray: #666666;
 	box-sizing: border-box;
 	color: rgba($color-dove-gray, .5);
 	cursor: pointer;
-	font-size: rem(36);
+	font-size: 36px;
 	font-weight: 300;
 	opacity: 0;
 	padding-right: rem(60);
@@ -76,7 +76,7 @@ $color-dove-gray: #666666;
 	float: right;
 	position: relative;
 	transition: all 0.2s ease-in-out;
-	width: rem(60);
+	width: 60px;
 	z-index: 2;
 
 	// Adjust the color of the search icon on hover
@@ -91,7 +91,7 @@ $color-dove-gray: #666666;
 // Style our search icon - FontAwesome
 .fa-search {
 	color: $color-dove-gray;
-	font-size: rem(36);
+	font-size: 36px;
 	transition: all 0.2s ease-in-out;
 }
 
@@ -115,14 +115,14 @@ $color-dove-gray: #666666;
 		clip: auto !important;
 		color: $color-white;
 		display: block;
-		font-size: rem(14);
+		font-size: 14px;
 		font-weight: 700;
 		height: auto;
-		left: rem(5);
+		left: 5px;
 		line-height: normal;
-		padding: rem(15) rem(23) rem(14);
+		padding: 15px 23px 14px;
 		text-decoration: none;
-		top: rem(5);
+		top: 5px;
 		width: auto;
 		z-index: 100000; // Above WP toolbar
 	}
