@@ -3,7 +3,7 @@
 //--------------------------------------------------------------
 
 // Variables
-$color-white: #FFFFFF;
+$color-dove-gray: #666666;
 
 
 // Set some base styles on the search form
@@ -23,10 +23,10 @@ $color-white: #FFFFFF;
 // Style the search text input
 .search-field {
 	background-color: transparent;
-	border-bottom: 1px solid rgba($color-white,.5);
+	border-bottom: 1px solid rgba($color-dove-gray,.5);
 	border: none;
 	box-sizing: border-box;
-	color: rgba($color-white, .5);
+	color: rgba($color-dove-gray, .5);
 	cursor: pointer;
 	font-size: rem(36);
 	font-weight: 300;
@@ -51,7 +51,7 @@ $color-white: #FFFFFF;
 		&:hover {
 
 		~ .search-submit .fa-search {
-				color: $color-white;
+				color: $color-dove-gray;
 			}
 		}
 	}
@@ -60,7 +60,7 @@ $color-white: #FFFFFF;
 	&:hover {
 
 		~ .search-submit .fa-search {
-			color: lighten($color-white, 10%);
+			color: lighten($color-dove-gray, 10%);
 		}
 	}
 }
@@ -79,14 +79,14 @@ $color-white: #FFFFFF;
 	&:hover {
 
 		.fa-search {
-			color: lighten($color-white, 10%);
+			color: lighten($color-dove-gray, 10%);
 		}
 	}
 }
 
 // Style our search icon
 .fa-search {
-	color: $color-white;
+	color: $color-dove-gray;
 	font-size: rem(36);
 	transition: all 0.2s ease-in-out;
 }
