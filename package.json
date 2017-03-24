@@ -1,0 +1,15 @@
+{
+  "name": "WDS-Components-Library",
+  "version": "0.1",
+  "main": "Gulpfile.js",
+  "repository": "https://github.com/WebDevStudios/WDS-Components-Library",
+  "author": "WebDevStudios <contact@webdevstudios.com>",
+  "license": "GPL-3.0",
+  "dependencies": {
+    "gulp": "^3.9.1"
+  },
+  "bugs": {
+    "url": "https://github.com/WebDevStudios/WDS-Components-Library/issues"
+  },
+  "homepage": "https://github.com/WebDevStudios/WDS-Components-Library#readme"
+}
