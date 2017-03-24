@@ -1,6 +1,6 @@
 ---
-title: Image Hero
-path_slug: image-hero
+title: CSS Expanding Search Box
+path_slug: css-expanding-search
 layout: component
 category: ui
 ---
