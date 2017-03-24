@@ -77,8 +77,6 @@ $color-white: #ffffff;
 	border: none;
 	float: right;
 	position: relative;
-	-webkit-transition: all 0.2s ease-in-out;
-	-moz-transition: all 0.2s ease-in-out;
 	transition: all 0.2s ease-in-out;
 	width: 60px;
 	z-index: 2;
@@ -96,8 +94,6 @@ $color-white: #ffffff;
 .fa-search {
 	color: $color-dove-gray;
 	font-size: 36px;
-	-webkit-transition: all 0.2s ease-in-out;
-	-moz-transition: all 0.2s ease-in-out;
 	transition: all 0.2s ease-in-out;
 }
 
