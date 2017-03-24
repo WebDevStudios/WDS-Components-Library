@@ -1,70 +1,88 @@
 //--------------------------------------------------------------
-// IMAGE HERO
+// CSS EXPANDING SEARCH BOX
 //--------------------------------------------------------------
-// Hero container.
-.hero-area {
+// Set some base styles on the search form
+.search-form {
+	display: inline-block;
+	float: right;
 	position: relative;
-	z-index: 1;
+	width: 100%;
+}
 
-	// Optional transparent overlay.
-	&:after {
-		@include position(absolute, 0 0 0 0);
+// Set height for the search form elements
+.search-field,
+.search-submit {
+	height: rem(60);
+}
 
-		background-color: rgba($color-black, 0.8);
-		content: '';
-		z-index: 2;
+// Style the search text input
+.search-field {
+	@include position(absolute, null 0 null null);
+	@include transition (all 0.5s ease-in-out);
+
+	background-color: transparent;
+	border: none;
+	border-bottom: 1px solid rgba($color-white,.5) !important; // Add an !important for CodePen because it's adding inline styles when focused
+	box-sizing: border-box;
+	color: rgba($color-white, .5);
+	cursor: pointer;
+	font-size: rem(36);
+	font-weight: 300;
+	opacity: 0;
+	padding-right: rem(60);
+	width: 0;
+	z-index: 3;
+
+	// When we focus on the text input, display it
+	&:focus {
+		cursor: text;
+		opacity: 1;
+		outline: none;
+		width: 100%;
+		z-index: 1;
+
+		// When focused AND hovering the text input, do not alter the default styles of the search icon
+		&:hover {
+
+		~ .search-submit .fa-search {
+				color: $color-white;
+			}
+		}
 	}
 
-	// Would you rather have a gradient overlay? Well then, go ahead and uncomment this.
-//	&:after {
-//		@include linear-gradient(to bottom, rgba($color-black, 0) 0%, rgba($color-black, 0.50) 50%);
-//		@include position(absolute, 0 0 0 0);
-//
-//		content: '';
-//		z-index: 2;
-//	}
+	// When hovering the text input, adjust the color of the search icon
+	&:hover {
 
-	// Content container.
-	.hero-content {
-		align-items: center;
-		display: flex;
-		flex-direction: column;
-		justify-content: center;
-		margin: 0 auto;
-		max-width: rem(500); // width of content
-		min-height: rem(500);  // height of hero
-		position: relative;
-		text-align: center;
-		z-index: 3;
-
-		.hero-title,
-		.hero-description,
-		.hero-button {
-			color: $color-white;
+		~ .search-submit .fa-search {
+			color: lighten($color-white, 10%);
 		}
+	}
+}
 
-		.hero-description {
-			padding-bottom: rem(24);
+// Style the submit button
+.search-submit {
+	@include transition (all 0.2s ease-in-out);
+
+	background-color: transparent;
+	border: none;
+	float: right;
+	position: relative;
+	width: rem(60);
+	z-index: 2;
+
+	// Adjust the color of the search icon on hover
+	&:hover {
+
+		.fa-search {
+			color: lighten($color-white, 10%);
 		}
+	}
+}
 
-		.hero-button {
-			padding: rem(12) rem(40);
+// Style our search icon
+.fa-search {
+	@include transition (all 0.2s ease-in-out);
 
-			background: transparent;
-			border: 2px solid $color-white;
-
-			&:hover {
-				background: rgba($color-black, 0.7);
-				text-decoration: none;
-			}
-		} // .hero-button
-	} // .hero-content
-} // .hero-area
-
-// Style the background with a class
-// for accessibility reasons. (This is already in wd_s)
-.image-as-background {
-	background-position: center center;
-	background-size: cover;
-	background-repeat: no-repeat;
+	color: $color-white;
+	font-size: rem(36);
 }
