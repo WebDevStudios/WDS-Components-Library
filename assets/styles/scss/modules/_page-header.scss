@@ -2,10 +2,12 @@
 // PAGE HEADER 
 //--------------------------------------------------------------
 .page-header {
+	margin-bottom: rem(40);
 	padding: rem(60);
 	text-align: center;
 
 	@include grid-media($tablet-landscape) {
+		margin-bottom: rem(60);
 		padding: rem(80);
 	}
 
