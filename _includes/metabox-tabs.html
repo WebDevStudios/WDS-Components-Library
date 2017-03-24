@@ -1,0 +1,20 @@
+<h2 class="component-heading">Metaboxes</h2>
+<ul class="tabs">
+	<li class="tab-header">
+		<a href="#acf" class="is-active tab-link">Advanced Custom Fields</a>
+	</li>
+	<li class="tab-header">
+		<a href="#cmb2" class="tab-link">CMB2</a>
+	</li>
+</ul>
+
+<!-- Tab Content must live outside markup because of Markdown. -->
+<div id="acf" class="tab-content is-active"></div>
+```json
+{% include_relative component-acf-json.json %}
+```
+
+<div id="cmb2" class="tab-content"></div>
+```php
+{% include_relative component-cmb2.html %}
+```

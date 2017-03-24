@@ -19,12 +19,5 @@ category: ui
 <!-- Code -->
 {% include code-tabs.html %}
 
-<h3 class="component__heading">CMB2 Metabox</h3>
-```php
-{% include_relative component-cmb2.html %}
-```
-
-<h3 class="component__heading">ACF JSON</h3>
-```json
-{% include_relative component-acf-json.json %}
-```
+<!-- Metaboxes -->
+{% include metabox-tabs.html %}
