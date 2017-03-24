@@ -38,6 +38,7 @@ Once Jekyll is installed, you can run the following commands in your terminal:
 ```
 gem install bundler
 bundle install
+bower install
 bundle exec jekyll serve
 ```
 
