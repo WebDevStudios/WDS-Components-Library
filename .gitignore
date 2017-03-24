@@ -1,10 +1,25 @@
 # https://git-scm.com/docs/gitignore
 # https://help.github.com/articles/ignoring-files
 # Example .gitignore files: https://github.com/github/gitignore
+
+# Bower
 *bower_components/
-*node_modules/
-*.DS_Store
-_site
-.sass-cache
+
+# Jekyll
 .jekyll-metadata
 /_posts/
+_site
+
+# macOS
+.DS_Store
+
+# NPM
+*node_modules/
+node_modules/
+
+# Sass
+.sass-cache
+.sass-cache/
+.sass-cache/*
+*.map
+_local.yaml
