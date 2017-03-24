@@ -18,7 +18,7 @@
   font-size: 36px;
   font-weight: 300;
   opacity: 0;
-  padding-right: rem(60);
+  padding-right: 60px;
   position: absolute;
   right: 0;
   top: 0;
@@ -41,6 +41,8 @@
   border: none;
   float: right;
   position: relative;
+  -webkit-transition: all 0.2s ease-in-out;
+  -moz-transition: all 0.2s ease-in-out;
   transition: all 0.2s ease-in-out;
   width: 60px;
   z-index: 2; }
@@ -50,6 +52,8 @@
 .fa-search {
   color: #666666;
   font-size: 36px;
+  -webkit-transition: all 0.2s ease-in-out;
+  -moz-transition: all 0.2s ease-in-out;
   transition: all 0.2s ease-in-out; }
 
 .screen-reader-text {
@@ -74,4 +78,4 @@
     text-decoration: none;
     top: 5px;
     width: auto;
-    z-index: 100000; }
+    z-index: 100000;
