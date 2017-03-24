@@ -6,7 +6,11 @@
   "author": "WebDevStudios <contact@webdevstudios.com>",
   "license": "GPL-3.0",
   "dependencies": {
-    "gulp": "^3.9.1"
+    "bourbon": "^4.3.3",
+    "bourbon-neat": "^2.0.0",
+    "browser-sync": "^2.18.8",
+    "gulp": "^3.9.1",
+    "gulp-postcss": "^6.4.0"
   },
   "bugs": {
     "url": "https://github.com/WebDevStudios/WDS-Components-Library/issues"
