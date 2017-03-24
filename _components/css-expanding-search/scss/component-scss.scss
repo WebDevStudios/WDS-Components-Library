@@ -29,7 +29,7 @@ $color-white: #ffffff;
 // Style the search text input
 .search-field {
 	background-color: transparent;
-	border-bottom: 1px solid rgba($color-dove-gray,.5);
+	border-bottom: 1px solid rgba($color-dove-gray,0.5);
 	border: none;
 	box-sizing: border-box;
 	color: rgba($color-dove-gray, .5);
@@ -47,6 +47,7 @@ $color-white: #ffffff;
 
 	// When we focus on the text input, display it
 	&:focus {
+		border-bottom: 1px solid rgba($color-dove-gray,0.5);
 		cursor: text;
 		opacity: 1;
 		outline: none;

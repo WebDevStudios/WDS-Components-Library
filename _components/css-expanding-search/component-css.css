@@ -28,6 +28,7 @@
   width: 0;
   z-index: 3; }
   .search-field:focus {
+	 border-bottom: 1px solid rgba($color-dove-gray,0.5);
     cursor: text;
     opacity: 1;
     outline: none;
