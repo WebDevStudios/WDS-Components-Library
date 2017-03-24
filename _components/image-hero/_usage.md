@@ -1,11 +1,12 @@
+## Usage
 ```php
-<?php _s_the_image_hero(); ?>
+<?php wds_the_image_hero(); ?>
 ```
 
-#### Params
+### Params
 $args  array()
 
-#### Arguments
+### Arguments
 `image`         (required)  
 `title`         (optional)  
 `description`   (optional)  
