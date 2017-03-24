@@ -1,6 +1,11 @@
 //--------------------------------------------------------------
 // CSS EXPANDING SEARCH BOX
 //--------------------------------------------------------------
+
+// Variables
+$color-white: #FFFFFF;
+
+
 // Set some base styles on the search form
 .search-form {
 	display: inline-block;
@@ -17,12 +22,9 @@
 
 // Style the search text input
 .search-field {
-	@include position(absolute, null 0 null null);
-	@include transition (all 0.5s ease-in-out);
-
 	background-color: transparent;
+	border-bottom: 1px solid rgba($color-white,.5);
 	border: none;
-	border-bottom: 1px solid rgba($color-white,.5) !important; // Add an !important for CodePen because it's adding inline styles when focused
 	box-sizing: border-box;
 	color: rgba($color-white, .5);
 	cursor: pointer;
@@ -30,6 +32,10 @@
 	font-weight: 300;
 	opacity: 0;
 	padding-right: rem(60);
+	position: absolute;
+	right: 0;
+	top: 0;
+	transition: all 0.5s ease-in-out;
 	width: 0;
 	z-index: 3;
 
@@ -61,12 +67,11 @@
 
 // Style the submit button
 .search-submit {
-	@include transition (all 0.2s ease-in-out);
-
 	background-color: transparent;
 	border: none;
 	float: right;
 	position: relative;
+	transition: all 0.2s ease-in-out;
 	width: rem(60);
 	z-index: 2;
 
@@ -81,8 +86,7 @@
 
 // Style our search icon
 .fa-search {
-	@include transition (all 0.2s ease-in-out);
-
 	color: $color-white;
 	font-size: rem(36);
+	transition: all 0.2s ease-in-out;
 }
