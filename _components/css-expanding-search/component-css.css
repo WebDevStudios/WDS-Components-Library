@@ -10,10 +10,10 @@
 
 .search-field {
   background-color: transparent;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.5);
+  border-bottom: 1px solid rgba(102, 102, 102, 0.5);
   border: none;
   box-sizing: border-box;
-  color: rgba(255, 255, 255, 0.5);
+  color: rgba(102, 102, 102, 0.5);
   cursor: pointer;
   font-size: rem(36);
   font-weight: 300;
@@ -32,9 +32,9 @@
     width: 100%;
     z-index: 1; }
     .search-field:focus:hover ~ .search-submit .fa-search {
-      color: #FFFFFF; }
+      color: #666666; }
   .search-field:hover ~ .search-submit .fa-search {
-    color: white; }
+    color: gray; }
 
 .search-submit {
   background-color: transparent;
@@ -45,9 +45,9 @@
   width: rem(60);
   z-index: 2; }
   .search-submit:hover .fa-search {
-    color: white; }
+    color: gray; }
 
 .fa-search {
-  color: #FFFFFF;
+  color: #666666;
   font-size: rem(36);
   transition: all 0.2s ease-in-out; }
