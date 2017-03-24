@@ -30,11 +30,13 @@ $output-bourbon-deprecation-warnings: false;
 @import 'modules/navigation';
 @import 'modules/social-navigation';
 @import 'modules/page-header';
+@import 'modules/tabs';
 
 
 // Layout
 @import 'layout/footer';
 @import 'layout/header';
 @import 'layout/content';
+
 
 // State

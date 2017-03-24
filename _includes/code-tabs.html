@@ -1,27 +1,27 @@
-<ul class="accordion-tabs">
-	<li class="tab-header-and-content">
-		<a href="javascript:void(0)" class="is-active tab-link">HTML Output</a>
+<ul class="tabs">
+	<li class="tab-header">
+		<a href="#html-output" class="is-active tab-link">HTML Output</a>
 	</li>
-	<li class="tab-header-and-content">
-		<a href="javascript:void(0)" class="tab-link">PHP</a>
+	<li class="tab-header">
+		<a href="#php" class="tab-link">PHP</a>
 	</li>
-	<li class="tab-header-and-content">
-		<a href="javascript:void(0)" class="tab-link">SCSS</a>
+	<li class="tab-header">
+		<a href="#scss" class="tab-link">SCSS</a>
 	</li>
 </ul>
 
 <!-- Tab Content must live outside markup because of Markdown. -->
-<div class="tab-content"></div>
+<div id="html-output" class="tab-content is-active"></div>
 ```html
 {% include_relative component-output.html %}
 ```
 
-<div class="tab-content"></div>
+<div id="php" class="tab-content"></div>
 ```php
 {% include_relative component-php.html %}
 ```
 
-<div class="tab-content"></div>
+<div  id="scss" class="tab-content"></div>
 ```scss
 {% include_relative scss/component-scss.scss %}
 ```

@@ -1,0 +1,46 @@
+//--------------------------------------------------------------
+// TABS 
+//--------------------------------------------------------------
+.tabs {
+	@include list-reset;
+
+	.tab-header {
+		display: inline-block;
+	} // .tab-header
+
+	.tab-link {
+		border-bottom: 0;
+		color: $color-mako;
+		display: block;
+		margin-bottom: rem(-2);
+		padding: rem(10) rem(15);
+		position: relative;
+
+		&.is-active {
+			background-color: $color-white;
+			border: 2px solid $color-alto;
+			border-bottom: none;
+			color: $color-sapphire;
+		}
+	} // .tab-link
+} // .tabs
+
+
+//-----------------------------------------
+// The Tabs Content
+//-----------------------------------------
+.tab-content {
+
+	// Hide tab content by default.
+	+ [class^='language'] {
+		display: none;
+	} // + [class^='language']
+
+	// But if the sibling <div /> has `is-active`, show it.
+	&.is-active {
+
+		+ [class^='language'] {
+			display: block;
+		} // + [class^='language']
+	} // &.is-active
+} // .tab-content
