@@ -17,6 +17,3 @@ category: ui
 
 <!-- Usage -->
 {% include_relative _usage.md %}
-
-<!-- Metaboxes -->
-{% include metabox-tabs.html %}
