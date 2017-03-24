@@ -5,7 +5,9 @@
 //-----------------------------------------
 // Variables
 //-----------------------------------------
+$color-black: #000000;
 $color-dove-gray: #666666;
+$color-white: #ffffff;
 
 //-----------------------------------------
 // Search form
@@ -126,3 +128,4 @@ $color-dove-gray: #666666;
 		width: auto;
 		z-index: 100000; // Above WP toolbar
 	}
+}
