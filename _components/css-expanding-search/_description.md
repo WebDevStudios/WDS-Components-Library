@@ -1,1 +1,1 @@
-An expanding search box/form powered purely by CSS..
+An expanding search box/form powered purely by CSS.
