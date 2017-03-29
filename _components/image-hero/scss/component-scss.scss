@@ -8,10 +8,13 @@
 
 	// Optional transparent overlay.
 	&:after {
-		@include position(absolute, 0 0 0 0);
-
 		background-color: rgba($color-black, 0.8);
+		bottom: 0;
 		content: '';
+		left: 0;
+		position: absolute;
+		right: 0;
+		top: 0;
 		z-index: 2;
 	}
 
