@@ -1,6 +1,11 @@
 //--------------------------------------------------------------
 // IMAGE HERO
 //--------------------------------------------------------------
+// Variables
+
+$color-black: #000000;
+$color-white: #ffffff;
+
 // Hero container.
 .hero-area {
 	position: relative;
@@ -8,10 +13,13 @@
 
 	// Optional transparent overlay.
 	&:after {
-		@include position(absolute, 0 0 0 0);
-
 		background-color: rgba($color-black, 0.8);
+		bottom: 0;
 		content: '';
+		left: 0;
+		position: absolute;
+		right: 0;
+		top: 0;
 		z-index: 2;
 	}
 
