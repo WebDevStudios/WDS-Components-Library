@@ -54,7 +54,7 @@
   .search-submit:hover .fa-search {
     color: gray; }
 
-.fa-search {
+.fa.fa-search {
   color: #666666;
   font-size: 36px;
   -webkit-transition: all 0.2s ease-in-out;
@@ -84,3 +84,4 @@
     top: 5px;
     width: auto;
     z-index: 100000;
+  }
