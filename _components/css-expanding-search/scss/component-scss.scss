@@ -1,0 +1,132 @@
+//--------------------------------------------------------------
+// CSS EXPANDING SEARCH BOX
+//--------------------------------------------------------------
+
+//-----------------------------------------
+// Variables
+//-----------------------------------------
+$color-black: #000000;
+$color-dove-gray: #666666;
+$color-white: #ffffff;
+
+//-----------------------------------------
+// Search form
+//-----------------------------------------
+// Set some base styles on the search form
+.expanding-search-form {
+	display: inline-block;
+	float: right;
+	position: relative;
+	width: 100%;
+
+	// Set height for the search form elements
+	.search-field,
+	.search-submit {
+		height: 60px;
+	}
+
+	// Style the search text input
+	.search-field {
+		background-color: transparent;
+		border-bottom: 1px solid rgba($color-dove-gray,0.5);
+		border: none;
+		box-sizing: border-box;
+		color: rgba($color-dove-gray, .5);
+		cursor: pointer;
+		font-size: 36px;
+		font-weight: 300;
+		opacity: 0;
+		padding-right: 60px;
+		position: absolute;
+		right: 0;
+		top: 0;
+		transition: all 0.5s ease-in-out;
+		width: 0;
+		z-index: 3;
+
+		// When we focus on the text input, display it
+		&:focus {
+			border-bottom: 1px solid rgba($color-dove-gray,0.5);
+			cursor: text;
+			opacity: 1;
+			outline: none;
+			width: 100%;
+			z-index: 1;
+
+			// When focused AND hovering the text input, do not alter the default styles of the search icon
+			&:hover {
+
+			~ .search-submit .fa-search {
+					color: $color-dove-gray;
+				}
+			}
+		}
+
+		// When hovering the text input, adjust the color of the search icon
+		&:hover {
+
+			~ .search-submit .fa-search {
+				color: lighten($color-dove-gray, 10%);
+			}
+		}
+	}
+
+	// Style the submit button
+	.search-submit {
+		background-color: transparent;
+		border: none;
+		float: right;
+		position: relative;
+		transition: all 0.2s ease-in-out;
+		width: 60px;
+		z-index: 2;
+
+		// Adjust the color of the search icon on hover
+		&:hover {
+
+			.fa-search {
+				color: lighten($color-dove-gray, 10%);
+			}
+		}
+	}
+
+	// Style our search icon - FontAwesome
+	.fa-search {
+		color: $color-dove-gray;
+		font-size: 36px;
+		transition: all 0.2s ease-in-out;
+	}
+} // .expanding-search-form
+
+
+//-----------------------------------------
+// Helper classes
+//-----------------------------------------
+.screen-reader-text {
+	clip: rect(1px, 1px, 1px, 1px);
+	height: 1px;
+	overflow: hidden;
+	position: absolute !important;
+	width: 1px;
+
+	&:hover,
+	&:active,
+	&:focus {
+		background-color: $color-black;
+		border-radius: 2px;
+		box-shadow: 0 0 2px 2px rgba(0, 0, 0, 0.6);
+		clip: auto !important;
+		color: $color-white;
+		display: block;
+		font-size: 14px;
+		font-weight: 700;
+		height: auto;
+		left: 5px;
+		line-height: normal;
+		padding: 15px 23px 14px;
+		text-decoration: none;
+		top: 5px;
+		width: auto;
+		z-index: 100000; // Above WP toolbar
+	}
+} // .screen-reader-text
