@@ -13,7 +13,7 @@
 		tabLinks[i].addEventListener( 'click', function( e ) {
 
 			// Stop the page from jumping.
-			e.preventDefault;
+			e.preventDefault();
 
 			// Set up variables for links and content areas.
 			var htmlOutput	= document.getElementById( 'html-output' ),
