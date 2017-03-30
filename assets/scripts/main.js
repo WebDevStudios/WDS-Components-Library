@@ -23,6 +23,37 @@
 				scssOutput	= document.getElementById( 'scss-output' ),
 				scssLink	= document.getElementById( 'scss-link' );
 
+				// Add and remove the is-active class from the link and the content areas based on the clicked tab.
+				if ( '#html-output' === this.getAttribute( 'href' ) ) {
+					htmlOutput.classList.add( 'is-active' );
+					htmlLink.classList.add( 'is-active' );
+
+					phpOutput.classList.remove( 'is-active' );
+					phpLink.classList.remove( 'is-active' );
+
+					scssOutput.classList.remove( 'is-active' );
+					scssLink.classList.remove( 'is-active' );
+
+				} else if ( '#php-output' === this.getAttribute( 'href' ) ) {
+					phpOutput.classList.add( 'is-active' );
+					phpLink.classList.add( 'is-active' );
+
+					htmlOutput.classList.remove( 'is-active' );
+					htmlLink.classList.remove( 'is-active' );
+
+					scssOutput.classList.remove( 'is-active' );
+					scssLink.classList.remove( 'is-active' );
+				} else {
+					scssOutput.classList.add( 'is-active' );
+					scssLink.classList.add( 'is-active' );
+
+					htmlOutput.classList.remove( 'is-active' );
+					htmlLink.classList.remove( 'is-active' );
+
+					phpOutput.classList.remove( 'is-active' );
+					phpLink.classList.remove( 'is-active' );
+				}
+
 		});
     }
 
