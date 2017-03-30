@@ -24,6 +24,7 @@
 				scssLink	= document.getElementById( 'scss-link' );
 
 				// Add and remove the is-active class from the link and the content areas based on the clicked tab.
+				// If the HTML tab is clicked...
 				if ( '#html-output' === this.getAttribute( 'href' ) ) {
 					htmlOutput.classList.add( 'is-active' );
 					htmlLink.classList.add( 'is-active' );
@@ -34,6 +35,7 @@
 					scssOutput.classList.remove( 'is-active' );
 					scssLink.classList.remove( 'is-active' );
 
+				// Else if the PHP tab is clicked...
 				} else if ( '#php-output' === this.getAttribute( 'href' ) ) {
 					phpOutput.classList.add( 'is-active' );
 					phpLink.classList.add( 'is-active' );
@@ -43,6 +45,8 @@
 
 					scssOutput.classList.remove( 'is-active' );
 					scssLink.classList.remove( 'is-active' );
+
+				// Otherwise the SCSS tab is clicked...
 				} else {
 					scssOutput.classList.add( 'is-active' );
 					scssLink.classList.add( 'is-active' );
