@@ -147,6 +147,14 @@ final class WP_Component_Library {
 	protected $image_hero;
 
 	/**
+	 * Instance of WPCL_Acf
+	 *
+	 * @since0.0.0
+	 * @var WPCL_Acf
+	 */
+	protected $acf;
+
+	/**
 	 * Creates or returns an instance of this class.
 	 *
 	 * @since   0.0.0
@@ -182,6 +190,7 @@ final class WP_Component_Library {
 		$this->component_status = new WPCL_Component_Status( $this );
 		$this->component_category = new WPCL_Component_Category( $this );
 		$this->image_hero = new WPCL_Image_Hero( $this );
+		$this->acf = new WPCL_Acf( $this );
 	} // END OF PLUGIN CLASSES FUNCTION
 
 	/**
@@ -346,6 +355,7 @@ final class WP_Component_Library {
 			case 'component_status':
 			case 'component_category':
 			case 'image_hero':
+			case 'acf':
 				return $this->$field;
 			default:
 				throw new Exception( 'Invalid ' . __CLASS__ . ' property: ' . $field );
