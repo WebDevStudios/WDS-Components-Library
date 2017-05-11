@@ -115,6 +115,14 @@ final class WP_Component_Library {
 	protected static $single_instance = null;
 
 	/**
+	 * Instance of WPCL_Component
+	 *
+	 * @since0.0.0
+	 * @var WPCL_Component
+	 */
+	protected $component;
+
+	/**
 	 * Creates or returns an instance of this class.
 	 *
 	 * @since   0.0.0
@@ -145,8 +153,8 @@ final class WP_Component_Library {
 	 * @since  0.0.0
 	 */
 	public function plugin_classes() {
-		// $this->plugin_class = new WPCL_Plugin_Class( $this );
 
+		$this->component = new WPCL_Component( $this );
 	} // END OF PLUGIN CLASSES FUNCTION
 
 	/**
@@ -298,6 +306,7 @@ final class WP_Component_Library {
 			case 'basename':
 			case 'url':
 			case 'path':
+			case 'component':
 				return $this->$field;
 			default:
 				throw new Exception( 'Invalid ' . __CLASS__ . ' property: ' . $field );
