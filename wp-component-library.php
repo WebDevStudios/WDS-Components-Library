@@ -186,6 +186,7 @@ final class WP_Component_Library {
 	 */
 	public function hooks() {
 		add_action( 'init', array( $this, 'init' ), 0 );
+		add_action( 'acf/settings/save_json', array( $this, 'acf_json_save_point' ) );
 	}
 
 	/**
@@ -226,6 +227,14 @@ final class WP_Component_Library {
 
 		// Initialize plugin classes.
 		$this->plugin_classes();
+	}
+
+	public function acf_json_save_point( $path ) {
+
+		// Point the ACF JSON folder to the plugin.
+		$path = plugin_dir_path( __FILE__ ) . '/acf-json';
+
+		return $path;
 	}
 
 	/**
