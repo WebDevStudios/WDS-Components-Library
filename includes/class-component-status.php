@@ -44,7 +44,7 @@ class WPCL_Component_Status extends Taxonomy_Core {
 			array(
 				__( 'Component Status', 'wp-component-library' ),
 				__( 'Component Statuses', 'wp-component-library' ),
-				'wpcl-component-statu',
+				'wpcl-component-status',
 			),
 			// Register taxonomy arguments.
 			array(
