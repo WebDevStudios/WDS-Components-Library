@@ -17,14 +17,36 @@
             },
             "button_label": "Add Row",
             "min": "",
-            "max": "",
+            "max": 1,
             "layouts": [
                 {
                     "key": "5914a7f2611ba",
-                    "name": "",
-                    "label": "",
+                    "name": "image_hero",
+                    "label": "Image Hero",
                     "display": "block",
-                    "sub_fields": [],
+                    "sub_fields": [
+                        {
+                            "key": "field_5914b169ece61",
+                            "label": "Image Hero",
+                            "name": "image_hero",
+                            "type": "clone",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "clone": [
+                                "group_5914adecb1b12"
+                            ],
+                            "display": "seamless",
+                            "layout": "block",
+                            "prefix_label": 0,
+                            "prefix_name": 0
+                        }
+                    ],
                     "min": "",
                     "max": ""
                 }
@@ -124,5 +146,5 @@
     "hide_on_screen": "",
     "active": 1,
     "description": "",
-    "modified": 1494526168
+    "modified": 1494527915
 }

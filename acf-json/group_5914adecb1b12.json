@@ -1,0 +1,161 @@
+{
+    "key": "group_5914adecb1b12",
+    "title": "Image Hero",
+    "fields": [
+        {
+            "key": "field_5914aff9e2c0b",
+            "label": "Background Image",
+            "name": "background_image",
+            "type": "image",
+            "instructions": "Upload an image to be used as the background.",
+            "required": 1,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "return_format": "id",
+            "preview_size": "medium",
+            "library": "all",
+            "min_width": "",
+            "min_height": "",
+            "min_size": "",
+            "max_width": "",
+            "max_height": "",
+            "max_size": "",
+            "mime_types": ""
+        },
+        {
+            "key": "field_5914b01be2c0c",
+            "label": "Title",
+            "name": "title",
+            "type": "text",
+            "instructions": "Add a catchy title.",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": "",
+            "maxlength": ""
+        },
+        {
+            "key": "field_5914b03ae2c0d",
+            "label": "Description",
+            "name": "description",
+            "type": "wysiwyg",
+            "instructions": "Add descriptive text to introduce the page, or entice customers to consume your product or service.",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "tabs": "all",
+            "toolbar": "basic",
+            "media_upload": 1,
+            "delay": 0
+        },
+        {
+            "key": "field_5914b085e2c0e",
+            "label": "CTA Button",
+            "name": "cta_button",
+            "type": "radio",
+            "instructions": "Would you like to include a CTA button?",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "choices": {
+                "no": "No",
+                "yes": "Yes"
+            },
+            "allow_null": 0,
+            "other_choice": 0,
+            "save_other_choice": 0,
+            "default_value": "no : No",
+            "layout": "horizontal",
+            "return_format": "value"
+        },
+        {
+            "key": "field_5914b0dbe2c0f",
+            "label": "Button Text",
+            "name": "button_text",
+            "type": "text",
+            "instructions": "Offer a clear call to action, e.g. \"Start Now!\"",
+            "required": 1,
+            "conditional_logic": [
+                [
+                    {
+                        "field": "field_5914b085e2c0e",
+                        "operator": "==",
+                        "value": "yes"
+                    }
+                ]
+            ],
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": "",
+            "maxlength": ""
+        },
+        {
+            "key": "field_5914b117e2c10",
+            "label": "Button Link",
+            "name": "button_link",
+            "type": "url",
+            "instructions": "Add a link destination for the button.",
+            "required": 1,
+            "conditional_logic": [
+                [
+                    {
+                        "field": "field_5914b085e2c0e",
+                        "operator": "==",
+                        "value": "yes"
+                    }
+                ]
+            ],
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "placeholder": ""
+        }
+    ],
+    "location": [
+        [
+            {
+                "param": "post_type",
+                "operator": "==",
+                "value": "post"
+            }
+        ]
+    ],
+    "menu_order": 0,
+    "position": "normal",
+    "style": "default",
+    "label_placement": "left",
+    "instruction_placement": "label",
+    "hide_on_screen": "",
+    "active": 0,
+    "description": "",
+    "modified": 1494527825
+}
