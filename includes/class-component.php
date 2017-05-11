@@ -92,4 +92,78 @@ class WPCL_Component extends CPT_Core {
 		switch ( $column ) {
 		}
 	}
+
+	// public function get_component_markup() {}
+
+	/**
+	 * Build the markup for the component meta.
+	 *
+	 * @param  interger  $post_id  ID of the post for which to display the meta.
+	 */
+	public function display_component_meta( $post_id = 0 ) {
+
+		// Get the post id.
+		if ( ! $post_id ) {
+			$post_id = get_the_ID();
+		}
+
+		$usage = get_post_meta( $post_id, 'usage', true );
+		$php   = get_post_meta( $post_id, 'php', true );
+		$sass  = get_post_meta( $post_id, 'sass', true );
+		$js    = get_post_meta( $post_id, 'javascript', true );
+
+		// Start the markup. 🎉 ?>
+		<div class="wp-component-meta">
+
+			<?php if ( ! empty( $usage ) ) : ?>
+				<div class="code-usage">
+					<pre>
+						<code class="language-php"><?php echo esc_html( $usage ); ?></code>
+					</pre>
+				</div>
+			<?php endif; ?>
+
+			<div class="code-tabs">
+				<ul>
+					<li><a href="#html-output"><?php esc_html_e( 'HTML Output', 'wpcl-components' ); ?></a></li>
+					<?php echo ( ! empty( $php ) ) ? '<li><a href="#php-code">' . esc_html__( 'PHP', 'wpcl-components' ) . '</a></li>' : ''; ?>
+					<?php echo ( ! empty( $sass ) ) ? '<li><a href="#sass-code">' . esc_html__( 'Sass', 'wpcl-components' ) . '</a></li>' : ''; ?>
+					<?php echo ( ! empty( $js ) ) ? '<li><a href="#js-code">' . esc_html__( 'JavaScript', 'wpcl-components' ) . '</a></li>' : ''; ?>
+				</ul>
+
+				<div class="html-output">
+					<pre>
+						<code class="language-html">
+							<?php // echo esc_html( get_component_markup() ); ?>
+						</code>
+					</pre>
+				</div><!-- .html-output -->
+				<?php if ( ! empty( $php ) ) : ?>
+					<div class="php-code">
+						<pre>
+							<code class="language-php"><?php echo esc_html( $php ); ?></code>
+						</pre>
+					</div><!-- .php-code -->
+				<?php endif; ?>
+
+				<?php if ( ! empty( $sass ) ) : ?>
+					<div class="sass-code">
+						<pre>
+							<code class="language-scss"><?php echo esc_html( $sass ); ?></code>
+						</pre>
+					</div><!-- .sass-code -->
+				<?php endif; ?>
+
+				<?php if ( ! empty( $js ) ) : ?>
+					<div class="js-code">
+						<pre>
+							<code class="language-js"><?php echo esc_html( $js ); ?></code>
+						</pre>
+					</div><!-- .js-code -->
+				<?php endif; ?>
+			</div><!-- .code-tabs -->
+		</div><!-- .wp-component-meta -->
+
+		<?php
+	}
 }
