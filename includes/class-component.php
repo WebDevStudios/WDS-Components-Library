@@ -65,6 +65,7 @@ class WPCL_Component extends CPT_Core {
 	 * @since  0.0.0
 	 */
 	public function hooks() {
+		add_filter( 'template_include', array( $this, 'component_template' ), 99 );
 	}
 
 	/**
@@ -207,5 +208,19 @@ class WPCL_Component extends CPT_Core {
 		</div><!-- .wp-component-meta -->
 
 		<?php
+	}
+
+	public function component_template( $template ) {
+
+		// The default template.
+		$component_template = 'single-wpcl-component.php';
+
+		if ( locate_template( $component_template ) ) {
+			$template = locate_template( $component_template );
+		} else {
+			$template = plugin_dir_path( __FILE__ ) . $component_template;
+		}
+
+		return $template;
 	}
 }
