@@ -226,8 +226,10 @@ class WPCL_Component extends CPT_Core {
 		if ( locate_template( $component_template ) ) {
 			$template = locate_template( $component_template );
 		} else {
-			$template = $this->plugin->path . 'includes/' . $component_template;
+			$template = $this->plugin->path . $component_template;
 		}
+
+		var_dump( $template );
 
 		return $template;
 	}
