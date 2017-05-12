@@ -222,10 +222,11 @@ class WPCL_Component extends CPT_Core {
 		// The default template.
 		$component_template = 'single-wpcl-component.php';
 
+		// If a single-wpcl-component.php template exists in the theme, use that, otherwise, use the plugin version.
 		if ( locate_template( $component_template ) ) {
 			$template = locate_template( $component_template );
 		} else {
-			$template = plugin_dir_path( __FILE__ ) . $component_template;
+			$template = $this->plugin->path . 'includes/' . $component_template;
 		}
 
 		return $template;
