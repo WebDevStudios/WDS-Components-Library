@@ -1,4 +1,5 @@
 module.exports = function (grunt) {
+    grunt.loadNpmTasks('gruntify-eslint');
     require('load-grunt-tasks')(grunt);
     var pkg = grunt.file.readJSON('package.json');
     var bannerTemplate = '/**\n' + ' * <%= pkg.title %> - v<%= pkg.version %> - <%= grunt.template.today("yyyy-mm-dd") %>\n' + ' * <%= pkg.author.url %>\n' + ' *\n' + ' * Copyright (c) <%= grunt.template.today("yyyy") %>;\n' + ' * Licensed GPLv2+\n' + ' */\n';
@@ -185,9 +186,32 @@ module.exports = function (grunt) {
                 },
                 files: { src: ['assets/css/wp-component-library.min.css'] }
             }
+        },
+        eslint: {
+            src: [
+                'assets/js/components/**/*.js',
+                '!**/*.min.js'
+            ]
+        },
+        concat: {
+            options: {
+                stripBanners: true,
+                banner: bannerTemplate
+            },
+            dist: { files: { 'assets/js/wp-component-library.js': 'assets/js/components/**/*.js' } }
+        },
+        uglify: {
+            dist: {
+                files: { 'assets/js/wp-component-library.min.js': 'assets/js/wp-component-library.js' },
+                options: { banner: compactBannerTemplate }
+            }
         }
     });
-    grunt.registerTask('scripts', []);
+    grunt.registerTask('scripts', [
+        'eslint',
+        'concat',
+        'uglify'
+    ]);
     grunt.registerTask('styles', [
         'sass',
         'cssmin',

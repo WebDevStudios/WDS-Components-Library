@@ -259,6 +259,9 @@ final class WP_Component_Library {
 
 		// Include the plugin's stylesheet.
 		wp_enqueue_style( 'wpcl-styles', $this->url . 'styles.css', array(), '0.0.0' );
+
+		// Include the plugin's scripts.
+		wp_enqueue_script( 'wpcl-scripts', $this->url . '/assets/scripts/project.js', array( 'jquery' ), '0.0.0', true );
 	}
 
 	/**

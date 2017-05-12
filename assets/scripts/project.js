@@ -1,0 +1,29 @@
+"use strict";
+
+/**
+ * WP Component Library
+ * https://carrieforde.com
+ *
+ * Licensed under the GPLv2+ license.
+ */
+
+window.WPComponentLibrary = window.WPComponentLibrary || {};
+
+(function (window, document, $, plugin) {
+	var $c = {};
+
+	plugin.init = function () {
+		plugin.cache();
+		plugin.bindEvents();
+	};
+
+	plugin.cache = function () {
+		$c.window = $(window);
+		$c.body = $(document.body);
+	};
+
+	plugin.bindEvents = function () {};
+
+	$(plugin.init);
+})(window, document, jQuery, window.WPComponentLibrary);
+//# sourceMappingURL=data:application/json;charset=utf8;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIm1haW4uanMiXSwibmFtZXMiOlsid2luZG93IiwiV1BDb21wb25lbnRMaWJyYXJ5IiwiZG9jdW1lbnQiLCIkIiwicGx1Z2luIiwiJGMiLCJpbml0IiwiY2FjaGUiLCJiaW5kRXZlbnRzIiwiYm9keSIsImpRdWVyeSJdLCJtYXBwaW5ncyI6Ijs7QUFBQTs7Ozs7OztBQU9BQSxPQUFPQyxrQkFBUCxHQUE0QkQsT0FBT0Msa0JBQVAsSUFBNkIsRUFBekQ7O0FBRUUsV0FBVUQsTUFBVixFQUFrQkUsUUFBbEIsRUFBNEJDLENBQTVCLEVBQStCQyxNQUEvQixFQUF3QztBQUN6QyxLQUFJQyxLQUFLLEVBQVQ7O0FBRUFELFFBQU9FLElBQVAsR0FBYyxZQUFXO0FBQ3hCRixTQUFPRyxLQUFQO0FBQ0FILFNBQU9JLFVBQVA7QUFDQSxFQUhEOztBQUtBSixRQUFPRyxLQUFQLEdBQWUsWUFBVztBQUN6QkYsS0FBR0wsTUFBSCxHQUFZRyxFQUFHSCxNQUFILENBQVo7QUFDQUssS0FBR0ksSUFBSCxHQUFVTixFQUFHRCxTQUFTTyxJQUFaLENBQVY7QUFDQSxFQUhEOztBQUtBTCxRQUFPSSxVQUFQLEdBQW9CLFlBQVcsQ0FDOUIsQ0FERDs7QUFHQUwsR0FBR0MsT0FBT0UsSUFBVjtBQUNBLENBakJDLEVBaUJDTixNQWpCRCxFQWlCU0UsUUFqQlQsRUFpQm1CUSxNQWpCbkIsRUFpQjJCVixPQUFPQyxrQkFqQmxDLENBQUYiLCJmaWxlIjoicHJvamVjdC5qcyIsInNvdXJjZXNDb250ZW50IjpbIi8qKlxuICogV1AgQ29tcG9uZW50IExpYnJhcnlcbiAqIGh0dHBzOi8vY2FycmllZm9yZGUuY29tXG4gKlxuICogTGljZW5zZWQgdW5kZXIgdGhlIEdQTHYyKyBsaWNlbnNlLlxuICovXG5cbndpbmRvdy5XUENvbXBvbmVudExpYnJhcnkgPSB3aW5kb3cuV1BDb21wb25lbnRMaWJyYXJ5IHx8IHt9O1xuXG4oIGZ1bmN0aW9uKCB3aW5kb3csIGRvY3VtZW50LCAkLCBwbHVnaW4gKSB7XG5cdHZhciAkYyA9IHt9O1xuXG5cdHBsdWdpbi5pbml0ID0gZnVuY3Rpb24oKSB7XG5cdFx0cGx1Z2luLmNhY2hlKCk7XG5cdFx0cGx1Z2luLmJpbmRFdmVudHMoKTtcblx0fTtcblxuXHRwbHVnaW4uY2FjaGUgPSBmdW5jdGlvbigpIHtcblx0XHQkYy53aW5kb3cgPSAkKCB3aW5kb3cgKTtcblx0XHQkYy5ib2R5ID0gJCggZG9jdW1lbnQuYm9keSApO1xuXHR9O1xuXG5cdHBsdWdpbi5iaW5kRXZlbnRzID0gZnVuY3Rpb24oKSB7XG5cdH07XG5cblx0JCggcGx1Z2luLmluaXQgKTtcbn0oIHdpbmRvdywgZG9jdW1lbnQsIGpRdWVyeSwgd2luZG93LldQQ29tcG9uZW50TGlicmFyeSApICk7XG4iXX0=
