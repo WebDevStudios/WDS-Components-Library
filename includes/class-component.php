@@ -123,6 +123,20 @@ class WPCL_Component extends CPT_Core {
 	}
 
 	/**
+	 * Get the component markup for output in component meta.
+	 *
+	 * @param   int  $post_id  The Post ID. By passing a post ID, the hero can be used outside the loop.
+	 *
+	 * @return  string  The component markup.
+	 */
+	public function get_component_markup( $post_id = 0 ) {
+
+		ob_start();
+		$this->display_component();
+		return ob_get_clean();
+	}
+
+	/**
 	 * Build the markup for the component meta.
 	 *
 	 * @param  interger  $post_id  ID of the post for which to display the meta.
@@ -162,7 +176,7 @@ class WPCL_Component extends CPT_Core {
 				<div class="html-output">
 					<pre>
 						<code class="language-html">
-							<?php // echo esc_html( get_component_markup() ); ?>
+							<?php echo esc_html( $this->get_component_markup() ); ?>
 						</code>
 					</pre>
 				</div><!-- .html-output -->
