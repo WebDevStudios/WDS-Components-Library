@@ -210,6 +210,13 @@ class WPCL_Component extends CPT_Core {
 		<?php
 	}
 
+	/**
+	 * Use the plugin's single-wpcl-template.php if one can't be found in the theme.
+	 *
+	 * @param   The template we need.
+	 *
+	 * @return  The template path.
+	 */
 	public function component_template( $template ) {
 
 		// The default template.
