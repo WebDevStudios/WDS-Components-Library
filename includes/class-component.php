@@ -229,8 +229,6 @@ class WPCL_Component extends CPT_Core {
 			$template = $this->plugin->path . $component_template;
 		}
 
-		var_dump( $template );
-
 		return $template;
 	}
 }
