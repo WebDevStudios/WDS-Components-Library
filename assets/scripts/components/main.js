@@ -7,21 +7,39 @@
 
 window.WPComponentLibrary = window.WPComponentLibrary || {};
 
-( function( window, document, $, plugin ) {
+( function( window, document, $, app ) {
 	var $c = {};
 
-	plugin.init = function() {
-		plugin.cache();
-		plugin.bindEvents();
+	app.init = function() {
+		app.cache();
+
+		if ( app.meetsRequirements() ) {
+			app.bindEvents();
+		}
 	};
 
-	plugin.cache = function() {
-		$c.window = $( window );
-		$c.body = $( document.body );
+	app.cache = function() {
+		app.$c = {
+			window: $( window ),
+			codeTabs: $( '#code-tabs' )
+		};
 	};
 
-	plugin.bindEvents = function() {
+	app.bindEvents = function() {
+
+		app.$c.window.on( 'load', app.jQueryTabs );
 	};
 
-	$( plugin.init );
+	// Do we meet the requirements?
+	app.meetsRequirements = function() {
+		return app.$c.codeTabs.length;
+	};
+
+	// Initiate the jQuery tabs.
+	app.jQueryTabs = function() {
+		console.log ('pffftt');
+		app.$c.codeTabs.tabs();
+	};
+
+	$( app.init );
 }( window, document, jQuery, window.WPComponentLibrary ) );

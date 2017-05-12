@@ -14,5 +14,6 @@
     "tests"
   ],
   "dependencies": {
+    "prism": "^1.6.0"
   }
 }

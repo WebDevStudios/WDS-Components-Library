@@ -166,7 +166,7 @@ class WPCL_Component extends CPT_Core {
 				</div>
 			<?php endif; ?>
 
-			<div class="code-tabs">
+			<div id="code-tabs" class="code-tabs">
 				<ul>
 					<li><a href="#html-output"><?php esc_html_e( 'HTML Output', 'wpcl-components' ); ?></a></li>
 					<?php echo ( ! empty( $php ) ) ? '<li><a href="#php-code">' . esc_html__( 'PHP', 'wpcl-components' ) . '</a></li>' : ''; ?>
@@ -174,7 +174,7 @@ class WPCL_Component extends CPT_Core {
 					<?php echo ( ! empty( $js ) ) ? '<li><a href="#js-code">' . esc_html__( 'JavaScript', 'wpcl-components' ) . '</a></li>' : ''; ?>
 				</ul>
 
-				<div class="html-output">
+				<div id="html-output" class="html-output">
 					<pre>
 						<code class="language-html">
 							<?php echo esc_html( $this->get_component_markup() ); ?>
@@ -182,7 +182,7 @@ class WPCL_Component extends CPT_Core {
 					</pre>
 				</div><!-- .html-output -->
 				<?php if ( ! empty( $php ) ) : ?>
-					<div class="php-code">
+					<div id="php-code" class="php-code">
 						<pre>
 							<code class="language-php"><?php echo esc_html( $php ); ?></code>
 						</pre>
@@ -190,7 +190,7 @@ class WPCL_Component extends CPT_Core {
 				<?php endif; ?>
 
 				<?php if ( ! empty( $sass ) ) : ?>
-					<div class="sass-code">
+					<div id="sass-code" class="sass-code">
 						<pre>
 							<code class="language-scss"><?php echo esc_html( $sass ); ?></code>
 						</pre>
@@ -198,7 +198,7 @@ class WPCL_Component extends CPT_Core {
 				<?php endif; ?>
 
 				<?php if ( ! empty( $js ) ) : ?>
-					<div class="js-code">
+					<div id="js-code" class="js-code">
 						<pre>
 							<code class="language-js"><?php echo esc_html( $js ); ?></code>
 						</pre>
