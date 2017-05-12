@@ -93,7 +93,34 @@ class WPCL_Component extends CPT_Core {
 		}
 	}
 
-	// public function get_component_markup() {}
+	/**
+	 * Cycle through flexible content and display the corresponding markup.
+	 *
+	 * @param  int  $post_id  ID of the post.
+	 */
+	public function display_component( $post_id = 0 ) {
+
+		// Get the post id.
+		if ( ! $post_id ) {
+			$post_id = get_the_ID();
+		}
+
+		// Get our data.
+		$component = get_post_meta( $post_id, 'component', true );
+
+		// Determine which layout to grab.
+		foreach ( (array) $component as $count => $component ) {
+
+			switch ( $component ) {
+
+				// Image Hero.
+				case 'image_hero' :
+
+					wp_component_library()->image_hero->image_hero_markup( $post_id, $count );
+					break;
+			}
+		}
+	}
 
 	/**
 	 * Build the markup for the component meta.
@@ -107,6 +134,7 @@ class WPCL_Component extends CPT_Core {
 			$post_id = get_the_ID();
 		}
 
+		// Get our data.
 		$usage = get_post_meta( $post_id, 'usage', true );
 		$php   = get_post_meta( $post_id, 'php', true );
 		$sass  = get_post_meta( $post_id, 'sass', true );
