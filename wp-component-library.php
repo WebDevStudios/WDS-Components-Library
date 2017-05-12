@@ -264,10 +264,10 @@ final class WP_Component_Library {
 		if ( 'wpcl-component' === get_post_type() ) {
 
 			// Prism Styles.
-			wp_enqueue_style( 'prism-styles', $this->url . 'assets/bower_components/prism/themes/prism.css', array(), '0.0.0' );
+			wp_enqueue_style( 'prism-styles', $this->url . 'assets/css/prism.css', array(), '0.0.0' );
 
 			// Prism JS.
-			wp_enqueue_script( 'prismjs', $this->url . 'assets/bower_components/prism/prism.js', array(), '1.0.0', true );
+			wp_enqueue_script( 'prismjs', $this->url . 'assets/scripts/prism.js', array(), '1.0.0', true );
 
 			// jQuery tabs.
 			wp_enqueue_script( 'jquery-ui-tabs' );
