@@ -56,7 +56,7 @@
             "key": "field_5914a80c93370",
             "label": "Usage",
             "name": "usage",
-            "type": "textarea",
+            "type": "wysiwyg",
             "instructions": "Enter a template tag or basic code showing how to use the code.",
             "required": 0,
             "conditional_logic": 0,
@@ -66,10 +66,10 @@
                 "id": ""
             },
             "default_value": "",
-            "placeholder": "",
-            "maxlength": "",
-            "rows": "",
-            "new_lines": "wpautop"
+            "tabs": "text",
+            "toolbar": "full",
+            "media_upload": 0,
+            "delay": 0
         },
         {
             "key": "field_5914a83393371",
@@ -146,5 +146,5 @@
     "hide_on_screen": "",
     "active": 1,
     "description": "",
-    "modified": 1494527915
+    "modified": 1494550964
 }
