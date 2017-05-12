@@ -1,36 +1,36 @@
 // Require our dependencies
 const autoprefixer = require( 'autoprefixer' );
-const babel = require( 'gulp-babel' );
-const bourbon = require( 'bourbon' ).includePaths;
-const browserSync = require( 'browser-sync' );
-const cheerio = require( 'gulp-cheerio' );
-const concat = require( 'gulp-concat' );
-const cssnano = require( 'gulp-cssnano' );
-const del = require( 'del' );
-const eslint = require( 'gulp-eslint' );
-const gulp = require( 'gulp' );
-const gutil = require( 'gulp-util' );
-const imagemin = require( 'gulp-imagemin' );
-const mqpacker = require( 'css-mqpacker' );
-const neat = require( 'bourbon-neat' ).includePaths;
-const notify = require( 'gulp-notify' );
-const plumber = require( 'gulp-plumber' );
-const postcss = require( 'gulp-postcss' );
-const reload = browserSync.reload;
-const rename = require( 'gulp-rename' );
-const sass = require( 'gulp-sass' );
-const sassLint = require( 'gulp-sass-lint' );
-const sort = require( 'gulp-sort' );
-const sourcemaps = require( 'gulp-sourcemaps' );
-const spritesmith = require( 'gulp.spritesmith' );
-const svgmin = require( 'gulp-svgmin' );
-const svgstore = require( 'gulp-svgstore' );
-const uglify = require( 'gulp-uglify' );
-const wpPot = require( 'gulp-wp-pot' );
+const babel        = require( 'gulp-babel' );
+const bourbon      = require( 'bourbon' ).includePaths;
+const browserSync  = require( 'browser-sync' );
+const cheerio      = require( 'gulp-cheerio' );
+const concat       = require( 'gulp-concat' );
+const cssnano      = require( 'gulp-cssnano' );
+const del          = require( 'del' );
+const eslint       = require( 'gulp-eslint' );
+const gulp         = require( 'gulp' );
+const gutil        = require( 'gulp-util' );
+const imagemin     = require( 'gulp-imagemin' );
+const mqpacker     = require( 'css-mqpacker' );
+const neat         = require( 'bourbon-neat' ).includePaths;
+const notify       = require( 'gulp-notify' );
+const plumber      = require( 'gulp-plumber' );
+const postcss      = require( 'gulp-postcss' );
+const reload       = browserSync.reload;
+const rename       = require( 'gulp-rename' );
+const sass         = require( 'gulp-sass' );
+const sassLint     = require( 'gulp-sass-lint' );
+const sort         = require( 'gulp-sort' );
+const sourcemaps   = require( 'gulp-sourcemaps' );
+const spritesmith  = require( 'gulp.spritesmith' );
+const svgmin       = require( 'gulp-svgmin' );
+const svgstore     = require( 'gulp-svgstore' );
+const uglify       = require( 'gulp-uglify' );
+const wpPot        = require( 'gulp-wp-pot' );
 
 // Set assets paths.
 const paths = {
-	'css': [ './*.css', '!*.min.css' ],
+	'css': [ 'assets/css/*.css', '!*.min.css' ],
 	'icons': 'assets/images/svg-icons/*.svg',
 	'images': [ 'assets/images/*', '!assets/images/*.svg' ],
 	'php': [ './*.php', './**/*.php' ],
@@ -74,7 +74,7 @@ gulp.task( 'clean:styles', () =>
  * https://www.npmjs.com/package/css-mqpacker
  */
 gulp.task( 'postcss', [ 'clean:styles' ], () =>
-	gulp.src( 'assets/sass/*.scss', paths.css )
+	gulp.src( 'assets/css/sass/*.scss', paths.css )
 
 		// Deal with errors.
 		.pipe( plumber( {'errorHandler': handleErrors} ) )

@@ -196,6 +196,7 @@ final class WP_Component_Library {
 	public function hooks() {
 		add_action( 'init', array( $this, 'init' ), 0 );
 		add_action( 'acf/settings/save_json', array( $this, 'acf_json_save_point' ) );
+		add_action( 'wp_enqueue_scripts', array( $this, 'enqueue_scripts_styles' ) );
 	}
 
 	/**
@@ -249,6 +250,15 @@ final class WP_Component_Library {
 		$path = plugin_dir_path( __FILE__ ) . '/acf-json';
 
 		return $path;
+	}
+
+	/**
+	 * Enqueue plugin scripts & styles.
+	 */
+	public function enqueue_scripts_styles() {
+
+		// Include the plugin's stylesheet.
+		wp_enqueue_style( 'wpcl-styles', $this->url . 'styles.css', array(), '0.0.0' );
 	}
 
 	/**
