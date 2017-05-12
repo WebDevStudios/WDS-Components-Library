@@ -20,6 +20,8 @@ get_header(); ?>
 
 			<?php wp_component_library()->component->display_component(); ?>
 
+			<?php the_content(); ?>
+
 			<?php wp_component_library()->component->display_component_meta(); ?>
 
 			<?php the_post_navigation(); ?>
