@@ -31,13 +31,13 @@ get_header(); ?>
 					<h1 class="entry-title"><?php the_title(); ?></h1>
 				</header>
 
-				<div class="entry-content">
-
+				<div class="component-example">
 					<?php wp_component_library()->component->display_component(); ?>
+				</div>
+
+				<div class="entry-content">
 					
 					<?php the_content(); ?>
-
-					<?php wp_component_library()->component->display_component_meta(); ?>
 					
 					<?php
 						wp_link_pages( array(
@@ -45,6 +45,10 @@ get_header(); ?>
 							'after'  => '</div>',
 						) );
 					?>
+				</div>
+
+				<div class="component-code">
+					<?php wp_component_library()->component->display_component_meta(); ?>
 				</div>
 
 				<?php //wpcl_the_entry_footer(); ?>
