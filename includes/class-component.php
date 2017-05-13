@@ -160,6 +160,9 @@ class WPCL_Component extends CPT_Core {
 
 			<?php if ( ! empty( $usage ) ) : ?>
 				<div class="code-usage">
+					<header class="meta-heading">
+						<h2><?php esc_html_e( 'Usage', 'wp-component-library' ); ?></h2>
+					</header>
 					<pre>
 						<code class="language-php"><?php echo esc_html( $usage ); ?></code>
 					</pre>
@@ -167,6 +170,9 @@ class WPCL_Component extends CPT_Core {
 			<?php endif; ?>
 
 			<div id="code-tabs" class="code-tabs">
+				<header class="meta-heading">
+					<h2><?php esc_html_e( 'Code', 'wp-component-library' ); ?></h2>
+				</header>
 				<ul>
 					<li><a href="#html-output"><?php esc_html_e( 'HTML Output', 'wpcl-components' ); ?></a></li>
 					<?php echo ( ! empty( $php ) ) ? '<li><a href="#php-code">' . esc_html__( 'PHP', 'wpcl-components' ) . '</a></li>' : ''; ?>
