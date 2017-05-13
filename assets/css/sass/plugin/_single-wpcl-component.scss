@@ -1,0 +1,33 @@
+//--------------------------------------------------------------
+// SINGLE WPCL COMPONENT 
+//--------------------------------------------------------------
+.single-wpcl-component {
+	
+	//-----------------------------------------
+	// LIVE OUTPUT
+	//-----------------------------------------
+	.component-example {
+
+		+ .entry-content {
+			margin-top: 40px;
+
+			@media (min-width: 900px) {
+				margin-top: 60px;
+			}
+		}
+	}
+
+	//-----------------------------------------
+	// ENTRY CONTENT
+	//-----------------------------------------
+	.entry-content {
+
+		+ .component-code {
+			margin-top: 40px;
+
+			@media (min-width: 900px) {
+				margin-top: 60px;
+			}
+		}
+	}
+}
