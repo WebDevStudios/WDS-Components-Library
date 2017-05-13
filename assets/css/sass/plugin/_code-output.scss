@@ -7,25 +7,16 @@ $border-color: #dcdcdc;
 $code-background: #fff;
 $tab-background: #fff;
 
-//-----------------------------------------
-// PRISM
-//-----------------------------------------
-.wp-component-meta {
-
-	pre[class*="language-"] {
-		background-color: $code-background;
-		border: 0;
-		margin-top: 0;
-	}
-}
-
 
 //-----------------------------------------
 // CODE USAGE
 //-----------------------------------------
 .code-usage {
-	background-color: $code-background;
-	border: 1px solid $border-color;
+
+	pre[class*="language-"] {
+		background-color: $code-background;
+		border: 1px solid $border-color;
+	}
 }
 
 
@@ -34,9 +25,14 @@ $tab-background: #fff;
 //-----------------------------------------
 .code-tabs {
 
-	//-----------------------------------------
+	// Prism
+	pre[class*="language-"] {
+		background-color: $code-background;
+		border: 0;
+		margin-top: 0;
+	}
+
 	// The Tab Navigation
-	//-----------------------------------------
 	.ui-tabs-nav {
 		display: flex;
 		flex-direction: row;
@@ -45,13 +41,13 @@ $tab-background: #fff;
 		padding: 0;
 	}
 
-	//-----------------------------------------
 	// The Tabs
-	//-----------------------------------------
 	.ui-state-default {
 		background-color: $tab-background;
 
 		a {
+			border: 0;
+			box-shadow: none;
 			display: block;
 			outline: 0;
 			padding: 10px 15px;
@@ -64,9 +60,7 @@ $tab-background: #fff;
 		margin-bottom: -1px;
 	}
 
-	//-----------------------------------------
 	// The Code Content
-	//-----------------------------------------
 	.ui-tabs-panel {
 		border: 1px solid $border-color;
 	}
