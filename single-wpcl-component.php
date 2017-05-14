@@ -29,6 +29,7 @@ get_header(); ?>
 
 				<header class="entry-header">
 					<h1 class="entry-title"><?php the_title(); ?></h1>
+					<span class="entry-meta"><?php wp_component_library()->component_status->get_status(); ?></span>
 				</header>
 
 				<div class="component-example">

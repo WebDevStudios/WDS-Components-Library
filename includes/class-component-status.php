@@ -65,4 +65,21 @@ class WPCL_Component_Status extends Taxonomy_Core {
 	public function hooks() {
 
 	}
+
+	public function get_status() {
+
+		$terms = get_the_terms( get_the_ID(), 'wpcl-component-status' );
+
+		if ( $terms && ! is_wp_error( $status ) ) {
+
+			$status = array();
+
+			foreach ( $terms as $term ) {
+
+				$status_color = get_term_meta( $term->term_id, 'status_color', true );
+
+				$status = printf( '<span class="component-status"><span class="status-color" style="background-color: %s"></span>%s</span>', esc_attr( $status_color ), esc_html( $term->name ) );
+			}
+		}
+	}
 }
