@@ -11,7 +11,7 @@ $tab-background: #fff;
 //-----------------------------------------
 // GENERAL STYLES
 //-----------------------------------------
-.code-usage {
+.code-implementation {
 
 	+ .code-tabs {
 		margin-top: 40px;
@@ -24,9 +24,9 @@ $tab-background: #fff;
 
 
 //-----------------------------------------
-// CODE USAGE
+// IMPLEMENTATION
 //-----------------------------------------
-.code-usage {
+.code-implementation {
 
 	pre[class*="language-"] {
 		background-color: $code-background;

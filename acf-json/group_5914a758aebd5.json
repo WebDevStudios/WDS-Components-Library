@@ -54,10 +54,10 @@
         },
         {
             "key": "field_5914a80c93370",
-            "label": "Usage",
-            "name": "usage",
+            "label": "Implementation",
+            "name": "implementation",
             "type": "wysiwyg",
-            "instructions": "Enter a template tag or basic code showing how to use the code.",
+            "instructions": "Enter a template tag or basic code showing how to pull the component into the template for use\r\n\r\nE.g. <?php wp_component_library()->image-hero->image-hero-markup(); ?>",
             "required": 0,
             "conditional_logic": 0,
             "wrapper": {
@@ -146,5 +146,5 @@
     "hide_on_screen": "",
     "active": 1,
     "description": "",
-    "modified": 1494550964
+    "modified": 1494795812
 }

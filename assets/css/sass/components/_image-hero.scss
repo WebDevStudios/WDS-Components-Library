@@ -16,7 +16,7 @@ $hero-text: $hero-text;
 
 	// Optional transparent overlay.
 	&::after {
-		background-color: rgba($hero-overlay, 0.8);
+		background-color: rgba($hero-overlay, 0.6);
 		content: '';
 		position: absolute;
 		top: 0; right: 0; bottom: 0; left: 0;
