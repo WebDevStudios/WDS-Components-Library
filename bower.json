@@ -1,0 +1,18 @@
+{
+  "name": "wp-component-library",
+  "description": "Manage and collaborate on UI components through WordPress.",
+  "license": "GPLv2",
+  "authors": [
+    "carrieforde"
+  ],
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+  }
+}

@@ -1,0 +1,82 @@
+//--------------------------------------------------------------
+// CODE Output
+//--------------------------------------------------------------
+
+// Local variables.
+$border-color: #dcdcdc;
+$code-background: #fff;
+$tab-background: #fff;
+
+
+//-----------------------------------------
+// GENERAL STYLES
+//-----------------------------------------
+.code-implementation {
+
+	+ .code-tabs {
+		margin-top: 40px;
+
+		@media (min-width: 900px) {
+			margin-top: 60px;
+		}
+	}
+}
+
+
+//-----------------------------------------
+// IMPLEMENTATION
+//-----------------------------------------
+.code-implementation {
+
+	pre[class*="language-"] {
+		background-color: $code-background;
+		border: 1px solid $border-color;
+	}
+}
+
+
+//-----------------------------------------
+// CODE TABS
+//-----------------------------------------
+.code-tabs {
+
+	// Prism
+	pre[class*="language-"] {
+		background-color: $code-background;
+		border: 0;
+		margin-top: 0;
+	}
+
+	// The Tab Navigation
+	.ui-tabs-nav {
+		display: flex;
+		flex-direction: row;
+		list-style: none;
+		margin: 0;
+		padding: 0;
+	}
+
+	// The Tabs
+	.ui-state-default {
+		background-color: $tab-background;
+
+		a {
+			border: 0;
+			box-shadow: none;
+			display: block;
+			outline: 0;
+			padding: 10px 15px;
+		}
+	}
+
+	.ui-state-active {
+		border: 1px solid $border-color;
+		border-bottom: 0;
+		margin-bottom: -1px;
+	}
+
+	// The Code Content
+	.ui-tabs-panel {
+		border: 1px solid $border-color;
+	}
+}

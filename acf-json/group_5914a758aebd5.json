@@ -1,0 +1,169 @@
+{
+    "key": "group_5914a758aebd5",
+    "title": "Components",
+    "fields": [
+        {
+            "key": "field_5914a7e39336f",
+            "label": "Component",
+            "name": "component",
+            "type": "flexible_content",
+            "instructions": "Select the component that corresponds to the document.",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "button_label": "Add Row",
+            "min": "",
+            "max": 1,
+            "layouts": [
+                {
+                    "key": "5914a7f2611ba",
+                    "name": "image_hero",
+                    "label": "Image Hero",
+                    "display": "block",
+                    "sub_fields": [
+                        {
+                            "key": "field_5914b169ece61",
+                            "label": "Image Hero",
+                            "name": "image_hero",
+                            "type": "clone",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "clone": [
+                                "group_5914adecb1b12"
+                            ],
+                            "display": "seamless",
+                            "layout": "block",
+                            "prefix_label": 0,
+                            "prefix_name": 0
+                        }
+                    ],
+                    "min": "",
+                    "max": ""
+                }
+            ]
+        },
+        {
+            "key": "field_5918ca7e15998",
+            "label": "Usage",
+            "name": "usage",
+            "type": "wysiwyg",
+            "instructions": "Indicate the dos \/ don'ts, rules, and considerations of using this component. E.g. \"Use this hero for single posts, and use the masthead for pages.\"",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "tabs": "visual",
+            "toolbar": "basic",
+            "media_upload": 0,
+            "delay": 0
+        },
+        {
+            "key": "field_5914a80c93370",
+            "label": "Implementation",
+            "name": "implementation",
+            "type": "wysiwyg",
+            "instructions": "Enter a template tag or basic code showing how to pull the component into the template for use\r\n\r\nE.g. <?php wp_component_library()->image-hero->image-hero-markup(); ?>",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "tabs": "text",
+            "toolbar": "full",
+            "media_upload": 0,
+            "delay": 0
+        },
+        {
+            "key": "field_5914a83393371",
+            "label": "PHP",
+            "name": "php",
+            "type": "wysiwyg",
+            "instructions": "Enter the PHP Code needed to produce the component.",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "tabs": "text",
+            "toolbar": "basic",
+            "media_upload": 0,
+            "delay": 0
+        },
+        {
+            "key": "field_5914a85693372",
+            "label": "Sass",
+            "name": "sass",
+            "type": "wysiwyg",
+            "instructions": "Enter the Sass code needed to style the component.",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "tabs": "text",
+            "toolbar": "basic",
+            "media_upload": 0,
+            "delay": 0
+        },
+        {
+            "key": "field_5914a86f93373",
+            "label": "JavaScript",
+            "name": "javascript",
+            "type": "wysiwyg",
+            "instructions": "Add required JavaScript for the component.",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "tabs": "text",
+            "toolbar": "basic",
+            "media_upload": 0,
+            "delay": 0
+        }
+    ],
+    "location": [
+        [
+            {
+                "param": "post_type",
+                "operator": "==",
+                "value": "wpcl-component"
+            }
+        ]
+    ],
+    "menu_order": 0,
+    "position": "normal",
+    "style": "default",
+    "label_placement": "left",
+    "instruction_placement": "label",
+    "hide_on_screen": "",
+    "active": 1,
+    "description": "",
+    "modified": 1494797071
+}
