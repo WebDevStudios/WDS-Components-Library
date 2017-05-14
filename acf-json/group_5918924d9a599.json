@@ -1,0 +1,39 @@
+{
+    "key": "group_5918924d9a599",
+    "title": "Component Status",
+    "fields": [
+        {
+            "key": "field_59189256adf94",
+            "label": "Status Color",
+            "name": "status_color",
+            "type": "color_picker",
+            "instructions": "Choose a color that will give the status a quick, meaningful status reference. E.g. red for \"deprecated\", or green for \"approved\".",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "#FFC200"
+        }
+    ],
+    "location": [
+        [
+            {
+                "param": "taxonomy",
+                "operator": "==",
+                "value": "wpcl-component-status"
+            }
+        ]
+    ],
+    "menu_order": 0,
+    "position": "normal",
+    "style": "default",
+    "label_placement": "top",
+    "instruction_placement": "label",
+    "hide_on_screen": "",
+    "active": 1,
+    "description": "",
+    "modified": 1494782726
+}
