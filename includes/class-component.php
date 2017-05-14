@@ -98,6 +98,7 @@ class WPCL_Component extends CPT_Core {
 	 * Cycle through flexible content and display the corresponding markup.
 	 *
 	 * @param  int  $post_id  ID of the post.
+	 * @author      Carrie Forde
 	 */
 	public function display_component( $post_id = 0 ) {
 
@@ -127,8 +128,8 @@ class WPCL_Component extends CPT_Core {
 	 * Get the component markup for output in component meta.
 	 *
 	 * @param   int  $post_id  The Post ID. By passing a post ID, the hero can be used outside the loop.
-	 *
-	 * @return  string  The component markup.
+	 * @return  string         The component markup.
+	 * @author                 Carrie Forde
 	 */
 	public function get_component_markup( $post_id = 0 ) {
 
@@ -140,7 +141,8 @@ class WPCL_Component extends CPT_Core {
 	/**
 	 * Build the markup for the component meta.
 	 *
-	 * @param  interger  $post_id  ID of the post for which to display the meta.
+	 * @param   interger  $post_id  ID of the post for which to display the meta.
+	 * @author                      Carrie Forde
 	 */
 	public function display_component_meta( $post_id = 0 ) {
 
@@ -219,9 +221,9 @@ class WPCL_Component extends CPT_Core {
 	/**
 	 * Use the plugin's single-wpcl-template.php if one can't be found in the theme.
 	 *
-	 * @param   The template we need.
-	 *
-	 * @return  The template path.
+	 * @param   $template  The template we need.
+	 * @return             The template path.
+	 * @author             Carrie Forde
 	 */
 	public function component_template( $template ) {
 

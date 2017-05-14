@@ -66,6 +66,11 @@ class WPCL_Component_Status extends Taxonomy_Core {
 
 	}
 
+	/**
+	 * Get the status of a component.
+	 *
+	 * @author  Carrie Forde
+	 */
 	public function get_status() {
 
 		$terms = get_the_terms( get_the_ID(), 'wpcl-component-status' );
