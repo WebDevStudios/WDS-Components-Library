@@ -45,7 +45,15 @@ class WPCL_Image_Hero {
 	 * @since  0.0.0
 	 */
 	public function hooks() {
+		add_filter( 'after_theme_setup', array( $this, 'add_hero_image_size' ) );
+	}
 
+	/**
+	 * Add an image size for the hero image.
+	 */
+	public function add_hero_image_size() {
+
+		add_image_size( 'hero-image', 1920, 500, true );
 	}
 
 	/**
@@ -79,7 +87,7 @@ class WPCL_Image_Hero {
 		}
 
 		// Start the markup. 🎉 ?>
-		<section class="hero-area image-as-background" style="background-image: url( <?php echo esc_url( wp_get_attachment_image_url( $image ) ); ?> );" role="dialog" aria-labelledby="hero-title" aria-describedby="hero-description">
+		<section class="hero-area image-as-background" style="background-image: url( <?php echo esc_url( wp_get_attachment_image_url( $image, 'hero-image' ) ); ?> );" role="dialog" aria-labelledby="hero-title" aria-describedby="hero-description">
 			<div class="hero-content">
 				<?php if ( ! empty( $title ) ) : ?>
 					<h2 class="hero-title"><?php echo esc_html( $title ); ?></h2>
