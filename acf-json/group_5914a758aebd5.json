@@ -53,6 +53,25 @@
             ]
         },
         {
+            "key": "field_5918ca7e15998",
+            "label": "Usage",
+            "name": "usage",
+            "type": "wysiwyg",
+            "instructions": "Indicate the dos \/ don'ts, rules, and considerations of using this component. E.g. \"Use this hero for single posts, and use the masthead for pages.\"",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "tabs": "visual",
+            "toolbar": "basic",
+            "media_upload": 0,
+            "delay": 0
+        },
+        {
             "key": "field_5914a80c93370",
             "label": "Implementation",
             "name": "implementation",
@@ -146,5 +165,5 @@
     "hide_on_screen": "",
     "active": 1,
     "description": "",
-    "modified": 1494795812
+    "modified": 1494797071
 }
