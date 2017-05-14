@@ -2,7 +2,23 @@
 // SINGLE WPCL COMPONENT 
 //--------------------------------------------------------------
 .single-wpcl-component {
-	
+
+	//-----------------------------------------
+	// GENERAL STYLES
+	//-----------------------------------------
+	.entry-content,
+	.component-code {
+		margin: 0 auto;
+		max-width: 100%;
+		padding: 20px;
+		width: 700px;
+
+		@media (min-width: 900px) {
+			padding: 40px;
+		}
+	}
+
+
 	//-----------------------------------------
 	// LIVE OUTPUT
 	//-----------------------------------------
@@ -22,11 +38,17 @@
 	//-----------------------------------------
 	.entry-content {
 
+		p {
+
+			&:last-of-type {
+				margin-bottom: 0;
+			}
+		}
+
 		+ .component-code {
-			margin-top: 40px;
 
 			@media (min-width: 900px) {
-				margin-top: 60px;
+				margin-top: 20px;
 			}
 		}
 	}
