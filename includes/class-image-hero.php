@@ -98,7 +98,7 @@ class WPCL_Image_Hero {
 						return;
 					endif;
 				?>
-					<a href="<?php echo esc_url( $button_link ); ?>" class="hero-button"><?php echo esc_html( $button_text ); ?></a>
+					<a href="<?php echo esc_url( $button_link ); ?>" class="button hero-button"><?php echo esc_html( $button_text ); ?></a>
 				<?php endif; ?>
 			</div><!-- .hero-content -->
 		</section><!-- .hero-area -->
