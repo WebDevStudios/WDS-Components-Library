@@ -28,8 +28,13 @@ get_header(); ?>
 				<?php endif; ?>
 
 				<header class="entry-header">
-					<h1 class="entry-title"><?php the_title(); ?></h1>
-					<span class="entry-meta"><?php wp_component_library()->component_status->get_status(); ?></span>
+					<div class="entry-header-inner">
+						<h1 class="entry-title"><?php the_title(); ?></h1>
+						<?php wp_component_library()->component_status->get_status(); ?>
+					</div>
+					<div class="entry-meta">
+						<?php wp_component_library()->component->display_post_entry_meta(); ?>
+					</div>
 				</header>
 
 				<div class="component-example">

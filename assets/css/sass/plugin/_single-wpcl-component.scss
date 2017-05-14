@@ -22,23 +22,10 @@
 	//-----------------------------------------
 	// ENTRY HEADER
 	//-----------------------------------------
-	.entry-header {
+	.entry-header-inner {
 		align-items: center;
 		display: flex;
 		margin-bottom: 0.5em;
-	}
-
-	.entry-title {
-		margin: 0; // we'll apply margin on entry-header instead.
-
-		+ .entry-meta {
-			margin-left: 30px;
-		}
-	}
-
-	.entry-meta {
-		align-items: center;
-		display: flex;
 
 		.component-status {
 			align-items: center;
@@ -56,6 +43,18 @@
 			margin-right: 5px;
 			vertical-align: middle;
 		}
+	}
+
+	.entry-title {
+		margin: 0; // we'll apply margin on entry-header instead.
+
+		+ .component-status {
+			margin-left: 30px;
+		}
+	}
+
+	.byline {
+		margin-left: 3px;
 	}
 
 

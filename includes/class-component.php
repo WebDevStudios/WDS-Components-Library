@@ -95,6 +95,44 @@ class WPCL_Component extends CPT_Core {
 	}
 
 	/**
+	 * Display component post meta.
+	 *
+	 * @author  Carrie Forde
+	 */
+	public function display_post_entry_meta() {
+
+		if ( ! $post_id ) {
+			$post_id = get_the_ID();
+		}
+
+		$time_string = '<time class="entry-date published updated" datetime="%1$s">%2$s</time>';
+		if ( get_the_time( 'U', $post_id ) !== get_post_modified_time( 'U', false, $post_id ) ) {
+			$time_string = '<time class="entry-date published" datetime="%1$s">%2$s</time><time class="updated" datetime="%3$s">%4$s</time>';
+		}
+
+		$time_string = sprintf( $time_string,
+			esc_attr( get_the_date( 'c', $post_id ) ),
+			esc_html( get_the_date( '', $post_id ) ),
+			esc_attr( get_post_modified_time( 'c', false, $post_id ) ),
+			esc_html( get_post_modified_time( '', false, $post_id ) )
+		);
+
+		$posted_on = sprintf(
+			esc_html_x( 'Published %s', 'post date', 'wp-component-library' ),
+			'<a href="' . esc_url( get_permalink() ) . '" rel="bookmark">' . $time_string . '</a>'
+		);
+
+		$author_id = get_post_field( 'post_author', $post_id );
+
+		$byline = sprintf(
+			esc_html_x( 'by %s', 'post author', 'wp-component-library' ),
+			'<span class="author vcard"><a class="url fn n" href="' . esc_url( get_author_posts_url( $author_id ) ) . '">' . esc_html( get_the_author_meta( 'display_name', $author_id ) ) . '</a></span>'
+		);
+
+		printf( '<div class="entry-meta"><span class="posted-on">%s</span><span class="byline">%s</span></div></div>', $posted_on, $byline ); // WPCS: XSS OK.
+	}
+
+	/**
 	 * Cycle through flexible content and display the corresponding markup.
 	 *
 	 * @param  int  $post_id  ID of the post.
