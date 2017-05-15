@@ -68,7 +68,7 @@ class WDSCL_Pricing_Table {
 		// Start the markup. 🎉 ?>
 		<div class="pricing-card">
 				<h3 class="pricing-title"><?php echo esc_html( $args['title'] ); ?></h3>
-				<div class="pricing-price"><span class="pricing-currency"><?php echo esc_html( $args['currency'] ); ?></span><?php echo esc_html( $args['price'] ); ?></div>
+				<div class="pricing-price"><?php echo esc_html( $args['price'] ); ?></div>
 
 				<?php if ( ! empty( $args['description'] ) ) : ?>
 					<p class="pricing-sentence"><?php echo esc_html( $args['description'] ); ?></p>
