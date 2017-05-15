@@ -263,6 +263,9 @@ final class WDS_Component_Library {
 		// Enqueue Prism.js (and .css) & jQuery tabs only on the single component.
 		if ( 'wdscl-component' === get_post_type() ) {
 
+			// Font Awesome font.
+			wp_enqueue_script( 'wdscl-fontawesome', '//use.fontawesome.com/f7361d8348.js', array(), '1.0.0', false );
+
 			// Prism Styles.
 			wp_enqueue_style( 'prism-styles', $this->url . 'assets/css/prism.css', array(), '0.0.0' );
 
