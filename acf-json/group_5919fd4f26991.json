@@ -82,7 +82,7 @@
                     "key": "field_5919fe196f189",
                     "label": "Price",
                     "name": "price",
-                    "type": "number",
+                    "type": "text",
                     "instructions": "Enter the price for the product or service.",
                     "required": 0,
                     "conditional_logic": 0,
@@ -95,9 +95,7 @@
                     "placeholder": "",
                     "prepend": "",
                     "append": "",
-                    "min": "",
-                    "max": "",
-                    "step": ""
+                    "maxlength": ""
                 },
                 {
                     "key": "field_5919fe4c6f18a",
@@ -178,5 +176,5 @@
     "hide_on_screen": "",
     "active": 0,
     "description": "",
-    "modified": 1494875876
+    "modified": 1494883023
 }
