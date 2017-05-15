@@ -1,17 +1,17 @@
 <?php
 /**
  * Plugin Name: WDS Component Library
- * Plugin URI:  https://carrieforde.com
+ * Plugin URI:  https://webdevstudios.com
  * Description: Manage and collaborate on UI components through WordPress.
  * Version:     0.0.0
- * Author:      carrieforde
- * Author URI:  https://carrieforde.com
- * Donate link: https://carrieforde.com
+ * Author:      webdevstudios
+ * Author URI:  https://webdevstudios.com
+ * Donate link: https://webdevstudios.com
  * License:     GPLv2
  * Text Domain: wds-component-library
  * Domain Path: /languages
  *
- * @link    https://carrieforde.com
+ * @link    https://webdevstudios.com
  *
  * @package WP_Component_Library
  * @version 0.0.0
