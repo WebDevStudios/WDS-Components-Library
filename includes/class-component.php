@@ -194,6 +194,12 @@ class WDSCL_Component extends CPT_Core {
 
 					<?php
 					break;
+
+				// Pricing Table.
+				case 'pricing_table' :
+
+					wds_component_library()->pricing_table->pricing_table_markup( $post_id, $count );
+					break;
 			}
 		}
 	}
