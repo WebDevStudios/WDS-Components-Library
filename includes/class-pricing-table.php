@@ -122,33 +122,33 @@ class WDSCL_Pricing_Table {
 					<?php echo wp_kses_post( $description ); ?>
 				</header>
 			<?php endif; // if ( ! empty( $title ) ) ?>
+
+			<div class="pricing-inner-wrap">
+
+				<?php for ( $i = 0; $i < $card; $i++ ) :
+
+					$title = get_post_meta( $post_id, $prefix . 'pricing_card_' . $i . '_card_title', true );
+					$price = get_post_meta( $post_id, $prefix . 'pricing_card_' . $i . '_price', true );
+					$description = get_post_meta( $post_id, $prefix . 'pricing_card_' . $i . '_card_description', true );
+					$features = get_post_meta( $post_id, $prefix . 'pricing_card_' . $i . '_features', true );
+
+					// Get each feature, and store them in an array.
+					$features_new = array();
+
+					// Loop over $features, which always has an index of 0, and store them in our $features_new array.
+					for ( $j = 0; $j < $features[0]; $j++ ) :
+						$features_new[] = get_post_meta( $post_id, $prefix . 'pricing_card_' . $i . '_features_' . $j . '_feature', true );
+					endfor;
+
+					$this->pricing_card_markup( array(
+						'title' => $title,
+						'price' => $price,
+						'description' => $description,
+						'features' => $features_new,
+					) );
+				endfor; ?>
+			</div>
 		</section>
-
-		<div class="pricing-inner-wrap">
-
-			<?php for ( $i = 0; $i < $card; $i++ ) :
-
-				$title = get_post_meta( $post_id, $prefix . 'pricing_card_' . $i . '_card_title', true );
-				$price = get_post_meta( $post_id, $prefix . 'pricing_card_' . $i . '_price', true );
-				$description = get_post_meta( $post_id, $prefix . 'pricing_card_' . $i . '_card_description', true );
-				$features = get_post_meta( $post_id, $prefix . 'pricing_card_' . $i . '_features', true );
-
-				// Get each feature, and store them in an array.
-				$features_new = array();
-
-				// Loop over $features, which always has an index of 0, and store them in our $features_new array.
-				for ( $j = 0; $j < $features[0]; $j++ ) :
-					$features_new[] = get_post_meta( $post_id, $prefix . 'pricing_card_' . $i . '_features_' . $j . '_feature', true );
-				endfor;
-
-				$this->pricing_card_markup( array(
-					'title' => $title,
-					'price' => $price,
-					'description' => $description,
-					'features' => $features_new,
-				) );
-			endfor; ?>
-		</div>
 
 		<?php
 	}
