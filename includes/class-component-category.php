@@ -3,7 +3,7 @@
  * WDS Component Library Component Category.
  *
  * @since   0.0.0
- * @package WP_Component_Library
+ * @package WDS_Component_Library
  */
 
 require_once dirname( __FILE__ ) . '/../vendor/taxonomy-core/Taxonomy_Core.php';
@@ -19,7 +19,7 @@ class WDSCL_Component_Category extends Taxonomy_Core {
 	/**
 	 * Parent plugin class.
 	 *
-	 * @var    WP_Component_Library
+	 * @var    WDS_Component_Library
 	 * @since  0.0.0
 	 */
 	protected $plugin = null;
@@ -33,7 +33,7 @@ class WDSCL_Component_Category extends Taxonomy_Core {
 	 *
 	 * @since  0.0.0
 	 *
-	 * @param  WP_Component_Library $plugin Main plugin object.
+	 * @param  WDS_Component_Library $plugin Main plugin object.
 	 */
 	public function __construct( $plugin ) {
 		$this->plugin = $plugin;

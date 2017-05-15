@@ -3,7 +3,7 @@
  * The template for displaying single components.
  *
  * @since   0.0.0
- * @package WP_Component_Library
+ * @package WDS_Component_Library
  */
 
 get_header(); ?>
@@ -30,15 +30,15 @@ get_header(); ?>
 				<header class="entry-header">
 					<div class="entry-header-inner">
 						<h1 class="entry-title"><?php the_title(); ?></h1>
-						<?php wp_component_library()->component_status->get_status(); ?>
+						<?php wds_component_library()->component_status->get_status(); ?>
 					</div>
 					<div class="entry-meta">
-						<?php wp_component_library()->component->display_post_entry_meta(); ?>
+						<?php wds_component_library()->component->display_post_entry_meta(); ?>
 					</div>
 				</header>
 
 				<div class="component-example">
-					<?php wp_component_library()->component->display_component(); ?>
+					<?php wds_component_library()->component->display_component(); ?>
 				</div>
 
 				<div class="entry-content">
@@ -54,7 +54,7 @@ get_header(); ?>
 				</div>
 
 				<div class="component-code">
-					<?php wp_component_library()->component->display_component_meta(); ?>
+					<?php wds_component_library()->component->display_component_meta(); ?>
 				</div>
 
 				<?php //WDSCL_the_entry_footer(); ?>

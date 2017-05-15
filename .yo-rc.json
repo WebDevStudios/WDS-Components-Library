@@ -9,10 +9,10 @@
     "authorurl": "https://webdevstudios.com",
     "license": "GPLv2",
     "slug": "wds-component-library",
-    "classname": "WP_Component_Library",
-    "mainclassname": "WP_Component_Library",
+    "classname": "WDS_Component_Library",
+    "mainclassname": "WDS_Component_Library",
     "classprefix": "WDSCL_",
-    "prefix": "wp_component_library",
+    "prefix": "wds_component_library",
     "year": 2017,
     "currentVersionWP": "4.7.2"
   }

@@ -92,13 +92,13 @@ public function display_component( $post_id = 0 ) {
             // Image Hero.
             case 'image_hero' :
 
-                wp_component_library()->image_hero->image_hero_markup( $post_id, $count );
+                wds_component_library()->image_hero->image_hero_markup( $post_id, $count );
                 break;
 
             // My new component.
             case 'my_new_component' :
 
-                wp_component_library()->my_new_component->my_new_component_markup( $post_id, $count );
+                wds_component_library()->my_new_component->my_new_component_markup( $post_id, $count );
                 break;
         }
     }

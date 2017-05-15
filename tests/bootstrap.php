@@ -1,9 +1,9 @@
 <?php
 /**
- * WP_Component_Library Test Bootstrapper.
+ * WDS_Component_Library Test Bootstrapper.
  *
  * @since   0.0.0
- * @package WP_Component_Library
+ * @package WDS_Component_Library
  */
 
 // Get our tests directory.
@@ -17,7 +17,7 @@ require_once $_tests_dir . '/includes/functions.php';
  *
  * @since 0.0.0
  */
-function _manually_load_wp_component_library_plugin() {
+function _manually_load_wds_component_library_plugin() {
 
 	// Include the REST API main plugin file if we're using it so we can run endpoint tests.
 	if ( class_exists( 'WP_REST_Controller' ) && file_exists( WP_PLUGIN_DIR . '/rest-api/plugin.php' ) ) {
@@ -29,7 +29,7 @@ function _manually_load_wp_component_library_plugin() {
 }
 
 // Inject in our plugin.
-tests_add_filter( 'muplugins_loaded', '_manually_load_wp_component_library_plugin' );
+tests_add_filter( 'muplugins_loaded', '_manually_load_wds_component_library_plugin' );
 
 // Include the main tests bootstrapper.
 require $_tests_dir . '/includes/bootstrap.php';

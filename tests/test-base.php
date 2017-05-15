@@ -1,11 +1,11 @@
 <?php
 /**
- * WP_Component_Library.
+ * WDS_Component_Library.
  *
  * @since   0.0.0
- * @package WP_Component_Library
+ * @package WDS_Component_Library
  */
-class WP_Component_Library_Test extends WP_UnitTestCase {
+class WDS_Component_Library_Test extends WP_UnitTestCase {
 
 	/**
 	 * Test if our class exists.
@@ -13,7 +13,7 @@ class WP_Component_Library_Test extends WP_UnitTestCase {
 	 * @since  0.0.0
 	 */
 	function test_class_exists() {
-		$this->assertTrue( class_exists( 'WP_Component_Library') );
+		$this->assertTrue( class_exists( 'WDS_Component_Library') );
 	}
 
 	/**
@@ -22,7 +22,7 @@ class WP_Component_Library_Test extends WP_UnitTestCase {
 	 * @since  0.0.0
 	 */
 	function test_get_instance() {
-		$this->assertInstanceOf( wp_component_library(), 'WP_Component_Library' );
+		$this->assertInstanceOf( wds_component_library(), 'WDS_Component_Library' );
 	}
 
 	/**

@@ -3,7 +3,7 @@
  * WDS Component Library Image Hero.
  *
  * @since   0.0.0
- * @package WP_Component_Library
+ * @package WDS_Component_Library
  */
 
 /**
@@ -23,7 +23,7 @@ class WDSCL_Image_Hero {
 	 *
 	 * @since 0.0.0
 	 *
-	 * @var   WP_Component_Library
+	 * @var   WDS_Component_Library
 	 */
 	protected $plugin = null;
 
@@ -32,7 +32,7 @@ class WDSCL_Image_Hero {
 	 *
 	 * @since  0.0.0
 	 *
-	 * @param  WP_Component_Library $plugin Main plugin object.
+	 * @param  WDS_Component_Library $plugin Main plugin object.
 	 */
 	public function __construct( $plugin ) {
 		$this->plugin = $plugin;

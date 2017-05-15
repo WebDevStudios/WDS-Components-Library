@@ -3,7 +3,7 @@
  * WDS Component Library Component Tests.
  *
  * @since   0.0.0
- * @package WP_Component_Library
+ * @package WDS_Component_Library
  */
 class WDSCL_Component_Test extends WP_UnitTestCase {
 
@@ -22,7 +22,7 @@ class WDSCL_Component_Test extends WP_UnitTestCase {
 	 * @since  0.0.0
 	 */
 	function test_class_access() {
-		$this->assertInstanceOf( wp_component_library()->component, 'WDSCL_Component' );
+		$this->assertInstanceOf( wds_component_library()->component, 'WDSCL_Component' );
 	}
 
 	/**

@@ -3,7 +3,7 @@
  * WDS Component Library Image Hero Tests.
  *
  * @since   0.0.0
- * @package WP_Component_Library
+ * @package WDS_Component_Library
  */
 class WDSCL_Image_Hero_Test extends WP_UnitTestCase {
 
@@ -22,7 +22,7 @@ class WDSCL_Image_Hero_Test extends WP_UnitTestCase {
 	 * @since  0.0.0
 	 */
 	function test_class_access() {
-		$this->assertInstanceOf( wp_component_library()->image-hero, 'WDSCL_Image_Hero' );
+		$this->assertInstanceOf( wds_component_library()->image-hero, 'WDSCL_Image_Hero' );
 	}
 
 	/**

@@ -3,7 +3,7 @@
  * WDS Component Library Component.
  *
  * @since   0.0.0
- * @package WP_Component_Library
+ * @package WDS_Component_Library
  */
 
 require_once dirname( __FILE__ ) . '/../vendor/cpt-core/CPT_Core.php';
@@ -19,7 +19,7 @@ class WDSCL_Component extends CPT_Core {
 	/**
 	 * Parent plugin class.
 	 *
-	 * @var WP_Component_Library
+	 * @var WDS_Component_Library
 	 * @since  0.0.0
 	 */
 	protected $plugin = null;
@@ -33,7 +33,7 @@ class WDSCL_Component extends CPT_Core {
 	 *
 	 * @since  0.0.0
 	 *
-	 * @param  WP_Component_Library $plugin Main plugin object.
+	 * @param  WDS_Component_Library $plugin Main plugin object.
 	 */
 	public function __construct( $plugin ) {
 		$this->plugin = $plugin;
@@ -156,7 +156,7 @@ class WDSCL_Component extends CPT_Core {
 				// Image Hero.
 				case 'image_hero' :
 
-					wp_component_library()->image_hero->image_hero_markup( $post_id, $count );
+					wds_component_library()->image_hero->image_hero_markup( $post_id, $count );
 					break;
 			}
 		}

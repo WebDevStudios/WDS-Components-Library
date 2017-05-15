@@ -76,7 +76,7 @@
             "label": "Implementation",
             "name": "implementation",
             "type": "wysiwyg",
-            "instructions": "Enter a template tag or basic code showing how to pull the component into the template for use\r\n\r\nE.g. <?php wp_component_library()->image-hero->image-hero-markup(); ?>",
+            "instructions": "Enter a template tag or basic code showing how to pull the component into the template for use\r\n\r\nE.g. <?php wds_component_library()->image-hero->image-hero-markup(); ?>",
             "required": 0,
             "conditional_logic": 0,
             "wrapper": {

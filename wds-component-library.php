@@ -13,7 +13,7 @@
  *
  * @link    https://webdevstudios.com
  *
- * @package WP_Component_Library
+ * @package WDS_Component_Library
  * @version 0.0.0
  *
  * Built using generator-plugin-wp (https://github.com/WebDevStudios/generator-plugin-wp)
@@ -44,7 +44,7 @@
  * @since  0.0.0
  * @param  string $class_name Name of the class being requested.
  */
-function wp_component_library_autoload_classes( $class_name ) {
+function wds_component_library_autoload_classes( $class_name ) {
 
 	// If our class doesn't have our prefix, don't load it.
 	if ( 0 !== strpos( $class_name, 'WDSCL_' ) ) {
@@ -55,16 +55,16 @@ function wp_component_library_autoload_classes( $class_name ) {
 	$filename = strtolower( str_replace( '_', '-', substr( $class_name, strlen( 'WDSCL_' ) ) ) );
 
 	// Include our file.
-	WP_Component_Library::include_file( 'includes/class-' . $filename );
+	WDS_Component_Library::include_file( 'includes/class-' . $filename );
 }
-spl_autoload_register( 'wp_component_library_autoload_classes' );
+spl_autoload_register( 'wds_component_library_autoload_classes' );
 
 /**
  * Main initiation class.
  *
  * @since  0.0.0
  */
-final class WP_Component_Library {
+final class WDS_Component_Library {
 
 	/**
 	 * Current version.
@@ -109,7 +109,7 @@ final class WP_Component_Library {
 	/**
 	 * Singleton instance of plugin.
 	 *
-	 * @var    WP_Component_Library
+	 * @var    WDS_Component_Library
 	 * @since  0.0.0
 	 */
 	protected static $single_instance = null;
@@ -150,7 +150,7 @@ final class WP_Component_Library {
 	 * Creates or returns an instance of this class.
 	 *
 	 * @since   0.0.0
-	 * @return  WP_Component_Library A single instance of this class.
+	 * @return  WDS_Component_Library A single instance of this class.
 	 */
 	public static function get_instance() {
 		if ( null === self::$single_instance ) {
@@ -429,19 +429,19 @@ final class WP_Component_Library {
 }
 
 /**
- * Grab the WP_Component_Library object and return it.
- * Wrapper for WP_Component_Library::get_instance().
+ * Grab the WDS_Component_Library object and return it.
+ * Wrapper for WDS_Component_Library::get_instance().
  *
  * @since  0.0.0
- * @return WP_Component_Library  Singleton instance of plugin class.
+ * @return WDS_Component_Library  Singleton instance of plugin class.
  */
-function wp_component_library() {
-	return WP_Component_Library::get_instance();
+function wds_component_library() {
+	return WDS_Component_Library::get_instance();
 }
 
 // Kick it off.
-add_action( 'plugins_loaded', array( wp_component_library(), 'hooks' ) );
+add_action( 'plugins_loaded', array( wds_component_library(), 'hooks' ) );
 
 // Activation and deactivation.
-register_activation_hook( __FILE__, array( wp_component_library(), '_activate' ) );
-register_deactivation_hook( __FILE__, array( wp_component_library(), '_deactivate' ) );
+register_activation_hook( __FILE__, array( wds_component_library(), '_activate' ) );
+register_deactivation_hook( __FILE__, array( wds_component_library(), '_deactivate' ) );
