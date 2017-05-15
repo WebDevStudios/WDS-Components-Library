@@ -1,0 +1,20 @@
+//--------------------------------------------------------------
+// COMPONENTS 
+//--------------------------------------------------------------
+
+.component-example {
+	overflow: hidden;
+}
+
+//-----------------------------------------
+// CSS Expanding Search Box
+//-----------------------------------------
+.component-css-expanding-search-box {
+
+	.component-example {
+		@include margin-auto;
+		
+		max-width: 100%;
+		width: rem(700);
+	}
+}
