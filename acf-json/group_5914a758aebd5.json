@@ -153,7 +153,7 @@
             {
                 "param": "post_type",
                 "operator": "==",
-                "value": "wpcl-component"
+                "value": "wdscl-component"
             }
         ]
     ],
@@ -165,5 +165,5 @@
     "hide_on_screen": "",
     "active": 1,
     "description": "",
-    "modified": 1494797071
+    "modified": 1494857665
 }

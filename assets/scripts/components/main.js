@@ -1,5 +1,5 @@
 /**
- * WP Component Library
+ * WDS Component Library
  * https://carrieforde.com
  *
  * Licensed under the GPLv2+ license.

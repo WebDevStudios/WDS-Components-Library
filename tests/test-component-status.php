@@ -1,11 +1,11 @@
 <?php
 /**
- * WP Component Library Component Status Tests.
+ * WDS Component Library Component Status Tests.
  *
  * @since   0.0.0
  * @package WP_Component_Library
  */
-class WPCL_Component_Status_Test extends WP_UnitTestCase {
+class WDSCL_Component_Status_Test extends WP_UnitTestCase {
 
 	/**
 	 * Test if our class exists.
@@ -13,7 +13,7 @@ class WPCL_Component_Status_Test extends WP_UnitTestCase {
 	 * @since  0.0.0
 	 */
 	function test_class_exists() {
-		$this->assertTrue( class_exists( 'WPCL_Component_Status') );
+		$this->assertTrue( class_exists( 'WDSCL_Component_Status') );
 	}
 
 	/**
@@ -22,7 +22,7 @@ class WPCL_Component_Status_Test extends WP_UnitTestCase {
 	 * @since  0.0.0
 	 */
 	function test_class_access() {
-		$this->assertInstanceOf( wp_component_library()->component-status, 'WPCL_Component_Status' );
+		$this->assertInstanceOf( wp_component_library()->component-status, 'WDSCL_Component_Status' );
 	}
 
 	/**
@@ -31,7 +31,7 @@ class WPCL_Component_Status_Test extends WP_UnitTestCase {
 	 * @since  0.0.0
 	 */
 	function test_taxonomy_exists() {
-		$this->assertTrue( taxonomy_exists( 'wpcl-component-statu' ) );
+		$this->assertTrue( taxonomy_exists( 'wdscl-component-statu' ) );
 	}
 
 	/**

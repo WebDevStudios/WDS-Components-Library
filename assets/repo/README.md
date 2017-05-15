@@ -1,4 +1,4 @@
-# WP Component Library Repo Assets #
+# WDS Component Library Repo Assets #
 https://carrieforde.com
 Copyright (c) 2017 carrieforde
 Licensed under the GPLv2 license.

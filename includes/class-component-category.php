@@ -1,6 +1,6 @@
 <?php
 /**
- * WP Component Library Component Category.
+ * WDS Component Library Component Category.
  *
  * @since   0.0.0
  * @package WP_Component_Library
@@ -9,13 +9,13 @@
 require_once dirname( __FILE__ ) . '/../vendor/taxonomy-core/Taxonomy_Core.php';
 
 /**
- * WP Component Library Component Category.
+ * WDS Component Library Component Category.
  *
  * @since 0.0.0
  *
  * @see   https://github.com/WebDevStudios/Taxonomy_Core
  */
-class WPCL_Component_Category extends Taxonomy_Core {
+class WDSCL_Component_Category extends Taxonomy_Core {
 	/**
 	 * Parent plugin class.
 	 *
@@ -42,9 +42,9 @@ class WPCL_Component_Category extends Taxonomy_Core {
 		parent::__construct(
 			// Should be an array with Singular, Plural, and Registered name.
 			array(
-				__( 'Component Category', 'wp-component-library' ),
-				__( 'Component Categories', 'wp-component-library' ),
-				'wpcl-component-category',
+				__( 'Component Category', 'wds-component-library' ),
+				__( 'Component Categories', 'wds-component-library' ),
+				'wdscl-component-category',
 			),
 			// Register taxonomy arguments.
 			array(
@@ -52,7 +52,7 @@ class WPCL_Component_Category extends Taxonomy_Core {
 			),
 			// Post types to attach to.
 			array(
-				'wpcl-component',
+				'wdscl-component',
 			)
 		);
 	}

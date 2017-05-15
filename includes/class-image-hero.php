@@ -1,17 +1,17 @@
 <?php
 /**
- * WP Component Library Image Hero.
+ * WDS Component Library Image Hero.
  *
  * @since   0.0.0
  * @package WP_Component_Library
  */
 
 /**
- * WP Component Library Image Hero.
+ * WDS Component Library Image Hero.
  *
  * @since 0.0.0
  */
-class WPCL_Image_Hero {
+class WDSCL_Image_Hero {
 
 	/**
 	 * Set the element name.

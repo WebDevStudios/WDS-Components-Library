@@ -1,6 +1,6 @@
 <?php
 /**
- * Plugin Name: WP Component Library
+ * Plugin Name: WDS Component Library
  * Plugin URI:  https://carrieforde.com
  * Description: Manage and collaborate on UI components through WordPress.
  * Version:     0.0.0
@@ -8,7 +8,7 @@
  * Author URI:  https://carrieforde.com
  * Donate link: https://carrieforde.com
  * License:     GPLv2
- * Text Domain: wp-component-library
+ * Text Domain: wds-component-library
  * Domain Path: /languages
  *
  * @link    https://carrieforde.com
@@ -47,12 +47,12 @@
 function wp_component_library_autoload_classes( $class_name ) {
 
 	// If our class doesn't have our prefix, don't load it.
-	if ( 0 !== strpos( $class_name, 'WPCL_' ) ) {
+	if ( 0 !== strpos( $class_name, 'WDSCL_' ) ) {
 		return;
 	}
 
 	// Set up our filename.
-	$filename = strtolower( str_replace( '_', '-', substr( $class_name, strlen( 'WPCL_' ) ) ) );
+	$filename = strtolower( str_replace( '_', '-', substr( $class_name, strlen( 'WDSCL_' ) ) ) );
 
 	// Include our file.
 	WP_Component_Library::include_file( 'includes/class-' . $filename );
@@ -115,34 +115,34 @@ final class WP_Component_Library {
 	protected static $single_instance = null;
 
 	/**
-	 * Instance of WPCL_Component
+	 * Instance of WDSCL_Component
 	 *
 	 * @since0.0.0
-	 * @var WPCL_Component
+	 * @var WDSCL_Component
 	 */
 	protected $component;
 
 	/**
-	 * Instance of WPCL_Component_Status
+	 * Instance of WDSCL_Component_Status
 	 *
 	 * @since0.0.0
-	 * @var WPCL_Component_Status
+	 * @var WDSCL_Component_Status
 	 */
 	protected $component_status;
 
 	/**
-	 * Instance of WPCL_Component_Category
+	 * Instance of WDSCL_Component_Category
 	 *
 	 * @since0.0.0
-	 * @var WPCL_Component_Category
+	 * @var WDSCL_Component_Category
 	 */
 	protected $component_category;
 
 	/**
-	 * Instance of WPCL_Image_Hero
+	 * Instance of WDSCL_Image_Hero
 	 *
 	 * @since0.0.0
-	 * @var WPCL_Image_Hero
+	 * @var WDSCL_Image_Hero
 	 */
 	protected $image_hero;
 
@@ -178,10 +178,10 @@ final class WP_Component_Library {
 	 */
 	public function plugin_classes() {
 
-		$this->component = new WPCL_Component( $this );
-		$this->component_status = new WPCL_Component_Status( $this );
-		$this->component_category = new WPCL_Component_Category( $this );
-		$this->image_hero = new WPCL_Image_Hero( $this );
+		$this->component = new WDSCL_Component( $this );
+		$this->component_status = new WDSCL_Component_Status( $this );
+		$this->component_category = new WDSCL_Component_Category( $this );
+		$this->image_hero = new WDSCL_Image_Hero( $this );
 	} // END OF PLUGIN CLASSES FUNCTION
 
 	/**
@@ -233,7 +233,7 @@ final class WP_Component_Library {
 		}
 
 		// Load translated strings for plugin.
-		load_plugin_textdomain( 'wp-component-library', false, dirname( $this->basename ) . '/languages/' );
+		load_plugin_textdomain( 'wds-component-library', false, dirname( $this->basename ) . '/languages/' );
 
 		// Initialize plugin classes.
 		$this->plugin_classes();
@@ -258,10 +258,10 @@ final class WP_Component_Library {
 	public function enqueue_scripts_styles() {
 
 		// Include the plugin's stylesheet.
-		wp_enqueue_style( 'wpcl-styles', $this->url . 'styles.css', array(), '0.0.0' );
+		wp_enqueue_style( 'wdscl-styles', $this->url . 'styles.css', array(), '0.0.0' );
 
 		// Enqueue Prism.js (and .css) & jQuery tabs only on the single component.
-		if ( 'wpcl-component' === get_post_type() ) {
+		if ( 'wdscl-component' === get_post_type() ) {
 
 			// Prism Styles.
 			wp_enqueue_style( 'prism-styles', $this->url . 'assets/css/prism.css', array(), '0.0.0' );
@@ -274,7 +274,7 @@ final class WP_Component_Library {
 		}
 
 		// Include the plugin's scripts.
-		wp_enqueue_script( 'wpcl-scripts', $this->url . 'assets/scripts/project.js', array( 'jquery', 'jquery-ui-tabs' ), '0.0.0', true );
+		wp_enqueue_script( 'wdscl-scripts', $this->url . 'assets/scripts/project.js', array( 'jquery', 'jquery-ui-tabs' ), '0.0.0', true );
 	}
 
 	/**
@@ -338,7 +338,7 @@ final class WP_Component_Library {
 	public function requirements_not_met_notice() {
 
 		// Compile default message.
-		$default_message = sprintf( __( 'WP Component Library is missing requirements and has been <a href="%s">deactivated</a>. Please make sure all requirements are available.', 'wp-component-library' ), admin_url( 'plugins.php' ) );
+		$default_message = sprintf( __( 'WDS Component Library is missing requirements and has been <a href="%s">deactivated</a>. Please make sure all requirements are available.', 'wds-component-library' ), admin_url( 'plugins.php' ) );
 
 		// Default details to null.
 		$details = null;

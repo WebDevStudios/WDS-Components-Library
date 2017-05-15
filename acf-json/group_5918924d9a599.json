@@ -23,7 +23,7 @@
             {
                 "param": "taxonomy",
                 "operator": "==",
-                "value": "wpcl-component-status"
+                "value": "wdscl-component-status"
             }
         ]
     ],

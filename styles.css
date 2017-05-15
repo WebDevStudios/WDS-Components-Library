@@ -1,5 +1,5 @@
 /**
- * WP Component Library
+ * WDS Component Library
  * https://carrieforde.com
  *
  * Copyright (c) 2017 carrieforde
@@ -56,17 +56,17 @@
   border: 1px solid #dcdcdc;
 }
 
-.single-wpcl-component .entry-header,
-.single-wpcl-component .entry-content,
-.single-wpcl-component .component-code,
-.single-wpcl-component .post-navigation {
+.single-wdscl-component .entry-header,
+.single-wdscl-component .entry-content,
+.single-wdscl-component .component-code,
+.single-wdscl-component .post-navigation {
   margin: 0 auto;
   max-width: 100%;
   padding: 20px;
   width: 700px;
 }
 
-.single-wpcl-component .entry-header-inner {
+.single-wdscl-component .entry-header-inner {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
@@ -76,7 +76,7 @@
   margin-bottom: 0.5em;
 }
 
-.single-wpcl-component .entry-header-inner .component-status {
+.single-wdscl-component .entry-header-inner .component-status {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
@@ -85,11 +85,11 @@
   display: flex;
 }
 
-.single-wpcl-component .entry-header-inner .component-status + .component-status {
+.single-wdscl-component .entry-header-inner .component-status + .component-status {
   margin-left: 15px;
 }
 
-.single-wpcl-component .entry-header-inner .status-color {
+.single-wdscl-component .entry-header-inner .status-color {
   border-radius: 50px;
   display: block;
   height: 20px;
@@ -98,27 +98,27 @@
   vertical-align: middle;
 }
 
-.single-wpcl-component .entry-title {
+.single-wdscl-component .entry-title {
   margin: 0;
 }
 
-.single-wpcl-component .entry-title + .component-status {
+.single-wdscl-component .entry-title + .component-status {
   margin-left: 30px;
 }
 
-.single-wpcl-component .byline {
+.single-wdscl-component .byline {
   margin-left: 3px;
 }
 
-.single-wpcl-component .component-example + .entry-content {
+.single-wdscl-component .component-example + .entry-content {
   margin-top: 40px;
 }
 
-.single-wpcl-component .entry-content p:last-of-type {
+.single-wdscl-component .entry-content p:last-of-type {
   margin-bottom: 0;
 }
 
-.single-wpcl-component .post-navigation .nav-links {
+.single-wdscl-component .post-navigation .nav-links {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -127,19 +127,19 @@
           justify-content: space-between;
 }
 
-.single-wpcl-component .post-navigation .nav-next,
-.single-wpcl-component .post-navigation .nav-previous {
+.single-wdscl-component .post-navigation .nav-next,
+.single-wdscl-component .post-navigation .nav-previous {
   -webkit-box-flex: 0;
       -ms-flex: 0 1 50%;
           flex: 0 1 50%;
   float: none;
 }
 
-.single-wpcl-component .post-navigation .nav-next {
+.single-wdscl-component .post-navigation .nav-next {
   margin-left: auto;
 }
 
-.single-wpcl-component .post-navigation .nav-previous {
+.single-wdscl-component .post-navigation .nav-previous {
   margin-right: auto;
 }
 
@@ -212,16 +212,16 @@
   .code-implementation + .code-tabs {
     margin-top: 60px;
   }
-  .single-wpcl-component .entry-header,
-  .single-wpcl-component .entry-content,
-  .single-wpcl-component .component-code,
-  .single-wpcl-component .post-navigation {
+  .single-wdscl-component .entry-header,
+  .single-wdscl-component .entry-content,
+  .single-wdscl-component .component-code,
+  .single-wdscl-component .post-navigation {
     padding: 40px;
   }
-  .single-wpcl-component .component-example + .entry-content {
+  .single-wdscl-component .component-example + .entry-content {
     margin-top: 60px;
   }
-  .single-wpcl-component .entry-content + .component-code {
+  .single-wdscl-component .entry-content + .component-code {
     margin-top: 20px;
   }
 }

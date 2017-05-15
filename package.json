@@ -1,6 +1,6 @@
 {
-	"name": "wp-component-library",
-	"title": "WP Component Library",
+	"name": "wds-component-library",
+	"title": "WDS Component Library",
 	"version": "0.0.0",
 	"description": "Manage and collaborate on UI components through WordPress.",
 	"author": {

@@ -25,7 +25,7 @@ function _manually_load_wp_component_library_plugin() {
 	}
 
 	// Require our plugin.
-	require dirname( dirname( __FILE__ ) ) . '/wp-component-library.php';
+	require dirname( dirname( __FILE__ ) ) . '/wds-component-library.php';
 }
 
 // Inject in our plugin.

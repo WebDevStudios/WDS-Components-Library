@@ -10,15 +10,15 @@ get_header(); ?>
 
 	<div id="primary" class="content-area">
 
-		<?php do_action( 'wpcl_before_main' ); ?>
+		<?php do_action( 'WDSCL_before_main' ); ?>
 
 		<main id="main" class="site-main" role="main">
 
-		<?php do_action( 'wpcl_before_main_inside' ); ?>
+		<?php do_action( 'WDSCL_before_main_inside' ); ?>
 
 		<?php while ( have_posts() ) : the_post(); ?>
 
-			<?php do_action( 'wpcl_before_entry' ); ?>
+			<?php do_action( 'WDSCL_before_entry' ); ?>
 
 			<article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
 				<?php if ( has_post_thumbnail() ) : ?>
@@ -47,7 +47,7 @@ get_header(); ?>
 					
 					<?php
 						wp_link_pages( array(
-							'before' => '<div class="page-links">' . esc_html__( 'Pages:', 'wp-component-library' ),
+							'before' => '<div class="page-links">' . esc_html__( 'Pages:', 'wds-component-library' ),
 							'after'  => '</div>',
 						) );
 					?>
@@ -57,10 +57,10 @@ get_header(); ?>
 					<?php wp_component_library()->component->display_component_meta(); ?>
 				</div>
 
-				<?php //wpcl_the_entry_footer(); ?>
+				<?php //WDSCL_the_entry_footer(); ?>
 			</article>
 
-			<?php do_action( 'wpcl_after_entry' ); ?>
+			<?php do_action( 'WDSCL_after_entry' ); ?>
 
 			<?php the_post_navigation(); ?>
 
@@ -73,11 +73,11 @@ get_header(); ?>
 
 		<?php endwhile; ?>
 
-		<?php do_action( 'wpcl_after_main_inside' ); ?>
+		<?php do_action( 'WDSCL_after_main_inside' ); ?>
 
 		</main>
 
-		<?php do_action( 'wpcl_after_main' ); ?>
+		<?php do_action( 'WDSCL_after_main' ); ?>
 
 	</div>
 

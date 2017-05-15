@@ -1,6 +1,6 @@
 <?php
 /**
- * WP Component Library Component.
+ * WDS Component Library Component.
  *
  * @since   0.0.0
  * @package WP_Component_Library
@@ -9,13 +9,13 @@
 require_once dirname( __FILE__ ) . '/../vendor/cpt-core/CPT_Core.php';
 
 /**
- * WP Component Library Component post type class.
+ * WDS Component Library Component post type class.
  *
  * @since 0.0.0
  *
  * @see   https://github.com/WebDevStudios/CPT_Core
  */
-class WPCL_Component extends CPT_Core {
+class WDSCL_Component extends CPT_Core {
 	/**
 	 * Parent plugin class.
 	 *
@@ -43,9 +43,9 @@ class WPCL_Component extends CPT_Core {
 		// First parameter should be an array with Singular, Plural, and Registered name.
 		parent::__construct(
 			array(
-				__( 'Component', 'wp-component-library' ),
-				__( 'Components', 'wp-component-library' ),
-				'wpcl-component',
+				__( 'Component', 'wds-component-library' ),
+				__( 'Components', 'wds-component-library' ),
+				'wdscl-component',
 			),
 			array(
 				'supports'  => array(
@@ -118,14 +118,14 @@ class WPCL_Component extends CPT_Core {
 		);
 
 		$posted_on = sprintf(
-			esc_html_x( 'Published %s', 'post date', 'wp-component-library' ),
+			esc_html_x( 'Published %s', 'post date', 'wds-component-library' ),
 			'<a href="' . esc_url( get_permalink() ) . '" rel="bookmark">' . $time_string . '</a>'
 		);
 
 		$author_id = get_post_field( 'post_author', $post_id );
 
 		$byline = sprintf(
-			esc_html_x( 'by %s', 'post author', 'wp-component-library' ),
+			esc_html_x( 'by %s', 'post author', 'wds-component-library' ),
 			'<span class="author vcard"><a class="url fn n" href="' . esc_url( get_author_posts_url( $author_id ) ) . '">' . esc_html( get_the_author_meta( 'display_name', $author_id ) ) . '</a></span>'
 		);
 
@@ -196,12 +196,12 @@ class WPCL_Component extends CPT_Core {
 		$js    = get_post_meta( $post_id, 'javascript', true );
 
 		// Start the markup. 🎉 ?>
-		<div class="wp-component-meta">
+		<div class="wds-component-meta">
 
 			<?php if ( ! empty( $implementation ) ) : ?>
 				<div class="code-implementation">
 					<header class="meta-heading">
-						<h2><?php esc_html_e( 'Implementation', 'wp-component-library' ); ?></h2>
+						<h2><?php esc_html_e( 'Implementation', 'wds-component-library' ); ?></h2>
 					</header>
 					<pre>
 						<code class="language-php"><?php echo esc_html( $implementation ); ?></code>
@@ -211,13 +211,13 @@ class WPCL_Component extends CPT_Core {
 
 			<div id="code-tabs" class="code-tabs">
 				<header class="meta-heading">
-					<h2><?php esc_html_e( 'Code', 'wp-component-library' ); ?></h2>
+					<h2><?php esc_html_e( 'Code', 'wds-component-library' ); ?></h2>
 				</header>
 				<ul>
-					<li><a href="#html-output"><?php esc_html_e( 'HTML Output', 'wpcl-components' ); ?></a></li>
-					<?php echo ( ! empty( $php ) ) ? '<li><a href="#php-code">' . esc_html__( 'PHP', 'wpcl-components' ) . '</a></li>' : ''; ?>
-					<?php echo ( ! empty( $sass ) ) ? '<li><a href="#sass-code">' . esc_html__( 'Sass', 'wpcl-components' ) . '</a></li>' : ''; ?>
-					<?php echo ( ! empty( $js ) ) ? '<li><a href="#js-code">' . esc_html__( 'JavaScript', 'wpcl-components' ) . '</a></li>' : ''; ?>
+					<li><a href="#html-output"><?php esc_html_e( 'HTML Output', 'wdscl-components' ); ?></a></li>
+					<?php echo ( ! empty( $php ) ) ? '<li><a href="#php-code">' . esc_html__( 'PHP', 'wdscl-components' ) . '</a></li>' : ''; ?>
+					<?php echo ( ! empty( $sass ) ) ? '<li><a href="#sass-code">' . esc_html__( 'Sass', 'wdscl-components' ) . '</a></li>' : ''; ?>
+					<?php echo ( ! empty( $js ) ) ? '<li><a href="#js-code">' . esc_html__( 'JavaScript', 'wdscl-components' ) . '</a></li>' : ''; ?>
 				</ul>
 
 				<div id="html-output" class="html-output">
@@ -251,13 +251,13 @@ class WPCL_Component extends CPT_Core {
 					</div><!-- .js-code -->
 				<?php endif; ?>
 			</div><!-- .code-tabs -->
-		</div><!-- .wp-component-meta -->
+		</div><!-- .wds-component-meta -->
 
 		<?php
 	}
 
 	/**
-	 * Use the plugin's single-wpcl-template.php if one can't be found in the theme.
+	 * Use the plugin's single-wdscl-template.php if one can't be found in the theme.
 	 *
 	 * @param   $template  The template we need.
 	 * @return             The template path.
@@ -266,12 +266,12 @@ class WPCL_Component extends CPT_Core {
 	public function component_template( $template ) {
 
 		// The default template.
-		$component_template = 'single-wpcl-component.php';
+		$component_template = 'single-wdscl-component.php';
 
-		// Check if a template for the wpcl-component post type exists in the theme.
-		if ( is_singular( 'wpcl-component' ) ) {
+		// Check if a template for the wdscl-component post type exists in the theme.
+		if ( is_singular( 'wdscl-component' ) ) {
 
-			// If a single-wpcl-component.php template exists in the theme, use that, otherwise, use the plugin version.
+			// If a single-wdscl-component.php template exists in the theme, use that, otherwise, use the plugin version.
 			if ( locate_template( $component_template ) ) {
 				$template = locate_template( $component_template );
 			} else {

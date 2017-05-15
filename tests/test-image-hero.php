@@ -1,11 +1,11 @@
 <?php
 /**
- * WP Component Library Image Hero Tests.
+ * WDS Component Library Image Hero Tests.
  *
  * @since   0.0.0
  * @package WP_Component_Library
  */
-class WPCL_Image_Hero_Test extends WP_UnitTestCase {
+class WDSCL_Image_Hero_Test extends WP_UnitTestCase {
 
 	/**
 	 * Test if our class exists.
@@ -13,7 +13,7 @@ class WPCL_Image_Hero_Test extends WP_UnitTestCase {
 	 * @since  0.0.0
 	 */
 	function test_class_exists() {
-		$this->assertTrue( class_exists( 'WPCL_Image_Hero') );
+		$this->assertTrue( class_exists( 'WDSCL_Image_Hero') );
 	}
 
 	/**
@@ -22,7 +22,7 @@ class WPCL_Image_Hero_Test extends WP_UnitTestCase {
 	 * @since  0.0.0
 	 */
 	function test_class_access() {
-		$this->assertInstanceOf( wp_component_library()->image-hero, 'WPCL_Image_Hero' );
+		$this->assertInstanceOf( wp_component_library()->image-hero, 'WDSCL_Image_Hero' );
 	}
 
 	/**

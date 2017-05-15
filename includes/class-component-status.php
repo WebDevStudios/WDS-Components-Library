@@ -1,6 +1,6 @@
 <?php
 /**
- * WP Component Library Component Status.
+ * WDS Component Library Component Status.
  *
  * @since   0.0.0
  * @package WP_Component_Library
@@ -9,13 +9,13 @@
 require_once dirname( __FILE__ ) . '/../vendor/taxonomy-core/Taxonomy_Core.php';
 
 /**
- * WP Component Library Component Status.
+ * WDS Component Library Component Status.
  *
  * @since 0.0.0
  *
  * @see   https://github.com/WebDevStudios/Taxonomy_Core
  */
-class WPCL_Component_Status extends Taxonomy_Core {
+class WDSCL_Component_Status extends Taxonomy_Core {
 	/**
 	 * Parent plugin class.
 	 *
@@ -42,9 +42,9 @@ class WPCL_Component_Status extends Taxonomy_Core {
 		parent::__construct(
 			// Should be an array with Singular, Plural, and Registered name.
 			array(
-				__( 'Component Status', 'wp-component-library' ),
-				__( 'Component Statuses', 'wp-component-library' ),
-				'wpcl-component-status',
+				__( 'Component Status', 'wds-component-library' ),
+				__( 'Component Statuses', 'wds-component-library' ),
+				'wdscl-component-status',
 			),
 			// Register taxonomy arguments.
 			array(
@@ -52,7 +52,7 @@ class WPCL_Component_Status extends Taxonomy_Core {
 			),
 			// Post types to attach to.
 			array(
-				'wpcl-component',
+				'wdscl-component',
 			)
 		);
 	}
@@ -73,7 +73,7 @@ class WPCL_Component_Status extends Taxonomy_Core {
 	 */
 	public function get_status() {
 
-		$terms = get_the_terms( get_the_ID(), 'wpcl-component-status' );
+		$terms = get_the_terms( get_the_ID(), 'wdscl-component-status' );
 
 		if ( $terms && ! is_wp_error( $status ) ) {
 

@@ -1,6 +1,6 @@
 {
   "generator-plugin-wp": {
-    "name": "WP Component Library",
+    "name": "WDS Component Library",
     "homepage": "https://carrieforde.com",
     "description": "Manage and collaborate on UI components through WordPress.",
     "version": "0.0.0",
@@ -8,10 +8,10 @@
     "authoremail": "carrie@carrieforde.com",
     "authorurl": "https://carrieforde.com",
     "license": "GPLv2",
-    "slug": "wp-component-library",
+    "slug": "wds-component-library",
     "classname": "WP_Component_Library",
     "mainclassname": "WP_Component_Library",
-    "classprefix": "WPCL_",
+    "classprefix": "WDSCL_",
     "prefix": "wp_component_library",
     "year": 2017,
     "currentVersionWP": "4.7.2"

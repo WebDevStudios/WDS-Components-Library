@@ -173,10 +173,10 @@ module.exports = function (grunt) {
         sass: {
             dist: {
                 options: { sourceMap: true },
-                files: { 'assets/css/wp-component-library.css': 'assets/css/sass/styles.scss' }
+                files: { 'assets/css/wds-component-library.css': 'assets/css/sass/styles.scss' }
             }
         },
-        cssmin: { dist: { files: { 'assets/css/wp-component-library.min.css': 'assets/css/wp-component-library.css' } } },
+        cssmin: { dist: { files: { 'assets/css/wds-component-library.min.css': 'assets/css/wds-component-library.css' } } },
         usebanner: {
             taskName: {
                 options: {
@@ -184,7 +184,7 @@ module.exports = function (grunt) {
                     banner: bannerTemplate,
                     linebreak: true
                 },
-                files: { src: ['assets/css/wp-component-library.min.css'] }
+                files: { src: ['assets/css/wds-component-library.min.css'] }
             }
         },
         eslint: {
@@ -198,11 +198,11 @@ module.exports = function (grunt) {
                 stripBanners: true,
                 banner: bannerTemplate
             },
-            dist: { files: { 'assets/js/wp-component-library.js': 'assets/js/components/**/*.js' } }
+            dist: { files: { 'assets/js/wds-component-library.js': 'assets/js/components/**/*.js' } }
         },
         uglify: {
             dist: {
-                files: { 'assets/js/wp-component-library.min.js': 'assets/js/wp-component-library.js' },
+                files: { 'assets/js/wds-component-library.min.js': 'assets/js/wds-component-library.js' },
                 options: { banner: compactBannerTemplate }
             }
         }

@@ -1,4 +1,4 @@
-# WP Component Library #
+# WDS Component Library #
 **Contributors:**      carrieforde  
 **Donate link:**       https://carrieforde.com  
 **Tags:**  
@@ -16,8 +16,8 @@ Manage and collaborate on UI components through WordPress.
 
 ### Manual Installation ###
 
-1. Upload the entire `/wp-component-library` directory to the `/wp-content/plugins/` directory.
-2. Activate WP Component Library through the 'Plugins' menu in WordPress.
+1. Upload the entire `/wds-component-library` directory to the `/wds-content/plugins/` directory.
+2. Activate WDS Component Library through the 'Plugins' menu in WordPress.
 
 ## Frequently Asked Questions ##
 
