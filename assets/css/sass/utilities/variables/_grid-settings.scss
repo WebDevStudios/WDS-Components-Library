@@ -3,6 +3,9 @@
 // http://neat.bourbon.io/examples/
 // --------------------------------------------------------------
 
+// Used as context for fonts and units of measure.
+$base-context: 16;
+
 $neat-grid: (
 	columns: 12,
 	gutter: 12px,
