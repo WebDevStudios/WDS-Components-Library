@@ -48,6 +48,50 @@ class WDSCL_Pricing_Table {
 
 	}
 
+	/**
+	 * Build & display the pricing card.
+	 *
+	 * @param   int  $args  The args.
+	 *
+	 * @author              Carrie Forde
+	 */
+	public function pricing_card_markup( $args = array() ) {
+
+		$defaults = array(
+			'title' => '',
+			'price' => '',
+			'description' => '',
+			'features' => '',
+		);
+		$args = wp_parse_args( $args, $defaults );
+
+		// Start the markup. 🎉 ?>
+		<div class="pricing-card">
+				<h3 class="pricing-title"><?php echo esc_html( $args['title'] ); ?></h3>
+				<div class="pricing-price"><span class="pricing-currency"><?php echo esc_html( $args['currency'] ); ?></span><?php echo esc_html( $args['price'] ); ?></div>
+
+				<?php if ( ! empty( $args['description'] ) ) : ?>
+					<p class="pricing-sentence"><?php echo esc_html( $args['description'] ); ?></p>
+				<?php endif; ?>
+
+				<ul class="pricing-feature-list">
+					<?php foreach ( $args['features'] as $feature ) : ?>
+						<li class="pricing-feature"><?php echo esc_html( $feature ); ?></li>
+					<?php endforeach; ?>
+				</ul>
+			</div>
+
+		<?php
+	}
+
+	/**
+	 * Display the pricing table markup.
+	 *
+	 * @param   int  $post_id  The Post ID.
+	 * @param   int  $count    The flexible content row.
+	 *
+	 * @author                 Carrie Forde
+	 */
 	public function pricing_table_markup( $post_id = 0, $count ) {
 
 		// Set the post ID if one wasn't passed.
@@ -94,15 +138,15 @@ class WDSCL_Pricing_Table {
 
 				// Loop over $features, which always has an index of 0, and store them in our $features_new array.
 				for ( $j = 0; $j < $features[0]; $j++ ) :
-					$features_new[] = get_post_meta( $post_id, 'pricing_card_' . $i . '_features_' . $j . '_feature', true );
+					$features_new[] = get_post_meta( $post_id, $prefix . 'pricing_card_' . $i . '_features_' . $j . '_feature', true );
 				endfor;
 
-				// pricing_card_markup( array(
-				// 	'title' => $title,
-				// 	'price' => $price,
-				// 	'description' => $description,
-				// 	'features' => $features,
-				// ) );
+				$this->pricing_card_markup( array(
+					'title' => $title,
+					'price' => $price,
+					'description' => $description,
+					'features' => $features_new,
+				) );
 			endfor; ?>
 		</div>
 
