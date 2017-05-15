@@ -58,10 +58,10 @@ class WDSCL_Pricing_Table {
 	public function pricing_card_markup( $args = array() ) {
 
 		$defaults = array(
-			'title' => '',
-			'price' => '',
+			'title'       => '',
+			'price'       => '',
 			'description' => '',
-			'features' => '',
+			'features'    => '',
 		);
 		$args = wp_parse_args( $args, $defaults );
 
@@ -127,10 +127,10 @@ class WDSCL_Pricing_Table {
 
 				<?php for ( $i = 0; $i < $card; $i++ ) :
 
-					$title = get_post_meta( $post_id, $prefix . 'pricing_card_' . $i . '_card_title', true );
-					$price = get_post_meta( $post_id, $prefix . 'pricing_card_' . $i . '_price', true );
+					$title       = get_post_meta( $post_id, $prefix . 'pricing_card_' . $i . '_card_title', true );
+					$price       = get_post_meta( $post_id, $prefix . 'pricing_card_' . $i . '_price', true );
 					$description = get_post_meta( $post_id, $prefix . 'pricing_card_' . $i . '_card_description', true );
-					$features = get_post_meta( $post_id, $prefix . 'pricing_card_' . $i . '_features', true );
+					$features    = get_post_meta( $post_id, $prefix . 'pricing_card_' . $i . '_features', true );
 
 					// Get each feature, and store them in an array.
 					$features_new = array();
@@ -141,10 +141,10 @@ class WDSCL_Pricing_Table {
 					endfor;
 
 					$this->pricing_card_markup( array(
-						'title' => $title,
-						'price' => $price,
+						'title'       => $title,
+						'price'       => $price,
 						'description' => $description,
-						'features' => $features_new,
+						'features'    => $features_new,
 					) );
 				endfor; ?>
 			</div>

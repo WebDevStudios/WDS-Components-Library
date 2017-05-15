@@ -233,9 +233,9 @@ class WDSCL_Component extends CPT_Core {
 
 		// Get our data.
 		$implementation = get_post_meta( $post_id, 'implementation', true );
-		$php   = get_post_meta( $post_id, 'php', true );
-		$sass  = get_post_meta( $post_id, 'sass', true );
-		$js    = get_post_meta( $post_id, 'javascript', true );
+		$php            = get_post_meta( $post_id, 'php', true );
+		$sass           = get_post_meta( $post_id, 'sass', true );
+		$js             = get_post_meta( $post_id, 'javascript', true );
 
 		// Start the markup. 🎉 ?>
 		<div class="wds-component-meta">
