@@ -147,6 +147,14 @@ final class WDS_Component_Library {
 	protected $image_hero;
 
 	/**
+	 * Instance of WDSCL_Pricing_Table
+	 *
+	 * @since0.0.0
+	 * @var WDSCL_Pricing_Table
+	 */
+	protected $pricing_table;
+
+	/**
 	 * Creates or returns an instance of this class.
 	 *
 	 * @since   0.0.0
@@ -182,6 +190,7 @@ final class WDS_Component_Library {
 		$this->component_status = new WDSCL_Component_Status( $this );
 		$this->component_category = new WDSCL_Component_Category( $this );
 		$this->image_hero = new WDSCL_Image_Hero( $this );
+		$this->pricing_table = new WDSCL_Pricing_Table( $this );
 	} // END OF PLUGIN CLASSES FUNCTION
 
 	/**
@@ -380,6 +389,7 @@ final class WDS_Component_Library {
 			case 'component_status':
 			case 'component_category':
 			case 'image_hero':
+			case 'pricing_table':
 				return $this->$field;
 			default:
 				throw new Exception( 'Invalid ' . __CLASS__ . ' property: ' . $field );
