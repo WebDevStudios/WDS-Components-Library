@@ -66,6 +66,7 @@ class WDSCL_Component extends CPT_Core {
 	 */
 	public function hooks() {
 		add_filter( 'template_include', array( $this, 'component_template' ), 99 );
+		add_filter( 'body_class', array( $this, 'add_body_classes' ) );
 	}
 
 	/**
@@ -99,7 +100,7 @@ class WDSCL_Component extends CPT_Core {
 	 *
 	 * @author  Carrie Forde
 	 */
-	public function display_post_entry_meta() {
+	public function display_post_entry_meta( $post_id = 0 ) {
 
 		if ( ! $post_id ) {
 			$post_id = get_the_ID();
@@ -133,6 +134,27 @@ class WDSCL_Component extends CPT_Core {
 	}
 
 	/**
+	 * Add body class.
+	 */
+	public function add_body_classes( $classes ) {
+
+		if ( ! is_singular( 'wdscl-component' ) ) {
+			return;
+		}
+
+		// Get our data.
+		$component = get_post_meta( get_the_ID(), 'component', true );
+
+		// Replace underscores with hyphens.
+		$component = str_replace( '_', '-', $component[0] );
+
+		// Add the component name to the string.
+		$classes[] = 'component-' . $component;
+
+		return $classes;
+	}
+
+	/**
 	 * Cycle through flexible content and display the corresponding markup.
 	 *
 	 * @param  int  $post_id  ID of the post.
@@ -157,6 +179,20 @@ class WDSCL_Component extends CPT_Core {
 				case 'image_hero' :
 
 					wds_component_library()->image_hero->image_hero_markup( $post_id, $count );
+					break;
+
+				// CSS Expanding Search Box.
+				case 'css_expanding_search_box' :
+					?>
+
+					<!-- // Add a searchform.php file to your theme, then add this custom markup. -->
+					<form method="get" class="search-form" action="#">
+						<label for="search-field"><span class="screen-reader-text">To search this site, enter a search term</span></label>
+						<input class="search-field" id="search-field" type="text" name="s" value="" aria-required="false" autocomplete="off" placeholder="Search&hellip;" />
+						<button class="search-submit"><span class="screen-reader-text">Search</span><i class="fa fa-search"></i></button>
+					</form>
+
+					<?php
 					break;
 			}
 		}

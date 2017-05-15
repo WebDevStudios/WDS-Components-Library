@@ -49,6 +49,33 @@
                     ],
                     "min": "",
                     "max": ""
+                },
+                {
+                    "key": "5919e1bd57cbd",
+                    "name": "css_expanding_search_box",
+                    "label": "CSS Expanding Search Box",
+                    "display": "block",
+                    "sub_fields": [
+                        {
+                            "key": "field_5919e1c357cbe",
+                            "label": "Note",
+                            "name": "",
+                            "type": "message",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "message": "There are no fields to configure for this component.",
+                            "new_lines": "wpautop",
+                            "esc_html": 0
+                        }
+                    ],
+                    "min": "",
+                    "max": ""
                 }
             ]
         },
@@ -76,7 +103,7 @@
             "label": "Implementation",
             "name": "implementation",
             "type": "wysiwyg",
-            "instructions": "Enter a template tag or basic code showing how to pull the component into the template for use\r\n\r\nE.g. <?php wds_component_library()->image-hero->image-hero-markup(); ?>",
+            "instructions": "Enter a template tag or basic code showing how to pull the component into the template for use\r\n\r\nE.g. <?php wp_component_library()->image-hero->image-hero-markup(); ?>",
             "required": 0,
             "conditional_logic": 0,
             "wrapper": {
@@ -165,5 +192,5 @@
     "hide_on_screen": "",
     "active": 1,
     "description": "",
-    "modified": 1494857665
+    "modified": 1494868448
 }
