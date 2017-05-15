@@ -1,6 +1,6 @@
 /**
  * WDS Component Library
- * https://carrieforde.com
+ * https://webdevstudios.com
  *
  * Licensed under the GPLv2+ license.
  */

@@ -4,8 +4,8 @@
 	"version": "0.0.0",
 	"description": "Manage and collaborate on UI components through WordPress.",
 	"author": {
-		"name": "carrieforde",
-		"url": "https://carrieforde.com"
+		"name": "webdevstudios",
+		"url": "https://webdevstudios.com"
 	},
 	"license": "GPLv2",
 	"devDependencies": {

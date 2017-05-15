@@ -1,12 +1,12 @@
 {
   "generator-plugin-wp": {
     "name": "WDS Component Library",
-    "homepage": "https://carrieforde.com",
+    "homepage": "https://webdevstudios.com",
     "description": "Manage and collaborate on UI components through WordPress.",
     "version": "0.0.0",
-    "author": "carrieforde",
-    "authoremail": "carrie@carrieforde.com",
-    "authorurl": "https://carrieforde.com",
+    "author": "webdevstudios",
+    "authoremail": "carrie@webdevstudios.com",
+    "authorurl": "https://webdevstudios.com",
     "license": "GPLv2",
     "slug": "wds-component-library",
     "classname": "WP_Component_Library",
