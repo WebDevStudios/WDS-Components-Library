@@ -3,11 +3,9 @@
 //--------------------------------------------------------------
 
 // Variables
-$hero-overlay: #000;
-$hero-text: #fff;
+$hero-overlay: $color-black;
+$hero-text: $color-white;
 
-$hero-overlay: $hero-overlay;
-$hero-text: $hero-text;
 
 // Hero container.
 .hero-area {
@@ -16,10 +14,10 @@ $hero-text: $hero-text;
 
 	// Optional transparent overlay.
 	&::after {
+		@include position(absolute, 0 0 0 0);
+
 		background-color: rgba($hero-overlay, 0.6);
 		content: '';
-		position: absolute;
-		top: 0; right: 0; bottom: 0; left: 0;
 		z-index: 2;
 	}
 
@@ -39,8 +37,8 @@ $hero-text: $hero-text;
 		flex-direction: column;
 		justify-content: center;
 		margin: 0 auto;
-		max-width: 500px; // width of content
-		min-height: 500px;  // height of hero
+		max-width: rem(500); // width of content
+		min-height: rem(500);  // height of hero
 		position: relative;
 		text-align: center;
 		z-index: 3;
@@ -52,13 +50,13 @@ $hero-text: $hero-text;
 		}
 
 		.hero-description {
-			padding-bottom: 24px;
+			padding-bottom: rem(24);
 		}
 
 		.hero-button {
 			background: transparent;
 			border: 2px solid $hero-text;
-			padding: 12px 40px;
+			padding: em(12) em(40);
 
 			&:hover {
 				background: rgba($hero-overlay, 0.7);
