@@ -6,9 +6,14 @@
  * Licensed under the GPLv2+ license.
  */
 
+
+// Silence errors thrown by Bourbon.
+$output-bourbon-deprecation-warnings: false;
+
+// Import the partials.
 @import 'bourbon';
 @import 'utilities/variables/index';
 @import 'utilities/mixins/index';
-@import 'bourbon-neat';
+@import 'neat';
 @import 'plugin/index';
 @import 'components/index';
