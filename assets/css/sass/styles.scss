@@ -7,6 +7,8 @@
  */
 
 @import 'bourbon';
+@import 'utilities/variables/index';
+@import 'utilities/mixins/index';
 @import 'bourbon-neat';
 @import 'plugin/index';
 @import 'components/index';
