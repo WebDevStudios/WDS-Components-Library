@@ -75,7 +75,7 @@ class WDSCL_Component_Status extends Taxonomy_Core {
 
 		$terms = get_the_terms( get_the_ID(), 'wdscl-component-status' );
 
-		if ( $terms && ! is_wp_error( $status ) ) {
+		if ( $terms && ! is_wp_error( $terms ) ) {
 
 			$status = array();
 
