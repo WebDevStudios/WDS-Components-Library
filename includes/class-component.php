@@ -138,18 +138,17 @@ class WDSCL_Component extends CPT_Core {
 	 */
 	public function add_body_classes( $classes ) {
 
-		if ( ! is_singular( 'wdscl-component' ) ) {
-			return;
+		if ( is_singular( 'wdscl-component' ) ) {
+
+			// Get our data.
+			$component = get_post_meta( get_the_ID(), 'component', true );
+
+			// Replace underscores with hyphens.
+			$component = str_replace( '_', '-', $component[0] );
+
+			// Add the component name to the string.
+			$classes[] = 'component-' . $component;
 		}
-
-		// Get our data.
-		$component = get_post_meta( get_the_ID(), 'component', true );
-
-		// Replace underscores with hyphens.
-		$component = str_replace( '_', '-', $component[0] );
-
-		// Add the component name to the string.
-		$classes[] = 'component-' . $component;
 
 		return $classes;
 	}
