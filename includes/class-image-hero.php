@@ -94,7 +94,7 @@ class WDSCL_Image_Hero {
 				<?php endif; ?>
 
 				<?php if ( ! empty( $description ) ) : ?>
-					<p class="hero-description"><?php echo esc_html( $description ); ?></p>
+					<div class="hero-description"><?php echo wp_kses_post( wpautop( $description ) ); ?></div>
 				<?php endif; ?>
 
 				<?php if ( 'yes' === $cta_button ) :
