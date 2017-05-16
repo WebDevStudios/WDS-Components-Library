@@ -161,8 +161,6 @@ class WDSCL_Component extends CPT_Core {
 	 */
 	public function display_component( $post_id = 0 ) {
 
-		var_dump( $this);
-
 		// Get the post id.
 		if ( ! $post_id ) {
 			$post_id = get_the_ID();
@@ -208,11 +206,14 @@ class WDSCL_Component extends CPT_Core {
 					wds_component_library()->pricing_table->pricing_table_markup( $post_id, $count );
 					break;
 
-				// // Social Menu.
-				// case 'social_menu' :
+				// Social Menu.
+				case 'social_menu' :
 
-			}
-		}
+					wds_component_library()->social_menu->social_media_menu();
+					break;
+
+			} // End switch().
+		} // End foreach().
 	}
 
 	/**

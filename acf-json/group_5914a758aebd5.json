@@ -15,11 +15,8 @@
                 "class": "",
                 "id": ""
             },
-            "button_label": "Add Row",
-            "min": "",
-            "max": 1,
-            "layouts": [
-                {
+            "layouts": {
+                "5914a7f2611ba": {
                     "key": "5914a7f2611ba",
                     "name": "image_hero",
                     "label": "Image Hero",
@@ -50,7 +47,7 @@
                     "min": "",
                     "max": ""
                 },
-                {
+                "591b1cfb025bc": {
                     "key": "591b1cfb025bc",
                     "name": "video_hero",
                     "label": "Video Hero",
@@ -81,7 +78,7 @@
                     "min": "",
                     "max": ""
                 },
-                {
+                "5919e1bd57cbd": {
                     "key": "5919e1bd57cbd",
                     "name": "css_expanding_search_box",
                     "label": "CSS Expanding Search Box",
@@ -108,7 +105,7 @@
                     "min": "",
                     "max": ""
                 },
-                {
+                "5919fef187251": {
                     "key": "5919fef187251",
                     "name": "pricing_table",
                     "label": "Pricing Table",
@@ -138,8 +135,38 @@
                     ],
                     "min": "",
                     "max": ""
+                },
+                "591b71c367759": {
+                    "key": "591b71c367759",
+                    "name": "social_menu",
+                    "label": "Social Menu",
+                    "display": "block",
+                    "sub_fields": [
+                        {
+                            "key": "field_591b71c96775a",
+                            "label": "Social Menu",
+                            "name": "",
+                            "type": "message",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "message": "There are no fields to configure for this component. Do make sure that you have a social menu set up, otherwise the menu will not display.",
+                            "new_lines": "wpautop",
+                            "esc_html": 0
+                        }
+                    ],
+                    "min": "",
+                    "max": ""
                 }
-            ]
+            },
+            "button_label": "Add Row",
+            "min": "",
+            "max": 1
         },
         {
             "key": "field_5918ca7e15998",
@@ -254,5 +281,5 @@
     "hide_on_screen": "",
     "active": 1,
     "description": "",
-    "modified": 1494949157
+    "modified": 1494970294
 }
