@@ -7,13 +7,17 @@ $hero-overlay: $color-black;
 $hero-text: $color-white;
 
 
-// Hero container.
+//-----------------------------------------
+// Hero Container
+//-----------------------------------------
 .hero-area {
 	position: relative;
 	z-index: 1;
 
 	// Optional transparent overlay.
 	&::after {
+		// Would you rather have a gradient overlay? Well then, go ahead and uncomment this.
+		// @include linear-gradient(to bottom, rgba($hero-overlay, 0) 0%, rgba($hero-overlay, 0.50) 50%);
 		@include position(absolute, 0 0 0 0);
 
 		background-color: rgba($hero-overlay, 0.6);
@@ -21,16 +25,9 @@ $hero-text: $color-white;
 		z-index: 2;
 	}
 
-	// Would you rather have a gradient overlay? Well then, go ahead and uncomment this.
-//	&:after {
-//		@include linear-gradient(to bottom, rgba($hero-overlay, 0) 0%, rgba($hero-overlay, 0.50) 50%);
-//		@include position(absolute, 0 0 0 0);
-//
-//		content: '';
-//		z-index: 2;
-//	}
-
-	// Content container.
+	//-----------------------------------------
+	// Hero Content
+	//-----------------------------------------
 	.hero-content {
 		align-items: center;
 		display: flex;
@@ -66,8 +63,14 @@ $hero-text: $color-white;
 	} // .hero-content
 } // .hero-area
 
-// Style the background with a class
-// for accessibility reasons. (This is already in wd_s)
+
+//-----------------------------------------
+// Image as Background
+//
+// A presentational class used for
+// improved accessibility. This is already
+// in wd_s.
+//-----------------------------------------
 .image-as-background {
 	background-position: center center;
 	background-repeat: no-repeat;
