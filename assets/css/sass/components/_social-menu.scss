@@ -1,0 +1,168 @@
+//--------------------------------------------------------------
+//   SOCIAL MEDIA MENU
+//--------------------------------------------------------------
+
+
+// Variables
+$font_social-icons: FontAwesome;
+
+//-----------------------------------------
+// Menu container
+//-----------------------------------------
+.social-media-menu {
+	margin: rem(15) 0 0;
+
+	//-----------------------------------------
+	// The actual menu (the <ul />)
+	//-----------------------------------------
+	.social-menu {
+		@include margin-padding-reset;
+
+		align-items: center;
+		display: flex;
+		list-style-type: none;
+		justify-content: center;
+
+		.menu-item > a {
+			@include size(rem(25));
+
+			display: block;
+			margin: 0 rem(5);
+			text-align: center;
+
+			&::before {
+				display: inline-block;
+				font-family: $font_social-icons;
+				font-size: rem(20);
+				font-style: normal;
+				line-height: 1;
+				text-align: center;
+			}
+
+			//-----------------------------------------
+			// The icons
+			//-----------------------------------------
+			&[href*="behance.net"]::before {
+				content: '\f1b4';
+			}
+
+			&[href*="bitbucket.org"]::before {
+				content: '\f171';
+			}
+
+			&[href*="codepen.io"]::before {
+				content: '\f1cb';
+			}
+
+			&[href*="deviantart.com"]::before {
+				content: '\f1bd';
+			}
+
+			&[href*="digg.com"]::before {
+				content: '\f1a6';
+			}
+
+			&[href*="dribbble.com"]::before {
+				content: '\f17d';
+			}
+
+			&[href^="mailto:"]::before {
+				content: '\f0e0';
+			}
+
+			&[href*="facebook.com"]::before {
+				content: '\f09a';
+			}
+
+			&[href*="github.com"]::before,
+			&[href*="github.io"]::before {
+				content: '\f09b';
+			}
+
+			&[href*="plus.google.com"]::before {
+				content: '\f0d5';
+			}
+
+			&[href*="instagram.com"]::before {
+				content: '\f16d';
+			}
+
+			&[href*="jsfiddle.net"]::before {
+				content: '\f1cc';
+			}
+
+			&[href*="linkedin.com"]::before {
+				content: '\f0e1';
+			}
+
+			&[href*="medium.com"]::before {
+				content: '\f23a';
+			}
+
+			&[href*="pinterest.com"]::before {
+				content: '\f0d2';
+			}
+
+			&[href*="reddit.com"]::before {
+				content: '\f1a1';
+			}
+
+			&[href*="skype.com"]::before {
+				content: '\f17e';
+			}
+
+			&[href*="slack.com"]::before {
+				content: '\f198';
+			}
+
+			&[href*="slideshare.net"]::before {
+				content: '\f1e7';
+			}
+
+			&[href*="snapchat.com"]::before {
+				content: '\f2ab';
+			}
+			
+			&[href*="soundcloud.com"]::before {
+				content: '\f1be';
+			}
+
+			&[href*="spotify.com"]::before {
+				content: '\f1bc';
+			}
+
+			&[href*="tumblr.com"]::before {
+				content: '\f173';
+			}
+
+			&[href*="twitter.com"]::before {
+				content: '\f099';
+			}
+
+			&[href*="vimeo.com"]::before {
+				content: '\f27d';
+			}
+
+			&[href*="vine.co"]::before {
+				content: '\f1ca';
+			}
+
+			&[href*="whatsapp.com"]::before {
+				content: '\f232';
+			}
+
+			&[href*="wordpress.com"]::before,
+			&[href*="wordpress.org"]::before {
+				content: '\f19a';
+			}
+
+			&[href*="yelp.com"]::before {
+				content: '\f1e9';
+			}
+
+			&[href*="youtube.com"]::before {
+				content: '\f167';
+			}
+		}
+	}
+}
