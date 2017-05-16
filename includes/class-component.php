@@ -180,6 +180,12 @@ class WDSCL_Component extends CPT_Core {
 					wds_component_library()->image_hero->image_hero_markup( $post_id, $count );
 					break;
 
+				// Video Hero.
+				case 'video_hero' :
+
+					wds_component_library()->video_hero->video_hero_markup( $post_id, $count );
+					break;
+
 				// CSS Expanding Search Box.
 				case 'css_expanding_search_box' :
 					?>
