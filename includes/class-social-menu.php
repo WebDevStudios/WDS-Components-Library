@@ -39,7 +39,7 @@ class WDSCL_Social_Menu {
 	 * @since  0.0.0
 	 */
 	public function hooks() {
-		add_action( 'after_setup_theme', array( $this, 'register_social_menu' ) );
+		add_action( 'init', array( $this, 'register_social_menu' ) );
 	}
 
 	/**
