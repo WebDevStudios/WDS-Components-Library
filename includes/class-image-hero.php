@@ -97,17 +97,15 @@ class WDSCL_Image_Hero {
 					<p class="hero-description"><?php echo esc_html( $description ); ?></p>
 				<?php endif; ?>
 
-				<?php if ( ! empty( $cta_button ) ) :
+				<?php if ( 'yes' === $cta_button ) :
 					$button_text = get_post_meta( $post_id, $prefix . 'button_text', true );
 					$button_link = get_post_meta( $post_id, $prefix . 'button_link', true );
 
-					// Return if either of button part is empty.
-					if ( empty( $button_text || $button_link ) ) :
-						return;
-					endif;
-				?>
-					<a href="<?php echo esc_url( $button_link ); ?>" class="button hero-button"><?php echo esc_html( $button_text ); ?></a>
-				<?php endif; ?>
+					// Output the button if we have both the text & the link.
+					if ( empty( $button_text && $button_link ) ) :?>
+						<a href="<?php echo esc_url( $button_link ); ?>" class="button hero-button"><?php echo esc_html( $button_text ); ?></a>
+					<?php endif;
+				endif; ?>
 			</div><!-- .hero-content -->
 		</section><!-- .hero-area -->
 
