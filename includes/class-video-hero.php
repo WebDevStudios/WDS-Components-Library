@@ -12,6 +12,12 @@
  * @since 0.0.0
  */
 class WDSCL_Video_Hero {
+
+	/**
+	 * Set the element name.
+	 */
+	private $component_name = 'video_hero';
+
 	/**
 	 * Parent plugin class.
 	 *
@@ -39,6 +45,14 @@ class WDSCL_Video_Hero {
 	 * @since  0.0.0
 	 */
 	public function hooks() {
+		add_filter( 'after_theme_setup', array( $this, 'add_hero_image_size' ) );
+	}
 
+	/**
+	 * Add an image size for the hero image.
+	 */
+	public function add_hero_image_size() {
+
+		add_image_size( 'hero-image', 1920, 500, true );
 	}
 }
