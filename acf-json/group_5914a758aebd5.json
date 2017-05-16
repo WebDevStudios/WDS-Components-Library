@@ -51,6 +51,37 @@
                     "max": ""
                 },
                 {
+                    "key": "591b1cfb025bc",
+                    "name": "video_hero",
+                    "label": "Video Hero",
+                    "display": "block",
+                    "sub_fields": [
+                        {
+                            "key": "field_591b1d04025bd",
+                            "label": "Video Hero",
+                            "name": "video_hero",
+                            "type": "clone",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "clone": [
+                                "group_591b1b2f7ab3d"
+                            ],
+                            "display": "seamless",
+                            "layout": "block",
+                            "prefix_label": 0,
+                            "prefix_name": 0
+                        }
+                    ],
+                    "min": "",
+                    "max": ""
+                },
+                {
                     "key": "5919e1bd57cbd",
                     "name": "css_expanding_search_box",
                     "label": "CSS Expanding Search Box",
@@ -223,5 +254,5 @@
     "hide_on_screen": "",
     "active": 1,
     "description": "",
-    "modified": 1494875930
+    "modified": 1494949157
 }

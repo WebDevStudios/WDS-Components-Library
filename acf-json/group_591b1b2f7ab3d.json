@@ -1,0 +1,177 @@
+{
+    "key": "group_591b1b2f7ab3d",
+    "title": "Video Hero",
+    "fields": [
+        {
+            "key": "field_591b1b7f43865",
+            "label": "Background Image",
+            "name": "background_image",
+            "type": "image",
+            "instructions": "Upload an image at least 1920 x 500px. This is used as a backup in case the video fails.",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "return_format": "id",
+            "preview_size": "medium",
+            "library": "all",
+            "min_width": "",
+            "min_height": "",
+            "min_size": "",
+            "max_width": "",
+            "max_height": "",
+            "max_size": "",
+            "mime_types": ""
+        },
+        {
+            "key": "field_591b1bd043866",
+            "label": "Background Video",
+            "name": "background_video",
+            "type": "url",
+            "instructions": "Provide a link to the video that will be used.",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "placeholder": ""
+        },
+        {
+            "key": "field_591b1bf643867",
+            "label": "Title",
+            "name": "title",
+            "type": "text",
+            "instructions": "Optional. Enter a title for the hero that draws the user into the content.",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": "",
+            "maxlength": ""
+        },
+        {
+            "key": "field_591b1c0f43868",
+            "label": "Description",
+            "name": "description",
+            "type": "wysiwyg",
+            "instructions": "Optional. Add a description that will tell users more about you, your company, your products, or your services.",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "tabs": "visual",
+            "toolbar": "basic",
+            "media_upload": 0,
+            "delay": 0
+        },
+        {
+            "key": "field_591b1c3b43869",
+            "label": "CTA Button",
+            "name": "cta_button",
+            "type": "radio",
+            "instructions": "Would you like to include a CTA button?",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "choices": {
+                "no": "No",
+                "yes": "Yes"
+            },
+            "allow_null": 0,
+            "other_choice": 0,
+            "save_other_choice": 0,
+            "default_value": "no",
+            "layout": "horizontal",
+            "return_format": "value"
+        },
+        {
+            "key": "field_591b1cb74386b",
+            "label": "Button Text",
+            "name": "button_text",
+            "type": "text",
+            "instructions": "Add text to the button.",
+            "required": 1,
+            "conditional_logic": [
+                [
+                    {
+                        "field": "field_591b1c3b43869",
+                        "operator": "==",
+                        "value": "yes"
+                    }
+                ]
+            ],
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": "",
+            "maxlength": ""
+        },
+        {
+            "key": "field_591b1c7d4386a",
+            "label": "Button Link",
+            "name": "button_link",
+            "type": "url",
+            "instructions": "Provide a link for the call to action.",
+            "required": 1,
+            "conditional_logic": [
+                [
+                    {
+                        "field": "field_591b1c3b43869",
+                        "operator": "==",
+                        "value": "yes"
+                    }
+                ]
+            ],
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "placeholder": ""
+        }
+    ],
+    "location": [
+        [
+            {
+                "param": "post_type",
+                "operator": "==",
+                "value": "post"
+            }
+        ]
+    ],
+    "menu_order": 0,
+    "position": "normal",
+    "style": "default",
+    "label_placement": "top",
+    "instruction_placement": "label",
+    "hide_on_screen": "",
+    "active": 0,
+    "description": "",
+    "modified": 1494949096
+}
