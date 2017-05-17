@@ -102,7 +102,7 @@ class WDSCL_Image_Hero {
 					$button_link = get_post_meta( $post_id, $prefix . 'button_link', true );
 
 					// Output the button if we have both the text & the link.
-					if ( empty( $button_text && $button_link ) ) :?>
+					if ( ! empty( $button_text && $button_link ) ) :?>
 						<a href="<?php echo esc_url( $button_link ); ?>" class="button hero-button"><?php echo esc_html( $button_text ); ?></a>
 					<?php endif;
 				endif; ?>
