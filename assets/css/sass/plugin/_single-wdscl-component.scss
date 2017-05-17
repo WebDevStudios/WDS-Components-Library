@@ -10,7 +10,8 @@
 	.entry-content,
 	.component-code,
 	.post-navigation {
-		margin: 0 auto;
+		@include margin-auto;
+
 		max-width: 100%;
 		padding: rem(20);
 		width: rem(700);
@@ -99,6 +100,7 @@
 	// POST NAVIGATION
 	//-----------------------------------------
 	.post-navigation {
+		margin: 0 auto !important; // override wd_s
 
 		.nav-links {
 			display: flex;
