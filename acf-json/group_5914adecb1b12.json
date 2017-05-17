@@ -65,11 +65,11 @@
             "delay": 0
         },
         {
-            "key": "field_5914b085e2c0e",
-            "label": "CTA Button",
-            "name": "cta_button",
-            "type": "radio",
-            "instructions": "Would you like to include a CTA button?",
+            "key": "field_591c680b25fae",
+            "label": "Button",
+            "name": "button",
+            "type": "clone",
+            "instructions": "",
             "required": 0,
             "conditional_logic": 0,
             "wrapper": {
@@ -77,67 +77,13 @@
                 "class": "",
                 "id": ""
             },
-            "choices": {
-                "no": "No",
-                "yes": "Yes"
-            },
-            "allow_null": 0,
-            "other_choice": 0,
-            "save_other_choice": 0,
-            "default_value": "no : No",
-            "layout": "horizontal",
-            "return_format": "value"
-        },
-        {
-            "key": "field_5914b0dbe2c0f",
-            "label": "Button Text",
-            "name": "button_text",
-            "type": "text",
-            "instructions": "Offer a clear call to action, e.g. \"Start Now!\"",
-            "required": 1,
-            "conditional_logic": [
-                [
-                    {
-                        "field": "field_5914b085e2c0e",
-                        "operator": "==",
-                        "value": "yes"
-                    }
-                ]
+            "clone": [
+                "group_591c64b1733d8"
             ],
-            "wrapper": {
-                "width": "",
-                "class": "",
-                "id": ""
-            },
-            "default_value": "",
-            "placeholder": "",
-            "prepend": "",
-            "append": "",
-            "maxlength": ""
-        },
-        {
-            "key": "field_5914b117e2c10",
-            "label": "Button Link",
-            "name": "button_link",
-            "type": "url",
-            "instructions": "Add a link destination for the button.",
-            "required": 1,
-            "conditional_logic": [
-                [
-                    {
-                        "field": "field_5914b085e2c0e",
-                        "operator": "==",
-                        "value": "yes"
-                    }
-                ]
-            ],
-            "wrapper": {
-                "width": "",
-                "class": "",
-                "id": ""
-            },
-            "default_value": "",
-            "placeholder": ""
+            "display": "seamless",
+            "layout": "block",
+            "prefix_label": 0,
+            "prefix_name": 0
         }
     ],
     "location": [
@@ -157,5 +103,5 @@
     "hide_on_screen": "",
     "active": 0,
     "description": "",
-    "modified": 1494527825
+    "modified": 1495033821
 }
