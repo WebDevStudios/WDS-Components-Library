@@ -171,6 +171,14 @@ final class WDS_Component_Library {
 	protected $social_menu;
 
 	/**
+	 * Instance of WDSCL_Equal_Height_Cards
+	 *
+	 * @since0.0.0
+	 * @var WDSCL_Equal_Height_Cards
+	 */
+	protected $equal_height_cards;
+
+	/**
 	 * Creates or returns an instance of this class.
 	 *
 	 * @since   0.0.0
@@ -209,6 +217,7 @@ final class WDS_Component_Library {
 		$this->pricing_table = new WDSCL_Pricing_Table( $this );
 		$this->video_hero = new WDSCL_Video_Hero( $this );
 		$this->social_menu = new WDSCL_Social_Menu( $this );
+		$this->equal_height_cards = new WDSCL_Equal_Height_Cards( $this );
 	} // END OF PLUGIN CLASSES FUNCTION
 
 	/**
@@ -424,6 +433,7 @@ final class WDS_Component_Library {
 			case 'pricing_table':
 			case 'video_hero':
 			case 'social_menu':
+			case 'equal_height_cards':
 				return $this->$field;
 			default:
 				throw new Exception( 'Invalid ' . __CLASS__ . ' property: ' . $field );
