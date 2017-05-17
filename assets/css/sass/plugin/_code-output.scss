@@ -11,6 +11,17 @@ $tab-background: #fff;
 //-----------------------------------------
 // GENERAL STYLES
 //-----------------------------------------
+.component-usage {
+
+	+ .code-implementation {
+		margin-top: rem(40);
+
+		@include grid-media($tablet-landscape) {
+			margin-top: rem(60);
+		}
+	}
+}
+
 .code-implementation {
 
 	+ .code-tabs {
