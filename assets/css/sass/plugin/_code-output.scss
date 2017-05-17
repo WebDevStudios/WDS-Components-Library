@@ -25,10 +25,10 @@ $tab-background: #fff;
 .code-implementation {
 
 	+ .code-tabs {
-		margin-top: 40px;
+		margin-top: rem(40);
 
-		@media (min-width: 900px) {
-			margin-top: 60px;
+		@include grid-media($tablet-landscape) {
+			margin-top: rem(60);
 		}
 	}
 }
@@ -76,7 +76,7 @@ $tab-background: #fff;
 			box-shadow: none;
 			display: block;
 			outline: 0;
-			padding: 10px 15px;
+			padding: rem(10) rem(15);
 		}
 	}
 

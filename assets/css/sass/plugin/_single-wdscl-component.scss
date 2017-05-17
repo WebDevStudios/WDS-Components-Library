@@ -12,11 +12,11 @@
 	.post-navigation {
 		margin: 0 auto;
 		max-width: 100%;
-		padding: 20px;
-		width: 700px;
+		padding: rem(20);
+		width: rem(700);
 
-		@media (min-width: 900px) {
-			padding: 40px;
+		@include grid-media($tablet-landscape) {
+			padding: rem(40);
 		}
 	}
 
@@ -34,15 +34,16 @@
 			display: flex;
 
 			+ .component-status {
-				margin-left: 15px;
+				margin-left: rem(15);
 			}
 		}
 
 		.status-color {
+			@include size(rem(20));
+
 			border-radius: 50px;
 			display: block;
-			height: 20px; width: 20px;
-			margin-right: 5px;
+			margin-right: rem(5);
 			vertical-align: middle;
 		}
 	}
@@ -51,12 +52,12 @@
 		margin: 0; // we'll apply margin on entry-header instead.
 
 		+ .component-status {
-			margin-left: 30px;
+			margin-left: rem(30);
 		}
 	}
 
 	.byline {
-		margin-left: 3px;
+		margin-left: rem(3);
 	}
 
 
@@ -66,10 +67,10 @@
 	.component-example {
 
 		+ .entry-content {
-			margin-top: 40px;
+			margin-top: rem(40);
 
-			@media (min-width: 900px) {
-				margin-top: 60px;
+			@include grid-media($tablet-landscape) {
+				margin-top: rem(60);
 			}
 		}
 	}
@@ -88,8 +89,8 @@
 
 		+ .component-code {
 
-			@media (min-width: 900px) {
-				margin-top: 20px;
+			@include grid-media($tablet-landscape) {
+				margin-top: rem(20);
 			}
 		}
 	}
