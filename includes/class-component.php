@@ -212,6 +212,12 @@ class WDSCL_Component extends CPT_Core {
 					wds_component_library()->social_menu->social_media_menu();
 					break;
 
+				// Equal height cards.
+				case 'cards' :
+
+					$this->post_query( $post_id, $count );
+					break;
+
 			} // End switch().
 		} // End foreach().
 	}
@@ -344,5 +350,43 @@ class WDSCL_Component extends CPT_Core {
 		}
 
 		return $template;
+	}
+
+	public function post_query( $post_id, $count ) {
+
+		// If we're using this within the components library, we need the flexible content name, and row count.
+		$prefix    = 'component_' . $count . '_';
+
+		$card_type = get_post_meta( $post_id, $prefix . 'type', true );
+		$num_posts = get_post_meta( $post_id, $prefix . 'number_of_posts', true );
+
+		$post = array(
+			'posts_per_page' => intval( $num_posts ),
+		);
+
+		$posts = new WP_Query( $post );
+
+		if ( $posts->have_posts() ) {
+
+			// Wrapper. ?>
+			<div class="equal-height-cards">
+
+			<?php while ( $posts->have_posts() ) {
+
+				$posts->the_post();
+
+				if ( 'equal-height' === $card_type ) {
+					wds_component_library()->equal_height_cards->card_markup();
+				} else {
+					return;
+				}
+			} ?>
+
+			</div><!-- .equal-height-cards -->
+			<?php
+		}
+
+		// Reset our post query.
+		wp_reset_postdata();
 	}
 }
