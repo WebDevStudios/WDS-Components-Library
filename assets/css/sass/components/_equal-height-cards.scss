@@ -22,37 +22,18 @@
 // Individual Card Styling
 //-----------------------------------------
 .card {
+	$cols: 5;
+	$width: 100% / $cols;
+
 	background-color: $color-whitesmoke;
 	border: rem(2) solid $color-alto;
 	margin-bottom: $gutter;
+	margin-right: $gutter;
 	padding: $gutter;
-	width: 100%;
 
-	// // Max number of cards in row.
-	// $max: 5;
-
-	// // Loop through class names to apply margin + width at certain media query.
-	// @for $i from 1 through 5 {
-	// 	&.span-column-#{$i} {
-	// 		@if $i <= $max {
-
-	// 			@include grid-media($tablet-portrait) {
-	// 				margin-right: 2%;
-	// 				width: calc(100% / #{$i} - 2%);
-	// 			}
-	// 		} @else {
-
-	// 			@include grid-media($tablet-portrait) {
-	// 				width: 33.33%;
-	// 			}
-	// 		} // @else
-
-	// 		// Get rid of margin on last card.
-	// 		&:nth-child(#{$i}n) {
-	// 			margin-right: 0;
-	// 		} // &:nth-child(#{$i}n)
-	// 	} // &-#{$i}
-	// } // end for | from | through
+	@include grid-media($tablet-landscape) {
+		width: calc(#{$width} - #{$gutter});
+	}
 
 	// Card content.
 	.card-content-area {
