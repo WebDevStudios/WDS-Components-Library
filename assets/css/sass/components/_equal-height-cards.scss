@@ -3,6 +3,10 @@
 //--------------------------------------------------------------
 
 
+// Local Variables
+$gutter: rem(25);
+
+
 //-----------------------------------------
 // Card Container Styling
 //-----------------------------------------
@@ -12,8 +16,9 @@
 	flex-wrap: wrap;
 	justify-content: space-around;
 
-	@include grid-media($tablet-portrait) {
+	@include grid-media($tablet-landscape) {
 		flex-direction: row;
+		justify-content: flex-start;
 	}
 } // .card-container
 
@@ -22,11 +27,9 @@
 // Individual Card Styling
 //-----------------------------------------
 .card {
-	$cols: 5;
+	$cols: 3;
 	$width: 100% / $cols;
 
-	background-color: $color-whitesmoke;
-	border: rem(2) solid $color-alto;
 	margin-bottom: $gutter;
 	margin-right: $gutter;
 	padding: $gutter;
@@ -34,17 +37,4 @@
 	@include grid-media($tablet-landscape) {
 		width: calc(#{$width} - #{$gutter});
 	}
-
-	// Card content.
-	.card-content-area {
-
-		// Card footer.
-		.card-footer {
-
-			// Read more link.
-			a {
-				text-decoration: underline;
-			} // a
-		} // .card-footer
-	} // .card-content-area
 } // .card
