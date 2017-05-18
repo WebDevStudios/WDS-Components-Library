@@ -21,6 +21,18 @@
 		}
 	}
 
+	.card {
+
+		.entry-header,
+		.entry-content {
+			padding: 0;
+			width: auto;
+
+			@include grid-media($tablet-landscape) {
+				padding: 0;
+			}
+		}
+	}
 
 	//-----------------------------------------
 	// ENTRY HEADER
