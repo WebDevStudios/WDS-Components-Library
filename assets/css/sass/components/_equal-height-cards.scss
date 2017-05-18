@@ -1,0 +1,70 @@
+//--------------------------------------------------------------
+// Card Styling
+//--------------------------------------------------------------
+
+
+//-----------------------------------------
+// Card Container Styling
+//-----------------------------------------
+.card-container {
+	align-content: stretch;
+	display: flex;
+	flex-direction: column;
+	flex-wrap: wrap;
+	justify-content: space-around;
+
+	@include grid-media($tablet-portrait) {
+		flex-direction: row;
+	}
+} // .card-container
+
+
+//-----------------------------------------
+// Individual Card Styling
+//-----------------------------------------
+.card {
+	background-color: $color-whitesmoke;
+	border: rem(2) solid $color-alto;
+	margin-bottom: $gutter;
+	padding: $gutter;
+	width: 100%;
+
+	// Max number of cards in row.
+	$max: 5;
+
+	// Loop through class names to apply margin + width at certain media query.
+	@for $i from 1 through 5 {
+		&.span-column-#{$i} {
+			@if $i <= $max {
+
+				@include grid-media($tablet-portrait) {
+					margin-right: 2%;
+					width: calc(100% / #{$i} - 2%);
+				}
+			} @else {
+
+				@include grid-media($tablet-portrait) {
+					width: 33.33%;
+				}
+			} // @else
+
+			// Get rid of margin on last card.
+			&:nth-child(#{$i}n) {
+				margin-right: 0;
+			} // &:nth-child(#{$i}n)
+		} // &-#{$i}
+	} // end for | from | through
+
+	// Card content.
+	.card-content-area {
+
+		// Card footer.
+		.card-footer {
+
+			// Read more link.
+			a {
+				text-decoration: underline;
+			} // a
+		} // .card-footer
+	} // .card-content-area
+} // .card
