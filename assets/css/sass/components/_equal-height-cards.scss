@@ -6,8 +6,7 @@
 //-----------------------------------------
 // Card Container Styling
 //-----------------------------------------
-.card-container {
-	align-content: stretch;
+.equal-height-cards {
 	display: flex;
 	flex-direction: column;
 	flex-wrap: wrap;
@@ -29,31 +28,31 @@
 	padding: $gutter;
 	width: 100%;
 
-	// Max number of cards in row.
-	$max: 5;
+	// // Max number of cards in row.
+	// $max: 5;
 
-	// Loop through class names to apply margin + width at certain media query.
-	@for $i from 1 through 5 {
-		&.span-column-#{$i} {
-			@if $i <= $max {
+	// // Loop through class names to apply margin + width at certain media query.
+	// @for $i from 1 through 5 {
+	// 	&.span-column-#{$i} {
+	// 		@if $i <= $max {
 
-				@include grid-media($tablet-portrait) {
-					margin-right: 2%;
-					width: calc(100% / #{$i} - 2%);
-				}
-			} @else {
+	// 			@include grid-media($tablet-portrait) {
+	// 				margin-right: 2%;
+	// 				width: calc(100% / #{$i} - 2%);
+	// 			}
+	// 		} @else {
 
-				@include grid-media($tablet-portrait) {
-					width: 33.33%;
-				}
-			} // @else
+	// 			@include grid-media($tablet-portrait) {
+	// 				width: 33.33%;
+	// 			}
+	// 		} // @else
 
-			// Get rid of margin on last card.
-			&:nth-child(#{$i}n) {
-				margin-right: 0;
-			} // &:nth-child(#{$i}n)
-		} // &-#{$i}
-	} // end for | from | through
+	// 		// Get rid of margin on last card.
+	// 		&:nth-child(#{$i}n) {
+	// 			margin-right: 0;
+	// 		} // &:nth-child(#{$i}n)
+	// 	} // &-#{$i}
+	// } // end for | from | through
 
 	// Card content.
 	.card-content-area {
