@@ -250,80 +250,19 @@ class WDSCL_Component extends CPT_Core {
 	 * @author      Carrie Forde
 	 */
 	public function display_component( $post_id = 0 ) {
+
 		// Get the post id.
 		if ( ! $post_id ) {
 			$post_id = get_the_ID();
 		}
+
 		// Get our data.
 		$component = get_post_meta( $post_id, 'component', true );
+
 		// Determine which layout to grab.
 		foreach ( (array) $component as $count => $component ) {
 			include( $this->get_component_template_part( 'component', $component, false ) );
 		}
-	}
-
-
-	/**
-	 * Cycle through flexible content and display the corresponding markup.
-	 *
-	 * @param  int  $post_id  ID of the post.
-	 * @author      Carrie Forde
-	 */
-	public function display_component( $post_id = 0 ) {
-
-		// Get the post id.
-		if ( ! $post_id ) {
-			$post_id = get_the_ID();
-		}
-
-		// Get our data.
-		$component = get_post_meta( $post_id, 'component', true );
-
-		// Determine which layout to grab.
-		foreach ( (array) $component as $count => $component ) {
-
-			switch ( $component ) {
-
-				// Image Hero.
-				case 'image_hero' :
-
-					wds_component_library()->image_hero->image_hero_markup( $post_id, $count );
-					break;
-
-				// Video Hero.
-				case 'video_hero' :
-
-					wds_component_library()->video_hero->video_hero_markup( $post_id, $count );
-					break;
-
-				// CSS Expanding Search Box.
-				case 'css_expanding_search_box' :
-					?>
-
-					<!-- // Add a searchform.php file to your theme, then add this custom markup. -->
-					<form method="get" class="search-form" action="#">
-						<label for="search-field"><span class="screen-reader-text">To search this site, enter a search term</span></label>
-						<input class="search-field" id="search-field" type="text" name="s" value="" aria-required="false" autocomplete="off" placeholder="Search&hellip;" />
-						<button class="search-submit"><span class="screen-reader-text">Search</span><i class="fa fa-search"></i></button>
-					</form>
-
-					<?php
-					break;
-
-				// Pricing Table.
-				case 'pricing_table' :
-
-					wds_component_library()->pricing_table->pricing_table_markup( $post_id, $count );
-					break;
-
-				// Social Menu.
-				case 'social_menu' :
-
-					wds_component_library()->social_menu->social_media_menu();
-					break;
-
-			} // End switch().
-		} // End foreach().
 	}
 
 	/**
