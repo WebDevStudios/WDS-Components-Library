@@ -199,8 +199,8 @@ class WDSCL_Component extends CPT_Core {
 				break;
 
 			// Check theme compatibility last.
-			} elseif ( file_exists( trailingslashit( $this->plugin->path ) . 'component-templates/' . $template_name ) ) {
-				$located = trailingslashit( $this->plugin->path ) . 'component-templates/' . $template_name;
+			} elseif ( file_exists( trailingslashit( $this->plugin->path ) . 'components/' . $template_name ) ) {
+				$located = trailingslashit( $this->plugin->path ) . 'components/' . $template_name;
 				break;
 			}
 		}
@@ -242,7 +242,7 @@ class WDSCL_Component extends CPT_Core {
 		// Return the part that is found
 		return $this->locate_component_template( $templates, $load, false );
 	}
-	
+
 	/**
 	 * Cycle through flexible content and display the corresponding markup.
 	 *
