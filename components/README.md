@@ -27,7 +27,7 @@ We then use this optional prefix when getting our component data:
 $image = get_post_meta( $post_id, $prefix . 'background_image', true );
 ```
 
-If the component is used within the Components flexible content, the field name passed is actually `component_background_image`.
+If the component is used within the Components flexible content, the field name passed is actually `component_0_background_image`.
 
 If the component is used on its own, the field name passed is simply `background_image`.
 
