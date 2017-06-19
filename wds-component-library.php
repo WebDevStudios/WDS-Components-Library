@@ -139,30 +139,6 @@ final class WDS_Component_Library {
 	protected $component_category;
 
 	/**
-	 * Instance of WDSCL_Image_Hero
-	 *
-	 * @since0.0.0
-	 * @var WDSCL_Image_Hero
-	 */
-	protected $image_hero;
-
-	/**
-	 * Instance of WDSCL_Video_Hero
-	 *
-	 * @since0.0.0
-	 * @var WDSCL_Video_Hero
-	 */
-	protected $video_hero;
-
-	/**
-	 * Instance of WDSCL_Social_Menu
-	 *
-	 * @since0.0.0
-	 * @var WDSCL_Social_Menu
-	 */
-	protected $social_menu;
-
-	/**
 	 * Creates or returns an instance of this class.
 	 *
 	 * @since   0.0.0
@@ -197,9 +173,6 @@ final class WDS_Component_Library {
 		$this->component = new WDSCL_Component( $this );
 		$this->component_status = new WDSCL_Component_Status( $this );
 		$this->component_category = new WDSCL_Component_Category( $this );
-		$this->image_hero = new WDSCL_Image_Hero( $this );
-		$this->video_hero = new WDSCL_Video_Hero( $this );
-		$this->social_menu = new WDSCL_Social_Menu( $this );
 	} // END OF PLUGIN CLASSES FUNCTION
 
 	/**
