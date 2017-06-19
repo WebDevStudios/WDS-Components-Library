@@ -7,6 +7,7 @@
  */
 
 require_once dirname( __FILE__ ) . '/../vendor/cpt-core/CPT_Core.php';
+require_once dirname( __FILE__ ) . '/../template-tags.php';
 
 /**
  * WDS Component Library Component post type class.
