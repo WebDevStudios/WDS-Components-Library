@@ -7,6 +7,7 @@
  */
 
 require_once dirname( __FILE__ ) . '/../vendor/cpt-core/CPT_Core.php';
+require_once dirname( __FILE__ ) . '/../template-tags.php';
 
 /**
  * WDS Component Library Component post type class.
@@ -154,6 +155,96 @@ class WDSCL_Component extends CPT_Core {
 	}
 
 	/**
+	 * Retrieve the name of the highest priority template file that exists.
+	 *
+	 * Searches in the STYLESHEETPATH before TEMPLATEPATH so that themes which
+	 * inherit from a parent theme can just overload one file. If the template is
+	 * not found in either of those, it looks in the theme-compat folder last.
+	 *
+	 * Modified from example on Pippin's Plugins.
+	 *
+	 * @link  https://pippinsplugins.com/template-file-loaders-plugins/
+	 *
+	 * @since 0.0.0
+	 *
+	 * @param string|array $template_names Template file(s) to search for, in order.
+	 * @param bool $load If true the template file will be loaded if it is found.
+	 * @param bool $require_once Whether to require_once or require. Default true.
+	 *                            Has no effect if $load is false.
+	 * @return string The template filename if one is located.
+	 */
+	public function locate_component_template( $template_names, $load = false, $require_once = true ) {
+
+		// No file found yet
+		$located = false;
+
+		// Try to find a template file
+		foreach ( (array) $template_names as $template_name ) {
+
+			// Continue if template is empty.
+			if ( empty( $template_name ) ) {
+				continue;
+			}
+
+			// Trim off any slashes from the template name
+			$template_name = ltrim( $template_name, '/' );
+
+			// Check child theme first.
+			if ( file_exists( trailingslashit( get_stylesheet_directory() ) . 'template-parts/components/' . $template_name ) ) {
+				$located = trailingslashit( get_stylesheet_directory() ) . 'template-parts/components/' . $template_name;
+				break;
+
+			// Check parent theme next.
+			} elseif ( file_exists( trailingslashit( get_template_directory() ) . 'template-parts/components/' . $template_name ) ) {
+				$located = trailingslashit( get_template_directory() ) . 'template-parts/components/' . $template_name;
+				break;
+
+			// Check theme compatibility last.
+			} elseif ( file_exists( trailingslashit( $this->plugin->path ) . 'components/' . $template_name ) ) {
+				$located = trailingslashit( $this->plugin->path ) . 'components/' . $template_name;
+				break;
+			}
+		}
+
+		if ( ( true === $load ) && ! empty( $located ) ) {
+			load_template( $located, $require_once );
+		}
+
+		return $located;
+	}
+
+	/**
+	 * Retrieves a template part
+	 *
+	 * Modified from example on Pippin's Plugins.
+	 *
+	 * @link  https://pippinsplugins.com/template-file-loaders-plugins/
+	 *
+	 * @since 0.0.0
+	 *
+	 * @param string $slug
+	 * @param string $name Optional. Default null
+	 */
+	public function get_component_template_part( $slug, $name = null, $load = true ) {
+
+		// Execute code for this part
+		do_action( 'get_template_part_' . $slug, $slug, $name );
+
+		// Setup possible parts
+		$templates = array();
+		if ( isset( $name ) ) {
+			$templates[] = $slug . '-' . $name . '.php';
+		}
+		$templates[] = $slug . '.php';
+
+		// Allow template parts to be filtered
+		$templates = apply_filters( 'get_component_template_part', $templates, $slug, $name );
+
+		// Return the part that is found
+		return $this->locate_component_template( $templates, $load, false );
+	}
+
+	/**
 	 * Cycle through flexible content and display the corresponding markup.
 	 *
 	 * @param  int  $post_id  ID of the post.
@@ -171,55 +262,8 @@ class WDSCL_Component extends CPT_Core {
 
 		// Determine which layout to grab.
 		foreach ( (array) $component as $count => $component ) {
-
-			switch ( $component ) {
-
-				// Image Hero.
-				case 'image_hero' :
-
-					wds_component_library()->image_hero->image_hero_markup( $post_id, $count );
-					break;
-
-				// Video Hero.
-				case 'video_hero' :
-
-					wds_component_library()->video_hero->video_hero_markup( $post_id, $count );
-					break;
-
-				// CSS Expanding Search Box.
-				case 'css_expanding_search_box' :
-					?>
-
-					<!-- // Add a searchform.php file to your theme, then add this custom markup. -->
-					<form method="get" class="search-form" action="#">
-						<label for="search-field"><span class="screen-reader-text">To search this site, enter a search term</span></label>
-						<input class="search-field" id="search-field" type="text" name="s" value="" aria-required="false" autocomplete="off" placeholder="Search&hellip;" />
-						<button class="search-submit"><span class="screen-reader-text">Search</span><i class="fa fa-search"></i></button>
-					</form>
-
-					<?php
-					break;
-
-				// Pricing Table.
-				case 'pricing_table' :
-
-					wds_component_library()->pricing_table->pricing_table_markup( $post_id, $count );
-					break;
-
-				// Social Menu.
-				case 'social_menu' :
-
-					wds_component_library()->social_menu->social_media_menu();
-					break;
-
-				// Equal height cards.
-				case 'cards' :
-
-					$this->post_query( $post_id, $count );
-					break;
-
-			} // End switch().
-		} // End foreach().
+			include( $this->get_component_template_part( 'component', $component, false ) );
+		}
 	}
 
 	/**

@@ -139,46 +139,6 @@ final class WDS_Component_Library {
 	protected $component_category;
 
 	/**
-	 * Instance of WDSCL_Image_Hero
-	 *
-	 * @since0.0.0
-	 * @var WDSCL_Image_Hero
-	 */
-	protected $image_hero;
-
-	/**
-	 * Instance of WDSCL_Pricing_Table
-	 *
-	 * @since0.0.0
-	 * @var WDSCL_Pricing_Table
-	 */
-	protected $pricing_table;
-
-	/**
-	 * Instance of WDSCL_Video_Hero
-	 *
-	 * @since0.0.0
-	 * @var WDSCL_Video_Hero
-	 */
-	protected $video_hero;
-
-	/**
-	 * Instance of WDSCL_Social_Menu
-	 *
-	 * @since0.0.0
-	 * @var WDSCL_Social_Menu
-	 */
-	protected $social_menu;
-
-	/**
-	 * Instance of WDSCL_Equal_Height_Cards
-	 *
-	 * @since0.0.0
-	 * @var WDSCL_Equal_Height_Cards
-	 */
-	protected $equal_height_cards;
-
-	/**
 	 * Creates or returns an instance of this class.
 	 *
 	 * @since   0.0.0
@@ -213,11 +173,6 @@ final class WDS_Component_Library {
 		$this->component = new WDSCL_Component( $this );
 		$this->component_status = new WDSCL_Component_Status( $this );
 		$this->component_category = new WDSCL_Component_Category( $this );
-		$this->image_hero = new WDSCL_Image_Hero( $this );
-		$this->pricing_table = new WDSCL_Pricing_Table( $this );
-		$this->video_hero = new WDSCL_Video_Hero( $this );
-		$this->social_menu = new WDSCL_Social_Menu( $this );
-		$this->equal_height_cards = new WDSCL_Equal_Height_Cards( $this );
 	} // END OF PLUGIN CLASSES FUNCTION
 
 	/**
