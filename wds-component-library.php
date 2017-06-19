@@ -139,14 +139,6 @@ final class WDS_Component_Library {
 	protected $component_category;
 
 	/**
-	 * Instance of WDSCL_Social_Menu
-	 *
-	 * @since0.0.0
-	 * @var WDSCL_Social_Menu
-	 */
-	protected $social_menu;
-
-	/**
 	 * Creates or returns an instance of this class.
 	 *
 	 * @since   0.0.0
@@ -181,7 +173,6 @@ final class WDS_Component_Library {
 		$this->component = new WDSCL_Component( $this );
 		$this->component_status = new WDSCL_Component_Status( $this );
 		$this->component_category = new WDSCL_Component_Category( $this );
-		$this->social_menu = new WDSCL_Social_Menu( $this );
 	} // END OF PLUGIN CLASSES FUNCTION
 
 	/**
