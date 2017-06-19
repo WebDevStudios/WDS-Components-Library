@@ -60,50 +60,11 @@ within the `wds-components-library` directory.
 
 
 ### Adding Components ###
-To add a new component, run
+To add a new component, add a template part to the `components` directory. Components should be named `component-` + `name_of_component.php`. `name_of_component` _must_ match the name used within the ACF Components flexible content field group (including underscores). This allows the component display function to automatically grab the correct template part.
 
-```
-yo plugin-wp:include <component-name>
-```
+As an example, let's look at the image hero component. Within the flexible content field group, it is named `image_hero`. Therefore, it's template part must be named `component-image_hero.php`.
 
-within the plugin directory.
-
-Assets, including styles and scripts, for each component should be contained to their own partials within `assets/css/sass/components` or `assets/scripts/components`, respectively.
-
-To add a component to the flexible content field for the components CPT, add a case for the flexible content field group in the `display_component()` function within `class-component.php`.
-
-Example:
-``` php
-public function display_component( $post_id = 0 ) {
-
-    // Get the post id.
-    if ( ! $post_id ) {
-        $post_id = get_the_ID();
-    }
-
-    // Get our data.
-    $component = get_post_meta( $post_id, 'component', true );
-
-    // Determine which layout to grab.
-    foreach ( (array) $component as $count => $component ) {
-
-        switch ( $component ) {
-
-            // Image Hero.
-            case 'image_hero' :
-
-                wds_component_library()->image_hero->image_hero_markup( $post_id, $count );
-                break;
-
-            // My new component.
-            case 'my_new_component' :
-
-                wds_component_library()->my_new_component->my_new_component_markup( $post_id, $count );
-                break;
-        }
-    }
-}
-```
+Please see the README.md within the `components` directory for more information.
 
 
 ## Changelog ##
