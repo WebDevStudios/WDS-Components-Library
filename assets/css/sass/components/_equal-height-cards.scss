@@ -5,21 +5,26 @@
 
 // Local Variables
 $gutter: rem(25);
+$cols: 3; // Set the number of columns you'd like within the section.
+$width: 100% / $cols; // calculates the width of the card.
 
 
 //-----------------------------------------
 // Card Container Styling
 //-----------------------------------------
-.equal-height-cards {
-	display: flex;
-	flex-direction: column;
-	flex-wrap: wrap;
-	justify-content: space-around;
+.cards-equal-height {
 
-	@include grid-media($tablet-landscape) {
-		flex-direction: row;
-		justify-content: flex-start;
-	}
+	.row {
+		display: flex;
+		flex-direction: column;
+		flex-wrap: wrap;
+		justify-content: space-around;
+
+		@include grid-media($tablet-landscape) {
+			flex-direction: row;
+			justify-content: flex-start;
+		}
+	} // .row
 } // .card-container
 
 
@@ -27,9 +32,6 @@ $gutter: rem(25);
 // Individual Card Styling
 //-----------------------------------------
 .card {
-	$cols: 3; // Set the number of columns you'd like within the section.
-	$width: 100% / $cols; // calculates the width of the card.
-
 	margin-bottom: $gutter;
 	margin-right: $gutter;
 	padding: $gutter;
